@@ -33,27 +33,27 @@ All `.cpp` files can **take input from a file** and **write output into a file**
 <details>
 <summary><strong><span style="font-size:20px;">Non-Linear Equation Solve</span></strong></summary>
 
-- ▶ [Bisection](./Bisection)  
-- ▶ [False Position (Regula Falsi)](./False%20Position)  
-- ▶ [Newton Raphson](./Newton%20Raphson)  
-- ▶ [Secant Method](./Secant)
+- ▶ [Bisection](./MainProject/Bisection)  
+- ▶ [False Position (Regula Falsi)](./MainProject/False%20Position)  
+- ▶ [Newton Raphson](./MainProject/Newton%20Raphson)  
+- ▶ [Secant Method](./MainProject/Secant)
 
 </details>
 
 <details>
 <summary><strong><span style="font-size:20px;">Linear Equation Solve</span></strong></summary>
 
-- ▶ [Gauss Elimination](./Gauss%20Elimination)  
-- ▶ [Gauss Jordan Elimination](./Gauss%20Jordan%20Elimination)  
-- ▶ [Doolittle Method (LU Decomposition)](./Doolittle%20Method)  
-- ▶ [Matrix Inversion](./Matrix%20Inversion)
+- ▶ [Gauss Elimination](./MainProject/Gauss%20Elimination)  
+- ▶ [Gauss Jordan Elimination](./MainProject/Gauss%20Jordan%20Elimination)  
+- ▶ [Doolittle Method (LU Decomposition)](./MainProject/Doolittle%20Method)  
+- ▶ [Matrix Inversion](./MainProject/Matrix%20Inversion)
 
 </details>
 
 <details>
 <summary><strong><span style="font-size:20px;">Differential Equation Solve</span></strong></summary>
 
-- ▶ [Runge Kutta 4th Order (RK4)](./Runge%20Kutta%204th%20Order)
+- ▶ [Runge Kutta 4th Order (RK4)](./MainProject/Runge%20Kutta%204th%20Order)
 
 </details>
  
