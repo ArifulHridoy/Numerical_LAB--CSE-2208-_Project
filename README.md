@@ -66,8 +66,8 @@ All `.cpp` files can **take input from a file** and **write output into a file**
 
 
 ## 👨‍💻 Author
-**1. Md. Toufiq Hasan : 2207049**  
-**2. Shahriar Abdullah : 2207050**  
-**3. Ariful Islam Sheikh : 2207051**
+**1. Md. Toufiq Hasan & Roll : 2207049**  
+**2. Shahriar Abdullah & Roll : 2207050**  
+**3. Ariful Islam Sheikh & Roll : 2207051**
 
 
