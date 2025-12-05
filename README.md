@@ -9,11 +9,13 @@ This project is a collection of classical **Numerical Methods implemented in C++
 - **A C++ implementation** demonstrating the algorithm  
 - **A text explanation** detailing the steps, formulas, and sample problems  
 
-The project covers three main areas:
+The project mainly these areas:
 
 1. **Non-Linear Equation Solving (Root-Finding Methods):** Bisection, False Position, Newton-Raphson, Secant  
 2. **Linear Algebra Methods:** Gauss Elimination, Gauss-Jordan Elimination, Doolittle (LU Decomposition), Matrix Inversion  
-3. **Differential Equation Solvers:** Runge-Kutta 4th Order (RK4)  
+3. **Differential Equation Solvers:** Runge-Kutta 4th Order (RK4)
+4. **Interpolation Methods:** Interpolation_newton_forward, Interpolation_newton_backward , Newton_divided_difference
+5. **Numerical Integration Methods:**  Simpson_1_3, Simpson_3_8
 
 This repository contains C++ implementations of popular **Numerical Methods**.  
 Each method has its own folder containing:
@@ -23,8 +25,8 @@ Each method has its own folder containing:
 Each folder includes:
 - `method.cpp` → C++ Implementation  
 - `method.txt` → Explanation / Notes  
-- Example input files are in `input_examples/`  
-- Example output files are in `output_examples/`  
+- Example input files are in `input.txt/`  
+- Example output files are in `output.txt/`  
 
 Top-level layout:
 - src/
@@ -46,10 +48,7 @@ Top-level layout:
   - simpson_1_3
   - simpson_3_8
 - include/
-- input_examples/
-- output_examples/
 
-All `.cpp` files can **take input from a file** and **write output into a file**.
 
 ## 🔢 Numerical Methods
 
