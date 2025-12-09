@@ -1,0 +1,58 @@
+SIMPSON'S 3/8 RULE - DOCUMENTATION
+
+This program calculates the definite integral of polynomial functions using Simpson's 3/8 Rule.
+Supports multiple test cases in a single run.
+
+SIMPSON'S 3/8 RULE FORMULA:
+---------------------------
+∫[a,b] f(x)dx ≈ (3h/8)[f(a) + 3Σf(i≠multiple of 3) + 2Σf(i=multiple of 3) + f(b)]
+where h = (b-a)/n and n must be a MULTIPLE OF 3
+
+INPUT FORMAT (Input.txt):
+-------------------------
+Line 1: Number of test cases (T)
+
+For each test case:
+  Line 1: Degree of polynomial (n)
+  Line 2: Coefficients (n+1 values) from highest degree to constant term
+  Line 3: Lower limit (a), Upper limit (b), Number of intervals (n - must be MULTIPLE OF 3)
+
+EXAMPLE:
+--------
+Input.txt:
+3
+2
+1 0 0
+0 2 6
+3
+1 -3 2 0
+1 4 9
+4
+1 0 0 0 -1
+0 1 12
+
+This represents 3 test cases:
+1. f(x) = x^2, integrate from 0 to 2 with 6 intervals
+2. f(x) = x^3 - 3x^2 + 2x, integrate from 1 to 4 with 9 intervals
+3. f(x) = x^4 - 1, integrate from 0 to 1 with 12 intervals
+
+OUTPUT:
+
+The program will:
+1. Process all test cases sequentially
+2. For each test case:
+   - Display the function equation in readable format
+   - Show integration parameters (limits, intervals, step size)
+   - Calculate the integral using Simpson's 3/8 rule
+   - Display results in console
+   - Write results to Output.txt
+3. Clear Output.txt at the start and write all results
+
+FEATURES:
+
+- Multiple test cases support
+- Dynamic polynomial evaluation
+- Automatic function string generation
+- Input validation (checks if n is multiple of 3)
+- Formatted output with precision control
+- Shows step size (h) calculation
