@@ -1,1 +1,24 @@
+Test Case 1
+Polynomial: f(x) = 1.0000*x^4 - 5.0000*x^3 + 0.0000*x^2 + 4.0000*x + 0.0000
+Tolerance (E): 1.000000e-04
+Search limit: [-5.000000e+00, 5.000000e+00]
+Root 1 found in [-1.0000, -0.8284]: -0.8284 (Iterations: 9)
+Root 2 found in [4.8284, 5.0000]: 4.8284 (Iterations: 6)
+All Real Roots:
+Root 1: -0.828423
+Root 2: 0.000000
+Root 3: 1.000000
+Root 4: 4.828427
+
+Test Case 2
+Polynomial: f(x) = 1.0000*x^3 + 2.0000*x^2 - 5.0000*x - 6.0000
+Tolerance (E): 1.000000e-03
+Search limit: [-3.741657e+00, 3.741657e+00]
+Root 1 found in [-3.2417, -2.9999]: -3.0000 (Iterations: 5)
+Root 2 found in [-1.0003, -0.7417]: -1.0000 (Iterations: 3)
+Root 3 found in [1.9995, 2.2583]: 1.9999 (Iterations: 4)
+All Real Roots:
+Root 1: -2.999978
+Root 2: -1.000010
+Root 3: 1.999936
 
