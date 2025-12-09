@@ -1,1 +1,28 @@
+Total Test Cases: 3
 
+TEST CASE 1
+Function: f(x) = x^2
+Degree: 2
+Lower Limit (a): 0.000000
+Upper Limit (b): 2.000000
+Number of intervals (n): 4
+Step size (h): 0.500000
+Integral value: 2.666667
+
+TEST CASE 2
+Function: f(x) = x^3 - 3x^2 + 2x
+Degree: 3
+Lower Limit (a): 1.000000
+Upper Limit (b): 4.000000
+Number of intervals (n): 6
+Step size (h): 0.500000
+Integral value: 15.750000
+
+TEST CASE 3
+Function: f(x) = x^4 - 1
+Degree: 4
+Lower Limit (a): 0.000000
+Upper Limit (b): 1.000000
+Number of intervals (n): 10
+Step size (h): 0.100000
+Integral value: -0.799987
