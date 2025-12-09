@@ -1,0 +1,50 @@
+BISECTION METHOD - DOCUMENTATION
+=================================
+
+This program finds the roots of polynomial equations using the Bisection Method.
+Supports multiple test cases in a single run.
+
+INPUT FORMAT (Input.txt):
+-------------------------
+Line 1: Number of test cases (T)
+
+For each test case:
+  Line 1: Degree of polynomial (n)
+  Line 2: Coefficients (n+1 values) from highest degree to constant term
+
+EXAMPLE:
+--------
+Input.txt:
+3
+4
+4 -9 0 0 4
+3
+1 -6 11 -6
+2
+1 0 -4
+
+This represents 3 test cases:
+1. Degree 4: f(x) = 4x^4 - 9x^3 + 4
+2. Degree 3: f(x) = x^3 - 6x^2 + 11x - 6
+3. Degree 2: f(x) = x^2 - 4
+
+OUTPUT:
+-------
+The program will:
+1. Process all test cases sequentially
+2. For each test case:
+   - Display the function equation in readable format
+   - Calculate the search limit for roots
+   - Find all roots within the search range
+   - Display results in console
+   - Write results to Output.txt
+3. Clear Output.txt at the start and write all results
+
+FEATURES:
+---------
+- Multiple test cases support
+- Dynamic polynomial evaluation
+- Automatic function string generation
+- Removes duplicate roots
+- Formatted output with precision control
+- Error tolerance: 0.001 (default)
