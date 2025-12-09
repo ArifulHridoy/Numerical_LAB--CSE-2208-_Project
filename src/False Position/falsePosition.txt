@@ -1,0 +1,62 @@
+FALSE POSITION METHOD - DOCUMENTATION
+
+This program finds the roots of polynomial functions using the False Position Method.
+Supports multiple test cases in a single run.
+
+FALSE POSITION METHOD FORMULA:
+------------------------------
+x_n = (x_{n-1} * f(x_n) - x_n * f(x_{n-1})) / (f(x_n) - f(x_{n-1}))
+
+The method uses regula falsi (false position) to find roots by linear interpolation.
+It requires a sign change f(x_1) * f(x_2) < 0 in the interval [x_1, x_2].
+
+INPUT FORMAT (Input.txt):
+-------------------------
+Line 1: Number of test cases (T)
+
+For each test case:
+  Line 1: Degree of polynomial (n)
+  Line 2: Coefficients (n+1 values) from highest degree to constant term
+  Line 3: Tolerance (E) - convergence criterion
+
+EXAMPLE:
+--------
+Input.txt:
+2
+4
+1 -5 0 4 0
+0.0001
+3
+1 2 -5 -6
+0.001
+
+This represents 2 test cases:
+1. f(x) = x^4 - 5x^3 + 4x with tolerance 0.0001
+2. f(x) = x^3 + 2x^2 - 5x - 6 with tolerance 0.001
+
+OUTPUT:
+
+The program will:
+1. Process all test cases sequentially
+2. For each test case:
+   - Display the polynomial equation in readable format
+   - Show tolerance value and search interval limits
+   - Automatically search for sign changes in the interval [-limit, limit]
+   - Apply False Position method to find each root
+   - Display iteration count for each root found
+   - Remove duplicate roots based on tolerance
+   - Display all unique roots found
+   - Write all results to Output.txt
+3. Append results to Output.txt for all test cases
+
+FEATURES:
+
+- Multiple test cases support
+- Dynamic polynomial evaluation
+- Automatic function string generation
+- Automatic root search with sign change detection
+- Iteration count tracking for convergence analysis
+- Duplicate root removal within tolerance
+- Formatted output with precision control
+- Console and file output simultaneously
+- Input validation and error handling
