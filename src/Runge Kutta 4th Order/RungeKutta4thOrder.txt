@@ -1,0 +1,57 @@
+RUNGE-KUTTA 4TH ORDER METHOD - DOCUMENTATION
+
+This program solves differential equations using the Runge-Kutta 4th Order method.
+Supports multiple test cases with different initial conditions.
+
+FUNCTION:
+---------
+dy/dx = f(x,y) = xy + y
+
+RUNGE-KUTTA 4TH ORDER FORMULA:
+
+y(n+1) = y(n) + (h/6)[k1 + 2k2 + 2k3 + k4]
+where:
+  k1 = h*f(x(n), y(n))
+  k2 = h*f(x(n) + h/2, y(n) + k1/2)
+  k3 = h*f(x(n) + h/2, y(n) + k2/2)
+  k4 = h*f(x(n) + h, y(n) + k3)
+
+INPUT FORMAT (Input.txt):
+
+Line 1: Number of test cases (T)
+
+For each test case:
+  Line 1: Initial x (x0), Initial y (y0), Final x (xn)
+
+EXAMPLE:
+--------
+Input.txt:
+3
+0 1 1
+0.2 2
+1 1 3
+
+This represents 3 test cases:
+1. Start at (0, 1), solve to x=1
+2. Start at (0.2, 2), solve to x=1
+3. Start at (1, 3), solve to x=3
+
+OUTPUT:
+
+The program will:
+1. Process all test cases sequentially
+2. For each test case:
+   - Display initial conditions (x0, y0)
+   - Show target x value
+   - Display step size and number of iterations
+   - Calculate y at xn using Runge-Kutta
+   - Write results to Output.txt
+3. Clear Output.txt at the start and write all results
+
+FEATURES:
+
+- Multiple test cases support
+- Fixed step size: h = 0.0001
+- Adaptive iteration count based on x range
+- Accurate 4th order method
+- Formatted output with precision control
