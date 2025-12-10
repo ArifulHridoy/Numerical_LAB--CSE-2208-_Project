@@ -1,0 +1,51 @@
+POLYNOMIAL REGRESSION - DOCUMENTATION
+
+This program fits a polynomial of chosen degree to given data points using least squares.
+Supports multiple test cases in one run.
+
+METHOD:
+--------
+- Builds normal equations from sums of powers of x and products with y
+- Solves the linear system via Gauss-Jordan elimination to obtain coefficients a0..am
+- Produces the fitted polynomial in readable form
+
+INPUT FORMAT (Input.txt):
+-------------------------
+Line 1: Number of test cases (T)
+
+For each test case:
+  Line 1: n m            (n data points, polynomial degree m)
+  Line 2: n x-values     (space-separated)
+  Line 3: n y-values     (space-separated)
+
+EXAMPLE:
+--------
+Input.txt:
+2
+5 2
+0 1 2 3 4
+1 2 1 2 1
+6 3
+1 2 3 4 5 6
+2 5 10 17 26 37
+
+This represents 2 test cases:
+1) 5 points, fit quadratic (degree 2)
+2) 6 points, fit cubic (degree 3)
+
+OUTPUT:
+
+For each test case, the program:
+1. Shows number of data points and polynomial degree
+2. Prints all x and y values
+3. Calculates coefficients a0..am
+4. Displays the fitted polynomial y = ...
+5. Writes the same results to Output.txt
+
+FEATURES:
+
+- Multiple test cases support
+- Gauss-Jordan solver for normal equations
+- Dynamic precision formatting (6 decimals)
+- Console and file output simultaneously
+- Compact code with no comments
