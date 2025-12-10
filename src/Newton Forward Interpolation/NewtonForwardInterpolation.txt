@@ -1,0 +1,77 @@
+NEWTON FORWARD INTERPOLATION - DOCUMENTATION
+
+This program performs Newton Forward Interpolation to estimate function values at intermediate points.
+Supports multiple test cases with automatic polynomial order detection.
+
+NEWTON FORWARD INTERPOLATION FORMULA:
+-------------------------------------
+f(x) = f(x₀) + uΔf(x₀) + [u(u-1)/2!]Δ²f(x₀) + [u(u-1)(u-2)/3!]Δ³f(x₀) + ...
+
+where:
+  u = (x - x₀) / h
+  h = step size (x₁ - x₀)
+  Δⁿf(x₀) = nth forward difference at x₀
+
+FORWARD DIFFERENCE TABLE:
+-------------------------
+Δf(xᵢ) = f(xᵢ₊₁) - f(xᵢ)
+Δ²f(xᵢ) = Δf(xᵢ₊₁) - Δf(xᵢ)
+Δⁿf(xᵢ) = Δⁿ⁻¹f(xᵢ₊₁) - Δⁿ⁻¹f(xᵢ)
+
+Best suited for interpolation near the beginning of the data table.
+Requires equally spaced x values.
+
+INPUT FORMAT (Input.txt):
+-------------------------
+Line 1: Number of test cases (T)
+
+For each test case:
+  Line 1: Number of data points (n)
+  Line 2: x values (n space-separated values, equally spaced)
+  Line 3: y values (n space-separated values)
+  Line 4: Interpolation point X
+
+EXAMPLE:
+--------
+Input.txt:
+2
+5
+0 1 2 3 4
+1 2 4 8 16
+2.5
+4
+1 2 3 4
+1 8 27 64
+2.5
+
+This represents 2 test cases:
+1. 5 data points with x from 0 to 4, interpolate at X=2.5
+2. 4 data points with x from 1 to 4 (y=x³), interpolate at X=2.5
+
+OUTPUT:
+
+The program will:
+1. Process all test cases sequentially
+2. For each test case:
+   - Display number of data points and all (x,y) pairs
+   - Show the interpolation point X
+   - Construct and display forward difference table
+   - Calculate step size (h) and u value
+   - Detect polynomial order automatically
+   - Compute interpolated value using Newton forward formula
+   - Display all results with 6 decimal precision
+   - Write all results to Output.txt
+3. Output both to console and file simultaneously
+
+FEATURES:
+
+- Multiple test cases support
+- Automatic forward difference table construction
+- Polynomial order detection (finds degree of underlying polynomial)
+- Displays complete difference table for transparency
+- Factorial computation for coefficients
+- Handles equally spaced data points
+- High precision output (6 decimal places)
+- Console and file output simultaneously
+- Input validation and error handling
+- Compact code with no comments

@@ -1,1 +1,38 @@
+Test Case 1
+Number of data points: 5
+Data points (x, y):
+(0, 1)
+(1, 2)
+(2, 4)
+(3, 8)
+(4, 16)
+Interpolation point X: 2.5
+Forward Difference Table:
+y[0] = 1.000000 | 1.000000 | 1.000000 | 1.000000 | 1.000000
+y[1] = 2.000000 | 2.000000 | 2.000000 | 2.000000
+y[2] = 4.000000 | 4.000000 | 4.000000
+y[3] = 8.000000 | 8.000000
+y[4] = 16.000000
+Step size (h): 1.000000
+u value: 2.500000
+Detected Polynomial Order: 4
+Interpolated value f(2.500000) = 5.648438
+
+Test Case 2
+Number of data points: 4
+Data points (x, y):
+(1.000000, 1.000000)
+(2.000000, 8.000000)
+(3.000000, 27.000000)
+(4.000000, 64.000000)
+Interpolation point X: 2.500000
+Forward Difference Table:
+y[0] = 1.000000 | 7.000000 | 12.000000 | 6.000000
+y[1] = 8.000000 | 19.000000 | 18.000000
+y[2] = 27.000000 | 37.000000
+y[3] = 64.000000
+Step size (h): 1.000000
+u value: 1.500000
+Detected Polynomial Order: 3
+Interpolated value f(2.500000) = 15.625000
 
