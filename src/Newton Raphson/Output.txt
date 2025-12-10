@@ -1,1 +1,19 @@
+Test Case 1
+Polynomial: f(x) = 1x^3 - 6x^2 + 11x - 6
+Search interval: [0, 5]
+Tolerance (E): 1.000000e-04
+Max iterations: 50
+Root 1 = 1.000000 (Iterations: 6)
+Root 2 = 3.000000 (Iterations: 2)
+Root 3 = 2.000000 (Iterations: 1)
+
+Test Case 2
+Polynomial: f(x) = 1x^4 - 5x^2 + 4
+Search interval: [-3.000000, 5.000000]
+Tolerance (E): 1.000000e-04
+Max iterations: 100
+Root 1 = -2.000000 (Iterations: 6)
+Root 2 = -1.000000 (Iterations: 1)
+Root 3 = 1.000000 (Iterations: 4)
+Root 4 = 2.000000 (Iterations: 13)
 
