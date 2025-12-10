@@ -1,1 +1,21 @@
 
+Polynomial: 1x^2 - 5x + 6
+Root bound: 7
+range: [1.997448, 1.999937] Root: 1.999937 Iterations: 9
+range: [2.997955, 3.000031] Root: 3.000031 Iterations: 4
+---------------------------------------
+
+Polynomial: 1.000000x^3 - 6.000000x^2 + 11.000000x - 6.000000
+Root bound: 12.000000
+range: [0.995828, 0.999820] Root: 0.999820 Iterations: 13
+range: [2.019031, 1.999970] Root: 1.999970 Iterations: 2
+range: [2.998532, 2.999971] Root: 2.999971 Iterations: 6
+---------------------------------------
+
+Polynomial: 1.000000x^4 - 7.000000x^2 + 6.000000
+Root bound: 8.000000
+range: [-2.450095, -2.449497] Root: -2.449497 Iterations: 11
+range: [0.999352, 1.000006] Root: 1.000006 Iterations: 9
+range: [-0.999423, -1.000006] Root: -1.000006 Iterations: 3
+range: [2.449534, 2.449490] Root: 2.449490 Iterations: 5
+---------------------------------------
