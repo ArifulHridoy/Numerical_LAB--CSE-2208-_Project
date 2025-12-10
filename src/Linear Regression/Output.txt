@@ -1,1 +1,26 @@
+Total Test Cases: 3
+
+Test Case #1
+Number of points: 5
+x values: 1 2 3 4 5 
+y values: 2 4 5 4 5 
+Computed Intercept (a): 2.2
+Computed Slope (b): 0.6
+Line Equation: y = 2.2 + 0.6x
+
+Test Case #2
+Number of points: 4
+x values: 2 4 6 8 
+y values: 3 5 7 9 
+Computed Intercept (a): 1
+Computed Slope (b): 1
+Line Equation: y = 1 + 1x
+
+Test Case #3
+Number of points: 6
+x values: 5 10 15 20 25 30 
+y values: 12 18 26 33 40 48 
+Computed Intercept (a): 4.2
+Computed Slope (b): 1.44571
+Line Equation: y = 4.2 + 1.44571x
 
