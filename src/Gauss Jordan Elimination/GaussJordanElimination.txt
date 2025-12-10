@@ -1,0 +1,57 @@
+Gauss-Jordan Elimination Report
+
+What it does :
+- Solves linear systems using Gauss-Jordan elimination with partial pivoting.
+- Reduces the augmented matrix to Reduced Row Echelon Form (RREF).
+- Detects three outcomes per test case: Unique Solution, No Solution (inconsistent), Infinite Solutions (dependent).
+- Handles multiple test cases in one run, reading from Input.txt and writing to Output.txt while printing to console.
+
+Input format (Input.txt)
+- First line: T (number of test cases)
+- For each test case:
+  - Line: n (number of variables/rows)
+  - Next n lines: n+1 numbers per line representing the augmented matrix [A|b]
+
+Algorithm steps
+1) Partial pivoting: swap the current row with the row having the largest absolute pivot in the column.
+2) Scale the pivot row so the pivot becomes 1.
+3) Eliminate the pivot column in all other rows to reach RREF.
+4) Check ranks to classify: inconsistent, infinite solutions, or unique solution (read directly from RREF).
+
+Theory (brief)
+- Gauss-Jordan applies row operations to convert [A|b] directly to RREF, where each pivot is 1 and the pivot columns have zeros elsewhere.
+- Partial pivoting improves numerical stability and avoids dividing by tiny pivots.
+- Rank comparison: if rank(A) < rank([A|b]) → inconsistent; if rank(A) < n but rank(A) == rank([A|b]) → infinite solutions; if rank(A) = n → unique solution.
+
+Output format
+- For each test case, console and Output.txt show:
+  - Header: Test Case k (nxn)
+  - Labeled block: Matrix: followed by the augmented matrix values to 3 decimals
+  - RREF printed before classification
+  - Result line:
+	 * Unique Solution
+		  x1 = value
+		  x2 = value
+		  ...
+	 * No Solution (Inconsistent)
+	 * Infinite Solutions
+
+Sample test cases included
+T = 4
+1) 3x3 unique solution
+	2 1 -1 8
+	-3 -1 2 -11
+	-2 1 2 -3
+2) 2x2 no solution (inconsistent)
+	1 2 3
+	2 4 5
+3) 3x3 infinite solutions (dependent)
+	2 4 6 8
+	1 2 3 4
+	3 6 9 12
+4) 2x2 no solution (0 = non-zero)
+	1 1 2
+	1 1 3
+
+Notes
+- Uses tolerance EPS = 1e-10 to treat pivots/coefficients as zero for stability.
