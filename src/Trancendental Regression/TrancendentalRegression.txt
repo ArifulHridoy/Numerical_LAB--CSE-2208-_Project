@@ -1,0 +1,85 @@
+TRANSCENDENTAL REGRESSION - DOCUMENTATION
+
+This program performs regression analysis for transcendental (non-polynomial) functions.
+Supports multiple test cases with three different transcendental models.
+
+TRANSCENDENTAL REGRESSION MODELS:
+---------------------------------
+Model 1: y = a * e^(bx)
+  - Exponential growth/decay model
+  - Transform: ln(y) = ln(a) + bx
+  - Linear regression on (x, ln(y))
+
+Model 2: y = a * x^b
+  - Power law model
+  - Transform: ln(y) = ln(a) + b*ln(x)
+  - Linear regression on (ln(x), ln(y))
+
+Model 3: y = a + b * e^(x/4)
+  - Linear-exponential combination
+  - Transform: y = a + b*z where z = e^(x/4)
+  - Linear regression on (e^(x/4), y)
+
+LINEAR REGRESSION FORMULA:
+-------------------------
+For transformed data (X, Y):
+  b = (n*ΣXY - ΣX*ΣY) / (n*ΣX² - (ΣX)²)
+  a = (ΣY - b*ΣX) / n
+
+INPUT FORMAT (Input.txt):
+-------------------------
+Line 1: Number of test cases (T)
+
+For each test case:
+  Line 1: Model type (1, 2, or 3)
+  Line 2: Number of data points (n)
+  Line 3: x values (n space-separated values)
+  Line 4: y values (n space-separated values)
+
+EXAMPLE:
+--------
+Input.txt:
+3
+1
+5
+1 2 3 4 5
+2.7 7.4 20.1 54.6 148.4
+2
+4
+2 3 4 5
+8 27 64 125
+3
+6
+0 4 8 12 16 20
+5.2 12.8 28.5 60.3 125.1 252.7
+
+This represents 3 test cases:
+1. Model 1 (exponential): 5 data points for y = a*e^(bx)
+2. Model 2 (power law): 4 data points for y = a*x^b
+3. Model 3 (linear-exp): 6 data points for y = a + b*e^(x/4)
+
+OUTPUT:
+
+The program will:
+1. Process all test cases sequentially
+2. For each test case:
+   - Display model type and number of data points
+   - Show input x and y values
+   - Apply appropriate transformation based on model type
+   - Perform linear regression on transformed data
+   - Calculate parameters a and b
+   - Display the final transcendental model equation
+   - Write results to Output.txt
+3. Output both to console and file simultaneously
+
+FEATURES:
+
+- Multiple test cases support
+- Three different transcendental model types
+- Automatic data transformation
+- Linear regression engine for transformed data
+- Parameter estimation with high precision
+- Formatted output with 6 decimal places
+- Console and file output simultaneously
+- Input validation and error handling
+- Compact code with no comments
