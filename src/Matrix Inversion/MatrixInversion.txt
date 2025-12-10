@@ -1,0 +1,70 @@
+Matrix Inversion Report
+
+What it does :
+- Solves linear systems AX = b by computing A^-1 using Gauss-Jordan elimination on augmented [A|I].
+- Handles multiple test cases, reading from Input.txt (matrix A and vector b per test case), writing to Output.txt, and printing to console.
+- Reports the inverse matrix A^-1 and the solution vector x = A^-1 * b.
+- Detects singular matrices (det = 0) and reports failure.
+
+Input format (Input.txt) :
+- First line: T (number of test cases)
+- For each test case:
+  - Line: n (matrix size, n×n)
+  - Next n lines: n entries per line (matrix A rows)
+  - Next n lines: 1 entry per line (vector b entries)
+
+Algorithm steps :
+1) Construct augmented matrix [A|I] by appending identity matrix to A.
+2) Apply Gauss-Jordan elimination (forward and back substitution simultaneously) with partial pivoting to reduce [A|I] to [I|A^-1].
+3) If a pivot is ~zero (|pivot| < EPS = 1e-10), matrix is singular; report failure.
+4) Extract A^-1 from the right half of the RREF matrix.
+5) Compute solution x = A^-1 * b by matrix-vector multiplication.
+6) Print A, vector b, augmented [A|I], RREF [I|A^-1], inverse A^-1, and solution x.
+
+Theory (brief) :
+- Matrix inversion by Gauss-Jordan is equivalent to solving n systems Ae_i = b_i for unit vectors e_i.
+- By augmenting with I and reducing to RREF, the right block becomes A^-1.
+- Computational cost is O(n^3) for factorization; multiplication by b adds O(n^2).
+- The method requires A to be nonsingular (det ≠ 0 and all leading principal minors nonzero).
+- Partial pivoting improves numerical stability.
+
+Output format :
+- For each test case, console and Output.txt show:
+  - Header: Test Case k (n×n)
+  - Matrix A (3 decimals)
+  - Vector b (3 decimals)
+  - Augmented [A|I] before reduction (3 decimals)
+  - Reduced Row Echelon Form [I|A^-1] (3 decimals)
+  - If nonsingular:
+    * Inverse Matrix A^-1 (3 decimals)
+    * Solution x1, x2, ..., xn = A^-1 * b (3 decimals)
+  - If singular: "Matrix is singular (det = 0)"
+
+Sample test cases included (Input.txt) :
+T = 4
+1) 3×3 nonsingular matrix
+   A = [ 2  1 -1]     b = [ 8  ]
+       [-3 -1  2]         [-11 ]
+       [-2  1  2]         [-3  ]
+   Expected inverse and unique solution.
+
+2) 2×2 singular (rank-deficient)
+   A = [1 2]     b = [3]
+       [2 4]         [5]
+   Row 2 = 2 × Row 1; linearly dependent.
+
+3) 3×3 singular (rank-deficient)
+   A = [2 4 6]     b = [8 ]
+       [1 2 3]         [4 ]
+       [3 6 9]         [12]
+   Rows linearly dependent (ratios: 1:2:3).
+
+4) 2×2 singular (identical rows)
+   A = [1 1]     b = [2]
+       [1 1]         [3]
+   Identical rows; zero determinant.
+
+Notes :
+- EPS = 1e-10 is used to detect singular matrices (zero pivot threshold).
+- Partial pivoting (row swapping) is applied to select the largest pivot in each column, improving numerical stability.
+- Input format: first the n×n matrix A row by row, then vector b.
