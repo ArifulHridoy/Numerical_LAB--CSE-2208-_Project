@@ -1,1 +1,73 @@
+LU DECOMPOSITION (Doolittle)
 
+Test Case 1 (3x3)
+Matrix:
+     2.000      1.000     -1.000      8.000 
+    -3.000     -1.000      2.000    -11.000 
+    -2.000      1.000      2.000     -3.000 
+
+L matrix:
+     1.000      0.000      0.000 
+    -1.500      1.000      0.000 
+    -1.000      4.000      1.000 
+
+U matrix:
+     2.000      1.000     -1.000 
+     0.000      0.500      0.500 
+     0.000      0.000     -1.000 
+
+Unique Solution!
+x1 = 2.000
+x2 = 3.000
+x3 = -1.000
+
+Test Case 2 (2x2)
+Matrix:
+     1.000      2.000      3.000 
+     2.000      4.000      5.000 
+
+L matrix:
+     1.000      0.000 
+     2.000      1.000 
+
+U matrix:
+     1.000      2.000 
+     0.000      0.000 
+
+Matrix A is singular (det A = 0)
+=> System has NO solution.
+
+Test Case 3 (3x3)
+Matrix:
+     2.000      4.000      6.000      8.000 
+     1.000      2.000      3.000      4.000 
+     3.000      6.000      9.000     12.000 
+
+L matrix:
+     1.000      0.000      0.000 
+     0.500      1.000      0.000 
+     1.500      0.000      1.000 
+
+U matrix:
+     2.000      4.000      6.000 
+     0.000      0.000      0.000 
+     0.000      0.000      0.000 
+
+Matrix A is singular (det A = 0)
+=> System has infinitely many solutions.
+
+Test Case 4 (2x2)
+Matrix:
+     1.000      1.000      2.000 
+     1.000      1.000      3.000 
+
+L matrix:
+     1.000      0.000 
+     1.000      1.000 
+
+U matrix:
+     1.000      1.000 
+     0.000      0.000 
+
+Matrix A is singular (det A = 0)
+=> System has NO solution.
