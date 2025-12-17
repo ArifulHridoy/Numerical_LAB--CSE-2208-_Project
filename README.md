@@ -57,58 +57,205 @@ Top-level layout:
 ##  Numerical Methods
 
 <details>
-<summary><strong><span style="font-size:20px;">Non-Linear Equation Solving</span></strong></summary>
+  <summary><strong style="font-size:20px;">Non-Linear Equation Solving</strong></summary>
+  <details>
+    <summary><strong>Bisection Method</strong></summary>
 
--  [Bisection Method](./src/Bisection)  
--  [False Position (Regula Falsi)](./src/False%20Position)  
--  [Newton Raphson Method](./src/Newton%20Raphson)  
--  [Secant Method](./src/Secant)
-</details>
+-  [Report](./src/Bisection/Bisection.txt) 
 
-<details>
-<summary><strong><span style="font-size:20px;">Linear Equation Solving</span></strong></summary>
+-  [Cpp Code](./src/Bisection/Bisection.cpp) 
 
--  [Gauss Elimination](./src/Gauss%20Elimination)  
--  [Gauss-Jordan Elimination](./src/Gauss%20Jordan%20Elimination)  
--  [LU Decomposition (Doolittle Method)](./src/LU%20Decomposition)  
--  [Matrix Inversion](./src/Matrix%20Inversion)
-</details>
+-  [Input](./src/Bisection/Input.txt) 
 
-<details>
-<summary><strong><span style="font-size:20px;">Differential Equation Solving</span></strong></summary>
+-  [Output](./src/Bisection/Output.txt) 
 
--  [Runge-Kutta 4th Order (RK4)](./src/Runge%20Kutta%204th%20Order)
-</details>
+</details> <details> <summary><strong>False Position (Regula Falsi)</strong></summary>
 
-<details>
-<summary><strong><span style="font-size:20px;">Interpolation Methods</span></strong></summary>
+-  [Report](./src/False%20Position/falsePosition.txt) 
 
--  [Newton''s Forward Interpolation](./src/Newton%20Forward%20Interpolation)  
--  [Newton''s Backward Interpolation](./src/Newton%20Backwardward%20Interpolation)  
--  [Newton''s Divided Difference Interpolation](./src/Newton%20Divided%20Difference%20Interpolation)
-</details>
+-  [Cpp Code](./src/False%20Position/falsePosition.txt) 
 
-<details>
-<summary><strong><span style="font-size:20px;">Numerical Differentiation</span></strong></summary>
+-  [Input](./src/False%20Position/Input.txt) 
 
--  [Differentiation by Forward Interpolation](./src/Differentiation%20by%20Forward%20Interpolation)  
--  [Differentiation by Backward Interpolation](./src/Differentiation%20by%20Backward%20Interpolation)
-</details>
+-  [Output](./src/False%20Position/Output.txt)
 
-<details>
-<summary><strong><span style="font-size:20px;">Curve Fitting / Regression Methods</span></strong></summary>
+</details> <details> <summary><strong>Newton Raphson Method</strong></summary>
 
--  [Linear Regression](./src/Linear%20Regression)  
--  [Polynomial Regression](./src/Polynomial%20Regression)  
--  [Transcendental Regression](./src/Trancendental%20Regression)
-</details>
+📄 Report
 
-<details>
-<summary><strong><span style="font-size:20px;">Numerical Integration Methods</span></strong></summary>
+💻 C++ Code
 
--  [Simpson''s 1/3 Rule](./src/Simpson%201_3)  
--  [Simpson''s 3/8 Rule](./src/Simpson%203_8)
-</details>
+📥 Input
+
+📤 Output
+
+</details> <details> <summary><strong>Secant Method</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> </details>
+<details> <summary><strong style="font-size:20px;">Linear Equation Solving</strong></summary> <details> <summary><strong>Gauss Elimination</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> <details> <summary><strong>Gauss-Jordan Elimination</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> <details> <summary><strong>LU Decomposition (Doolittle Method)</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> <details> <summary><strong>Matrix Inversion</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> </details>
+<details> <summary><strong style="font-size:20px;">Differential Equation Solving</strong></summary> <details> <summary><strong>Runge-Kutta 4th Order (RK4)</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> </details>
+<details> <summary><strong style="font-size:20px;">Interpolation Methods</strong></summary> <details> <summary><strong>Newton's Forward Interpolation</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> <details> <summary><strong>Newton's Backward Interpolation</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> <details> <summary><strong>Newton's Divided Difference Interpolation</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> </details>
+<details> <summary><strong style="font-size:20px;">Numerical Differentiation</strong></summary> <details> <summary><strong>Differentiation by Forward Interpolation</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> <details> <summary><strong>Differentiation by Backward Interpolation</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> </details>
+<details> <summary><strong style="font-size:20px;">Curve Fitting / Regression</strong></summary> <details> <summary><strong>Linear Regression</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> <details> <summary><strong>Polynomial Regression</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> <details> <summary><strong>Transcendental Regression</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> </details>
+<details> <summary><strong style="font-size:20px;">Numerical Integration</strong></summary> <details> <summary><strong>Simpson's 1/3 Rule</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> <details> <summary><strong>Simpson's 3/8 Rule</strong></summary>
+
+📄 Report
+
+💻 C++ Code
+
+📥 Input
+
+📤 Output
+
+</details> </details>
 
 ##  Purpose of This Repository
 - Provide **clean C++ codes** for numerical methods. 
