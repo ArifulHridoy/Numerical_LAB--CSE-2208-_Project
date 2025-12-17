@@ -56,7 +56,6 @@ Top-level layout:
 
 ##  Numerical Methods
 
-
 <details>
   <summary><h3>📊 Non-Linear Equation Solving</h3></summary>
   <details>
@@ -92,7 +91,7 @@ Top-level layout:
 
 </details> <details> <summary><strong>Secant Method</strong></summary>
 
--  [Report](./src/Secant/Secant.txt) 
+-  [Report](./src/Secant/SECANT%20METHOD.pdf) 
 
 -  [Cpp Code](./src/Secant/Secant.cpp) 
 
@@ -101,7 +100,6 @@ Top-level layout:
 -  [Output](./src/Secant/Output.txt)
 
 </details> </details>
-
 
 <details> <summary><h3>🔢 Linear Equation Solving</h3></summary> <details> <summary><strong>Gauss Elimination</strong></summary>
 
@@ -145,7 +143,6 @@ Top-level layout:
 
 </details> </details>
 
-
 <details> <summary><h3>🧮 Differential Equation Solving</h3></summary> <details> <summary><strong>Runge-Kutta 4th Order (RK4)</strong></summary>
 
 -  [Report](./src/Runge%20Kutta%204th%20Order/RungeKutta4thOrder.txt) 
@@ -157,7 +154,6 @@ Top-level layout:
 -  [Output](./src/Runge%20Kutta%204th%20Order/Output.txt)
 
 </details> </details>
-
 
 <details> <summary><h3>📈 Interpolation Methods</h3></summary> <details> <summary><strong>Newton's Forward Interpolation</strong></summary>
 
@@ -171,7 +167,7 @@ Top-level layout:
 
 </details> <details> <summary><strong>Newton's Backward Interpolation</strong></summary>
 
--  [Report](./src/Newton%20Backwardward%20Interpolation/NewtonBackwardwardInterpolation.txt) 
+-  [Report](./src/Newton%20Backwardward%20Interpolation/Newton%20Backward%20Interpolation.pdf) 
 
 -  [Cpp Code](./src/Newton%20Backwardward%20Interpolation/NewtonBackwardwardInterpolation.cpp) 
 
@@ -181,7 +177,7 @@ Top-level layout:
 
 </details> <details> <summary><strong>Newton's Divided Difference Interpolation</strong></summary>
 
--  [Report](./src/Newton%20Divided%20Difference%20Interpolation/NewtonDividedDifferenceInterpolation.txt) 
+-  [Report](./src/Newton%20Divided%20Difference%20Interpolation/NEWTON%20FORWARD%20INTERPOLATION%20FOR%20UNEQUALLY%20SPACED%20DATA.pdf) 
 
 -  [Cpp Code](./src/Newton%20Divided%20Difference%20Interpolation/NewtonDividedDifferenceInterpolation.cpp) 
 
@@ -191,10 +187,9 @@ Top-level layout:
 
 </details> </details>
 
-
 <details> <summary><h3>📐 Numerical Differentiation</h3></summary> <details> <summary><strong>Differentiation by Forward Interpolation</strong></summary>
 
--  [Report](./src/Differentiation%20by%20Forward%20Interpolation/DifferentiationForward.txt) 
+-  [Report](./src/Differentiation%20by%20Forward%20Interpolation/DIFFERENTIATION%20USING%20NEWTON.pdf) 
 
 -  [Cpp Code](./src/Differentiation%20by%20Forward%20Interpolation/DifferentiationForward.cpp) 
 
@@ -214,10 +209,9 @@ Top-level layout:
 
 </details> </details>
 
-
 <details> <summary><h3>📉 Curve Fitting / Regression</h3></summary> <details> <summary><strong>Linear Regression</strong></summary>
 
--  [Report](./src/Linear%20Regression/linearRegression.txt) 
+-  [Report](./src/Linear%20Regression/LINEAR%20REGRESSION.pdf) 
 
 -  [Cpp Code](./src/Linear%20Regression/linearRegression.cpp) 
 
@@ -246,7 +240,6 @@ Top-level layout:
 -  [Output](./src/Trancendental%20Regression/Output.txt)
 
 </details> </details>
-
 
 <details> <summary><h3>∫ Numerical Integration</h3></summary> <details> <summary><strong>Simpson's 1/3 Rule</strong></summary>
 
