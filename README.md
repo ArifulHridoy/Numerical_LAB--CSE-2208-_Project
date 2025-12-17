@@ -56,8 +56,9 @@ Top-level layout:
 
 ##  Numerical Methods
 
+
 <details>
-  <summary><strong style="font-size:20px;">Non-Linear Equation Solving</strong></summary>
+  <summary><h3>📊 Non-Linear Equation Solving</h3></summary>
   <details>
     <summary><strong>Bisection Method</strong></summary>
 
@@ -73,7 +74,7 @@ Top-level layout:
 
 -  [Report](./src/False%20Position/falsePosition.txt) 
 
--  [Cpp Code](./src/False%20Position/falsePosition.txt) 
+-  [Cpp Code](./src/False%20Position/falsePosition.cpp) 
 
 -  [Input](./src/False%20Position/Input.txt) 
 
@@ -81,179 +82,191 @@ Top-level layout:
 
 </details> <details> <summary><strong>Newton Raphson Method</strong></summary>
 
-📄 Report
+-  [Report](./src/Newton%20Raphson/NewtonRaphson.txt) 
 
-💻 C++ Code
+-  [Cpp Code](./src/Newton%20Raphson/NewtonRaphson.cpp) 
 
-📥 Input
+-  [Input](./src/Newton%20Raphson/Input.txt) 
 
-📤 Output
+-  [Output](./src/Newton%20Raphson/Output.txt)
 
 </details> <details> <summary><strong>Secant Method</strong></summary>
 
-📄 Report
+-  [Report](./src/Secant/Secant.txt) 
 
-💻 C++ Code
+-  [Cpp Code](./src/Secant/Secant.cpp) 
 
-📥 Input
+-  [Input](./src/Secant/Input.txt) 
 
-📤 Output
+-  [Output](./src/Secant/Output.txt)
 
 </details> </details>
-<details> <summary><strong style="font-size:20px;">Linear Equation Solving</strong></summary> <details> <summary><strong>Gauss Elimination</strong></summary>
 
-📄 Report
 
-💻 C++ Code
+<details> <summary><h3>🔢 Linear Equation Solving</h3></summary> <details> <summary><strong>Gauss Elimination</strong></summary>
 
-📥 Input
+-  [Report](./src/Gauss%20Elimination/Gauss%20Elimination.txt) 
 
-📤 Output
+-  [Cpp Code](./src/Gauss%20Elimination/GaussElimination.cpp) 
+
+-  [Input](./src/Gauss%20Elimination/Input.txt) 
+
+-  [Output](./src/Gauss%20Elimination/Output.txt)
 
 </details> <details> <summary><strong>Gauss-Jordan Elimination</strong></summary>
 
-📄 Report
+-  [Report](./src/Gauss%20Jordan%20Elimination/GaussJordanElimination.txt) 
 
-💻 C++ Code
+-  [Cpp Code](./src/Gauss%20Jordan%20Elimination/GaussJordanElimination.cpp) 
 
-📥 Input
+-  [Input](./src/Gauss%20Jordan%20Elimination/Input.txt) 
 
-📤 Output
+-  [Output](./src/Gauss%20Jordan%20Elimination/Output.txt)
 
 </details> <details> <summary><strong>LU Decomposition (Doolittle Method)</strong></summary>
 
-📄 Report
+-  [Report](./src/LU%20Decomposition/DoolittleMethod.txt) 
 
-💻 C++ Code
+-  [Cpp Code](./src/LU%20Decomposition/DoolittleMethod.cpp) 
 
-📥 Input
+-  [Input](./src/LU%20Decomposition/Input.txt) 
 
-📤 Output
+-  [Output](./src/LU%20Decomposition/Output.txt)
 
 </details> <details> <summary><strong>Matrix Inversion</strong></summary>
 
-📄 Report
+-  [Report](./src/Matrix%20Inversion/MatrixInversion.txt) 
 
-💻 C++ Code
+-  [Cpp Code](./src/Matrix%20Inversion/MatrixInversion.cpp) 
 
-📥 Input
+-  [Input](./src/Matrix%20Inversion/Input.txt) 
 
-📤 Output
-
-</details> </details>
-<details> <summary><strong style="font-size:20px;">Differential Equation Solving</strong></summary> <details> <summary><strong>Runge-Kutta 4th Order (RK4)</strong></summary>
-
-📄 Report
-
-💻 C++ Code
-
-📥 Input
-
-📤 Output
+-  [Output](./src/Matrix%20Inversion/Output.txt)
 
 </details> </details>
-<details> <summary><strong style="font-size:20px;">Interpolation Methods</strong></summary> <details> <summary><strong>Newton's Forward Interpolation</strong></summary>
 
-📄 Report
 
-💻 C++ Code
+<details> <summary><h3>🧮 Differential Equation Solving</h3></summary> <details> <summary><strong>Runge-Kutta 4th Order (RK4)</strong></summary>
 
-📥 Input
+-  [Report](./src/Runge%20Kutta%204th%20Order/RungeKutta4thOrder.txt) 
 
-📤 Output
+-  [Cpp Code](./src/Runge%20Kutta%204th%20Order/RungeKutta4thOrder.cpp) 
+
+-  [Input](./src/Runge%20Kutta%204th%20Order/Input.txt) 
+
+-  [Output](./src/Runge%20Kutta%204th%20Order/Output.txt)
+
+</details> </details>
+
+
+<details> <summary><h3>📈 Interpolation Methods</h3></summary> <details> <summary><strong>Newton's Forward Interpolation</strong></summary>
+
+-  [Report](./src/Newton%20Forward%20Interpolation/NewtonForwardInterpolation.txt) 
+
+-  [Cpp Code](./src/Newton%20Forward%20Interpolation/NewtonForwardInterpolation.cpp) 
+
+-  [Input](./src/Newton%20Forward%20Interpolation/Input.txt) 
+
+-  [Output](./src/Newton%20Forward%20Interpolation/Output.txt)
 
 </details> <details> <summary><strong>Newton's Backward Interpolation</strong></summary>
 
-📄 Report
+-  [Report](./src/Newton%20Backwardward%20Interpolation/NewtonBackwardwardInterpolation.txt) 
 
-💻 C++ Code
+-  [Cpp Code](./src/Newton%20Backwardward%20Interpolation/NewtonBackwardwardInterpolation.cpp) 
 
-📥 Input
+-  [Input](./src/Newton%20Backwardward%20Interpolation/Input.txt) 
 
-📤 Output
+-  [Output](./src/Newton%20Backwardward%20Interpolation/Output.txt)
 
 </details> <details> <summary><strong>Newton's Divided Difference Interpolation</strong></summary>
 
-📄 Report
+-  [Report](./src/Newton%20Divided%20Difference%20Interpolation/NewtonDividedDifferenceInterpolation.txt) 
 
-💻 C++ Code
+-  [Cpp Code](./src/Newton%20Divided%20Difference%20Interpolation/NewtonDividedDifferenceInterpolation.cpp) 
 
-📥 Input
+-  [Input](./src/Newton%20Divided%20Difference%20Interpolation/Input.txt) 
 
-📤 Output
+-  [Output](./src/Newton%20Divided%20Difference%20Interpolation/Output.txt)
 
 </details> </details>
-<details> <summary><strong style="font-size:20px;">Numerical Differentiation</strong></summary> <details> <summary><strong>Differentiation by Forward Interpolation</strong></summary>
 
-📄 Report
 
-💻 C++ Code
+<details> <summary><h3>📐 Numerical Differentiation</h3></summary> <details> <summary><strong>Differentiation by Forward Interpolation</strong></summary>
 
-📥 Input
+-  [Report](./src/Differentiation%20by%20Forward%20Interpolation/DifferentiationForward.txt) 
 
-📤 Output
+-  [Cpp Code](./src/Differentiation%20by%20Forward%20Interpolation/DifferentiationForward.cpp) 
+
+-  [Input](./src/Differentiation%20by%20Forward%20Interpolation/Input.txt) 
+
+-  [Output](./src/Differentiation%20by%20Forward%20Interpolation/Output.txt)
 
 </details> <details> <summary><strong>Differentiation by Backward Interpolation</strong></summary>
 
-📄 Report
+-  [Report](./src/Differentiation%20by%20Backward%20Interpolation/DifferentiationBackward.txt) 
 
-💻 C++ Code
+-  [Cpp Code](./src/Differentiation%20by%20Backward%20Interpolation/DifferentiationBackward.cpp) 
 
-📥 Input
+-  [Input](./src/Differentiation%20by%20Backward%20Interpolation/Input.txt) 
 
-📤 Output
+-  [Output](./src/Differentiation%20by%20Backward%20Interpolation/Output.txt)
 
 </details> </details>
-<details> <summary><strong style="font-size:20px;">Curve Fitting / Regression</strong></summary> <details> <summary><strong>Linear Regression</strong></summary>
 
-📄 Report
 
-💻 C++ Code
+<details> <summary><h3>📉 Curve Fitting / Regression</h3></summary> <details> <summary><strong>Linear Regression</strong></summary>
 
-📥 Input
+-  [Report](./src/Linear%20Regression/linearRegression.txt) 
 
-📤 Output
+-  [Cpp Code](./src/Linear%20Regression/linearRegression.cpp) 
+
+-  [Input](./src/Linear%20Regression/Input.txt) 
+
+-  [Output](./src/Linear%20Regression/Output.txt)
 
 </details> <details> <summary><strong>Polynomial Regression</strong></summary>
 
-📄 Report
+-  [Report](./src/Polynomial%20Regression/PolynomialRegression.txt) 
 
-💻 C++ Code
+-  [Cpp Code](./src/Polynomial%20Regression/PolynomialRegression.cpp) 
 
-📥 Input
+-  [Input](./src/Polynomial%20Regression/Input.txt) 
 
-📤 Output
+-  [Output](./src/Polynomial%20Regression/Output.txt)
 
 </details> <details> <summary><strong>Transcendental Regression</strong></summary>
 
-📄 Report
+-  [Report](./src/Trancendental%20Regression/TrancendentalRegression.txt) 
 
-💻 C++ Code
+-  [Cpp Code](./src/Trancendental%20Regression/TrancendentalRegression.cpp) 
 
-📥 Input
+-  [Input](./src/Trancendental%20Regression/Input.txt) 
 
-📤 Output
+-  [Output](./src/Trancendental%20Regression/Output.txt)
 
 </details> </details>
-<details> <summary><strong style="font-size:20px;">Numerical Integration</strong></summary> <details> <summary><strong>Simpson's 1/3 Rule</strong></summary>
 
-📄 Report
 
-💻 C++ Code
+<details> <summary><h3>∫ Numerical Integration</h3></summary> <details> <summary><strong>Simpson's 1/3 Rule</strong></summary>
 
-📥 Input
+-  [Report](./src/Simpson%201_3/Simpson1_3.txt) 
 
-📤 Output
+-  [Cpp Code](./src/Simpson%201_3/Simpson1_3.cpp) 
+
+-  [Input](./src/Simpson%201_3/Input.txt) 
+
+-  [Output](./src/Simpson%201_3/Output.txt)
 
 </details> <details> <summary><strong>Simpson's 3/8 Rule</strong></summary>
 
-📄 Report
+-  [Report](./src/Simpson%203_8/Simpson3_8.txt) 
 
-💻 C++ Code
+-  [Cpp Code](./src/Simpson%203_8/Simpson3_8.cpp) 
 
-📥 Input
+-  [Input](./src/Simpson%203_8/Input.txt) 
 
-📤 Output
+-  [Output](./src/Simpson%203_8/Output.txt)
 
 </details> </details>
 
