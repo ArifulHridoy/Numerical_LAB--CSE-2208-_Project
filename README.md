@@ -1,274 +1,450 @@
-#  Numerical Methods in C++
+# Numerical Methods in C++
 
-##  Overview
+## Overview
 
 Numerical Methods are mathematical techniques used to **approximate solutions** to problems that may not have exact analytical solutions. They are widely used in engineering, physics, computer science and many applied fields.
 
-This project is a collection of classical **Numerical Methods implemented in C++**, organized for easy learning and practical use. Each method includes:
+This project is a comprehensive collection of classical **Numerical Methods implemented in C++**, organized for easy learning and practical use.
+
+---
+
+# Table of Contents
+
+- [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
+  - [Bisection Method](#bisection-method)
+    - [Theory](#bisection-theory)
+    - [Code](#bisection-code)
+    - [Input](#bisection-input)
+    - [Output](#bisection-output)
+  - [False Position Method](#false-position-method)
+    - [Theory](#false-position-theory)
+    - [Code](#false-position-code)
+    - [Input](#false-position-input)
+    - [Output](#false-position-output)
+  - [Newton Raphson Method](#newton-raphson-method)
+    - [Theory](#newton-raphson-theory)
+    - [Code](#newton-raphson-code)
+    - [Input](#newton-raphson-input)
+    - [Output](#newton-raphson-output)
+  - [Secant Method](#secant-method)
+    - [Theory](#secant-theory)
+    - [Code](#secant-code)
+    - [Input](#secant-input)
+    - [Output](#secant-output)
+
+- [Solution of Linear Equations](#solution-of-linear-equations)
+  - [Gauss Elimination Method](#gauss-elimination-method)
+    - [Theory](#gauss-elimination-theory)
+    - [Code](#gauss-elimination-code)
+    - [Input](#gauss-elimination-input)
+    - [Output](#gauss-elimination-output)
+  - [Gauss Jordan Elimination Method](#gauss-jordan-elimination-method)
+    - [Theory](#gauss-jordan-theory)
+    - [Code](#gauss-jordan-code)
+    - [Input](#gauss-jordan-input)
+    - [Output](#gauss-jordan-output)
+  - [LU Decomposition Method](#lu-decomposition-method)
+    - [Theory](#lu-decomposition-theory)
+    - [Code](#lu-decomposition-code)
+    - [Input](#lu-decomposition-input)
+    - [Output](#lu-decomposition-output)
+  - [Matrix Inversion](#matrix-inversion)
+    - [Theory](#matrix-inversion-theory)
+    - [Code](#matrix-inversion-code)
+    - [Input](#matrix-inversion-input)
+    - [Output](#matrix-inversion-output)
+
+- [Differential Equation Solving](#differential-equation-solving)
+  - [Runge-Kutta 4th Order Method](#runge-kutta-4th-order-method)
+    - [Theory](#runge-kutta-theory)
+    - [Code](#runge-kutta-code)
+    - [Input](#runge-kutta-input)
+    - [Output](#runge-kutta-output)
+
+- [Interpolation Methods](#interpolation-methods)
+  - [Newton Forward Interpolation](#newton-forward-interpolation)
+    - [Theory](#newton-forward-theory)
+    - [Code](#newton-forward-code)
+    - [Input](#newton-forward-input)
+    - [Output](#newton-forward-output)
+  - [Newton Backward Interpolation](#newton-backward-interpolation)
+    - [Theory](#newton-backward-theory)
+    - [Code](#newton-backward-code)
+    - [Input](#newton-backward-input)
+    - [Output](#newton-backward-output)
+  - [Newton Divided Difference Interpolation](#newton-divided-difference-interpolation)
+    - [Theory](#newton-divided-difference-theory)
+    - [Code](#newton-divided-difference-code)
+    - [Input](#newton-divided-difference-input)
+    - [Output](#newton-divided-difference-output)
+
+- [Numerical Differentiation](#numerical-differentiation)
+  - [Differentiation by Forward Interpolation](#differentiation-forward-interpolation)
+    - [Theory](#differentiation-forward-theory)
+    - [Code](#differentiation-forward-code)
+    - [Input](#differentiation-forward-input)
+    - [Output](#differentiation-forward-output)
+  - [Differentiation by Backward Interpolation](#differentiation-backward-interpolation)
+    - [Theory](#differentiation-backward-theory)
+    - [Code](#differentiation-backward-code)
+    - [Input](#differentiation-backward-input)
+    - [Output](#differentiation-backward-output)
+
+- [Curve Fitting / Regression](#curve-fitting--regression)
+  - [Linear Regression](#linear-regression)
+    - [Theory](#linear-regression-theory)
+    - [Code](#linear-regression-code)
+    - [Input](#linear-regression-input)
+    - [Output](#linear-regression-output)
+  - [Polynomial Regression](#polynomial-regression)
+    - [Theory](#polynomial-regression-theory)
+    - [Code](#polynomial-regression-code)
+    - [Input](#polynomial-regression-input)
+    - [Output](#polynomial-regression-output)
+  - [Transcendental Regression](#transcendental-regression)
+    - [Theory](#transcendental-regression-theory)
+    - [Code](#transcendental-regression-code)
+    - [Input](#transcendental-regression-input)
+    - [Output](#transcendental-regression-output)
 
-- **A C++ implementation** demonstrating the algorithm  
-- **A text explanation** detailing the steps, formulas, and sample problems  
+- [Numerical Integration](#numerical-integration)
+  - [Simpson's 1/3 Rule](#simpsons-13-rule)
+    - [Theory](#simpson-13-theory)
+    - [Code](#simpson-13-code)
+    - [Input](#simpson-13-input)
+    - [Output](#simpson-13-output)
+  - [Simpson's 3/8 Rule](#simpsons-38-rule)
+    - [Theory](#simpson-38-theory)
+    - [Code](#simpson-38-code)
+    - [Input](#simpson-38-input)
+    - [Output](#simpson-38-output)
 
-The project covers these areas:
+---
 
-1. **Non-Linear Equation Solving (Root-Finding Methods):** Bisection, False Position, Newton-Raphson, Secant  
-2. **Linear Algebra Methods:** Gauss Elimination, Gauss-Jordan Elimination, LU Decomposition (Doolittle), Matrix Inversion  
-3. **Differential Equation Solvers:** Runge-Kutta 4th Order (RK4)
-4. **Interpolation Methods:** Newton Forward, Newton Backward, Newton Divided Difference
-5. **Curve Fitting Methods:** Linear Regression, Polynomial Regression, Transcendental Regression
-6. **Numerical Differentiation:** Forward Interpolation Differentiation, Backward Interpolation Differentiation
-7. **Numerical Integration Methods:** Simpson's 1/3 Rule, Simpson's 3/8 Rule
+## Solution of Non-Linear Equations
 
-This repository contains C++ implementations of popular **Numerical Methods**.  
-Each method has its own folder containing:
+### Bisection Method
 
-##  Folder Structure
+#### Bisection Theory
+📄 [View Theory Document](./src/Bisection/Bisection.txt)
 
-Each folder includes:
-- `method.cpp`  C++ Implementation  
-- `method.txt`  Explanation / Notes  
-- Example input files are in `input.txt/`  
-- Example output files are in `output.txt/`  
+#### Bisection Code
+💻 [View C++ Code](./src/Bisection/Bisection.cpp)
 
-Top-level layout:
-- src/
-  - Bisection/
-  - False Position/
-  - Newton Raphson/
-  - Secant/
-  - Runge Kutta 4th Order/
-  - Gauss Elimination/
-  - Gauss Jordan Elimination/
-  - LU Decomposition/
-  - Matrix Inversion/
-  - Newton Forward Interpolation/
-  - Newton Backward Interpolation/
-  - Newton Divided Difference Interpolation/
-  - Differentiation by Forward Interpolation/
-  - Differentiation by Backward Interpolation/
-  - Linear Regression/
-  - Polynomial Regression/
-  - Transcendental Regression/
-  - Simpson 1_3/
-  - Simpson 3_8/
-- include/
+#### Bisection Input
+📥 [View Input Format](./src/Bisection/Input.txt)
 
+#### Bisection Output
+📤 [View Output Example](./src/Bisection/Output.txt)
 
-##  Numerical Methods
+---
 
-<details>
-  <summary><h3>📊 Non-Linear Equation Solving</h3></summary>
-  <details>
-    <summary><strong>Bisection Method</strong></summary>
+### False Position Method
 
--  [Report](./src/Bisection/Bisection.txt) 
+#### False Position Theory
+📄 [View Theory Document](./src/False%20Position/falsePosition.txt)
 
--  [Cpp Code](./src/Bisection/Bisection.cpp) 
+#### False Position Code
+💻 [View C++ Code](./src/False%20Position/falsePosition.cpp)
 
--  [Input](./src/Bisection/Input.txt) 
+#### False Position Input
+📥 [View Input Format](./src/False%20Position/Input.txt)
 
--  [Output](./src/Bisection/Output.txt) 
+#### False Position Output
+📤 [View Output Example](./src/False%20Position/Output.txt)
 
-</details> <details> <summary><strong>False Position (Regula Falsi)</strong></summary>
+---
 
--  [Report](./src/False%20Position/falsePosition.txt) 
+### Newton Raphson Method
 
--  [Cpp Code](./src/False%20Position/falsePosition.cpp) 
+#### Newton Raphson Theory
+📄 [View Theory Document](./src/Newton%20Raphson/NewtonRaphson.txt)
 
--  [Input](./src/False%20Position/Input.txt) 
+#### Newton Raphson Code
+💻 [View C++ Code](./src/Newton%20Raphson/NewtonRaphson.cpp)
 
--  [Output](./src/False%20Position/Output.txt)
+#### Newton Raphson Input
+📥 [View Input Format](./src/Newton%20Raphson/Input.txt)
 
-</details> <details> <summary><strong>Newton Raphson Method</strong></summary>
+#### Newton Raphson Output
+📤 [View Output Example](./src/Newton%20Raphson/Output.txt)
 
--  [Report](./src/Newton%20Raphson/NewtonRaphson.txt) 
+---
 
--  [Cpp Code](./src/Newton%20Raphson/NewtonRaphson.cpp) 
+### Secant Method
 
--  [Input](./src/Newton%20Raphson/Input.txt) 
+#### Secant Theory
+📄 [View Theory Document](./src/Secant/SECANT%20METHOD.pdf)
 
--  [Output](./src/Newton%20Raphson/Output.txt)
+#### Secant Code
+💻 [View C++ Code](./src/Secant/Secant.cpp)
 
-</details> <details> <summary><strong>Secant Method</strong></summary>
+#### Secant Input
+📥 [View Input Format](./src/Secant/Input.txt)
 
--  [Report](./src/Secant/SECANT%20METHOD.pdf) 
+#### Secant Output
+📤 [View Output Example](./src/Secant/Output.txt)
 
--  [Cpp Code](./src/Secant/Secant.cpp) 
+---
 
--  [Input](./src/Secant/Input.txt) 
+## Solution of Linear Equations
 
--  [Output](./src/Secant/Output.txt)
+### Gauss Elimination Method
 
-</details> </details>
+#### Gauss Elimination Theory
+📄 [View Theory Document](./src/Gauss%20Elimination/Gauss%20Elimination.txt)
 
-<details> <summary><h3>🔢 Linear Equation Solving</h3></summary> <details> <summary><strong>Gauss Elimination</strong></summary>
+#### Gauss Elimination Code
+💻 [View C++ Code](./src/Gauss%20Elimination/GaussElimination.cpp)
 
--  [Report](./src/Gauss%20Elimination/Gauss%20Elimination.txt) 
+#### Gauss Elimination Input
+📥 [View Input Format](./src/Gauss%20Elimination/Input.txt)
 
--  [Cpp Code](./src/Gauss%20Elimination/GaussElimination.cpp) 
+#### Gauss Elimination Output
+📤 [View Output Example](./src/Gauss%20Elimination/Output.txt)
 
--  [Input](./src/Gauss%20Elimination/Input.txt) 
+---
 
--  [Output](./src/Gauss%20Elimination/Output.txt)
+### Gauss Jordan Elimination Method
 
-</details> <details> <summary><strong>Gauss-Jordan Elimination</strong></summary>
+#### Gauss Jordan Theory
+📄 [View Theory Document](./src/Gauss%20Jordan%20Elimination/GaussJordanElimination.txt)
 
--  [Report](./src/Gauss%20Jordan%20Elimination/GaussJordanElimination.txt) 
+#### Gauss Jordan Code
+💻 [View C++ Code](./src/Gauss%20Jordan%20Elimination/GaussJordanElimination.cpp)
 
--  [Cpp Code](./src/Gauss%20Jordan%20Elimination/GaussJordanElimination.cpp) 
+#### Gauss Jordan Input
+📥 [View Input Format](./src/Gauss%20Jordan%20Elimination/Input.txt)
 
--  [Input](./src/Gauss%20Jordan%20Elimination/Input.txt) 
+#### Gauss Jordan Output
+📤 [View Output Example](./src/Gauss%20Jordan%20Elimination/Output.txt)
 
--  [Output](./src/Gauss%20Jordan%20Elimination/Output.txt)
+---
 
-</details> <details> <summary><strong>LU Decomposition (Doolittle Method)</strong></summary>
+### LU Decomposition Method
 
--  [Report](./src/LU%20Decomposition/DoolittleMethod.txt) 
+#### LU Decomposition Theory
+📄 [View Theory Document](./src/LU%20Decomposition/DoolittleMethod.txt)
 
--  [Cpp Code](./src/LU%20Decomposition/DoolittleMethod.cpp) 
+#### LU Decomposition Code
+💻 [View C++ Code](./src/LU%20Decomposition/DoolittleMethod.cpp)
 
--  [Input](./src/LU%20Decomposition/Input.txt) 
+#### LU Decomposition Input
+📥 [View Input Format](./src/LU%20Decomposition/Input.txt)
 
--  [Output](./src/LU%20Decomposition/Output.txt)
+#### LU Decomposition Output
+📤 [View Output Example](./src/LU%20Decomposition/Output.txt)
 
-</details> <details> <summary><strong>Matrix Inversion</strong></summary>
+---
 
--  [Report](./src/Matrix%20Inversion/MatrixInversion.txt) 
+### Matrix Inversion
 
--  [Cpp Code](./src/Matrix%20Inversion/MatrixInversion.cpp) 
+#### Matrix Inversion Theory
+📄 [View Theory Document](./src/Matrix%20Inversion/MatrixInversion.txt)
 
--  [Input](./src/Matrix%20Inversion/Input.txt) 
+#### Matrix Inversion Code
+💻 [View C++ Code](./src/Matrix%20Inversion/MatrixInversion.cpp)
 
--  [Output](./src/Matrix%20Inversion/Output.txt)
+#### Matrix Inversion Input
+📥 [View Input Format](./src/Matrix%20Inversion/Input.txt)
 
-</details> </details>
+#### Matrix Inversion Output
+📤 [View Output Example](./src/Matrix%20Inversion/Output.txt)
 
-<details> <summary><h3>🧮 Differential Equation Solving</h3></summary> <details> <summary><strong>Runge-Kutta 4th Order (RK4)</strong></summary>
+---
 
--  [Report](./src/Runge%20Kutta%204th%20Order/RungeKutta4thOrder.txt) 
+## Differential Equation Solving
 
--  [Cpp Code](./src/Runge%20Kutta%204th%20Order/RungeKutta4thOrder.cpp) 
+### Runge-Kutta 4th Order Method
 
--  [Input](./src/Runge%20Kutta%204th%20Order/Input.txt) 
+#### Runge-Kutta Theory
+📄 [View Theory Document](./src/Runge%20Kutta%204th%20Order/RungeKutta4thOrder.txt)
 
--  [Output](./src/Runge%20Kutta%204th%20Order/Output.txt)
+#### Runge-Kutta Code
+💻 [View C++ Code](./src/Runge%20Kutta%204th%20Order/RungeKutta4thOrder.cpp)
 
-</details> </details>
+#### Runge-Kutta Input
+📥 [View Input Format](./src/Runge%20Kutta%204th%20Order/Input.txt)
 
-<details> <summary><h3>📈 Interpolation Methods</h3></summary> <details> <summary><strong>Newton's Forward Interpolation</strong></summary>
+#### Runge-Kutta Output
+📤 [View Output Example](./src/Runge%20Kutta%204th%20Order/Output.txt)
 
--  [Report](./src/Newton%20Forward%20Interpolation/NewtonForwardInterpolation.txt) 
+---
 
--  [Cpp Code](./src/Newton%20Forward%20Interpolation/NewtonForwardInterpolation.cpp) 
+## Interpolation Methods
 
--  [Input](./src/Newton%20Forward%20Interpolation/Input.txt) 
+### Newton Forward Interpolation
 
--  [Output](./src/Newton%20Forward%20Interpolation/Output.txt)
+#### Newton Forward Theory
+📄 [View Theory Document](./src/Newton%20Forward%20Interpolation/NewtonForwardInterpolation.txt)
 
-</details> <details> <summary><strong>Newton's Backward Interpolation</strong></summary>
+#### Newton Forward Code
+💻 [View C++ Code](./src/Newton%20Forward%20Interpolation/NewtonForwardInterpolation.cpp)
 
--  [Report](./src/Newton%20Backwardward%20Interpolation/Newton%20Backward%20Interpolation.pdf) 
+#### Newton Forward Input
+📥 [View Input Format](./src/Newton%20Forward%20Interpolation/Input.txt)
 
--  [Cpp Code](./src/Newton%20Backwardward%20Interpolation/NewtonBackwardwardInterpolation.cpp) 
+#### Newton Forward Output
+📤 [View Output Example](./src/Newton%20Forward%20Interpolation/Output.txt)
 
--  [Input](./src/Newton%20Backwardward%20Interpolation/Input.txt) 
+---
 
--  [Output](./src/Newton%20Backwardward%20Interpolation/Output.txt)
+### Newton Backward Interpolation
 
-</details> <details> <summary><strong>Newton's Divided Difference Interpolation</strong></summary>
+#### Newton Backward Theory
+📄 [View Theory Document](./src/Newton%20Backwardward%20Interpolation/Newton%20Backward%20Interpolation.pdf)
 
--  [Report](./src/Newton%20Divided%20Difference%20Interpolation/NEWTON%20FORWARD%20INTERPOLATION%20FOR%20UNEQUALLY%20SPACED%20DATA.pdf) 
+#### Newton Backward Code
+💻 [View C++ Code](./src/Newton%20Backwardward%20Interpolation/NewtonBackwardwardInterpolation.cpp)
 
--  [Cpp Code](./src/Newton%20Divided%20Difference%20Interpolation/NewtonDividedDifferenceInterpolation.cpp) 
+#### Newton Backward Input
+📥 [View Input Format](./src/Newton%20Backwardward%20Interpolation/Input.txt)
 
--  [Input](./src/Newton%20Divided%20Difference%20Interpolation/Input.txt) 
+#### Newton Backward Output
+📤 [View Output Example](./src/Newton%20Backwardward%20Interpolation/Output.txt)
 
--  [Output](./src/Newton%20Divided%20Difference%20Interpolation/Output.txt)
+---
 
-</details> </details>
+### Newton Divided Difference Interpolation
 
-<details> <summary><h3>📐 Numerical Differentiation</h3></summary> <details> <summary><strong>Differentiation by Forward Interpolation</strong></summary>
+#### Newton Divided Difference Theory
+📄 [View Theory Document](./src/Newton%20Divided%20Difference%20Interpolation/NEWTON%20FORWARD%20INTERPOLATION%20FOR%20UNEQUALLY%20SPACED%20DATA.pdf)
 
--  [Report](./src/Differentiation%20by%20Forward%20Interpolation/DIFFERENTIATION%20USING%20NEWTON.pdf) 
+#### Newton Divided Difference Code
+💻 [View C++ Code](./src/Newton%20Divided%20Difference%20Interpolation/NewtonDividedDifferenceInterpolation.cpp)
 
--  [Cpp Code](./src/Differentiation%20by%20Forward%20Interpolation/DifferentiationForward.cpp) 
+#### Newton Divided Difference Input
+📥 [View Input Format](./src/Newton%20Divided%20Difference%20Interpolation/Input.txt)
 
--  [Input](./src/Differentiation%20by%20Forward%20Interpolation/Input.txt) 
+#### Newton Divided Difference Output
+📤 [View Output Example](./src/Newton%20Divided%20Difference%20Interpolation/Output.txt)
 
--  [Output](./src/Differentiation%20by%20Forward%20Interpolation/Output.txt)
+---
 
-</details> <details> <summary><strong>Differentiation by Backward Interpolation</strong></summary>
+## Numerical Differentiation
 
--  [Report](./src/Differentiation%20by%20Backward%20Interpolation/DifferentiationBackward.txt) 
+### Differentiation by Forward Interpolation
 
--  [Cpp Code](./src/Differentiation%20by%20Backward%20Interpolation/DifferentiationBackward.cpp) 
+#### Differentiation Forward Theory
+📄 [View Theory Document](./src/Differentiation%20by%20Forward%20Interpolation/DIFFERENTIATION%20USING%20NEWTON.pdf)
 
--  [Input](./src/Differentiation%20by%20Backward%20Interpolation/Input.txt) 
+#### Differentiation Forward Code
+💻 [View C++ Code](./src/Differentiation%20by%20Forward%20Interpolation/DifferentiationForward.cpp)
 
--  [Output](./src/Differentiation%20by%20Backward%20Interpolation/Output.txt)
+#### Differentiation Forward Input
+📥 [View Input Format](./src/Differentiation%20by%20Forward%20Interpolation/Input.txt)
 
-</details> </details>
+#### Differentiation Forward Output
+📤 [View Output Example](./src/Differentiation%20by%20Forward%20Interpolation/Output.txt)
 
-<details> <summary><h3>📉 Curve Fitting / Regression</h3></summary> <details> <summary><strong>Linear Regression</strong></summary>
+---
 
--  [Report](./src/Linear%20Regression/LINEAR%20REGRESSION.pdf) 
+### Differentiation by Backward Interpolation
 
--  [Cpp Code](./src/Linear%20Regression/linearRegression.cpp) 
+#### Differentiation Backward Theory
+📄 [View Theory Document](./src/Differentiation%20by%20Backward%20Interpolation/DifferentiationBackward.txt)
 
--  [Input](./src/Linear%20Regression/Input.txt) 
+#### Differentiation Backward Code
+💻 [View C++ Code](./src/Differentiation%20by%20Backward%20Interpolation/DifferentiationBackward.cpp)
 
--  [Output](./src/Linear%20Regression/Output.txt)
+#### Differentiation Backward Input
+📥 [View Input Format](./src/Differentiation%20by%20Backward%20Interpolation/Input.txt)
 
-</details> <details> <summary><strong>Polynomial Regression</strong></summary>
+#### Differentiation Backward Output
+📤 [View Output Example](./src/Differentiation%20by%20Backward%20Interpolation/Output.txt)
 
--  [Report](./src/Polynomial%20Regression/PolynomialRegression.txt) 
+---
 
--  [Cpp Code](./src/Polynomial%20Regression/PolynomialRegression.cpp) 
+## Curve Fitting / Regression
 
--  [Input](./src/Polynomial%20Regression/Input.txt) 
+### Linear Regression
 
--  [Output](./src/Polynomial%20Regression/Output.txt)
+#### Linear Regression Theory
+📄 [View Theory Document](./src/Linear%20Regression/LINEAR%20REGRESSION.pdf)
 
-</details> <details> <summary><strong>Transcendental Regression</strong></summary>
+#### Linear Regression Code
+💻 [View C++ Code](./src/Linear%20Regression/linearRegression.cpp)
 
--  [Report](./src/Trancendental%20Regression/TrancendentalRegression.txt) 
+#### Linear Regression Input
+📥 [View Input Format](./src/Linear%20Regression/Input.txt)
 
--  [Cpp Code](./src/Trancendental%20Regression/TrancendentalRegression.cpp) 
+#### Linear Regression Output
+📤 [View Output Example](./src/Linear%20Regression/Output.txt)
 
--  [Input](./src/Trancendental%20Regression/Input.txt) 
+---
 
--  [Output](./src/Trancendental%20Regression/Output.txt)
+### Polynomial Regression
 
-</details> </details>
+#### Polynomial Regression Theory
+📄 [View Theory Document](./src/Polynomial%20Regression/PolynomialRegression.txt)
 
-<details> <summary><h3>∫ Numerical Integration</h3></summary> <details> <summary><strong>Simpson's 1/3 Rule</strong></summary>
+#### Polynomial Regression Code
+💻 [View C++ Code](./src/Polynomial%20Regression/PolynomialRegression.cpp)
 
--  [Report](./src/Simpson%201_3/Simpson1_3.txt) 
+#### Polynomial Regression Input
+📥 [View Input Format](./src/Polynomial%20Regression/Input.txt)
 
--  [Cpp Code](./src/Simpson%201_3/Simpson1_3.cpp) 
+#### Polynomial Regression Output
+📤 [View Output Example](./src/Polynomial%20Regression/Output.txt)
 
--  [Input](./src/Simpson%201_3/Input.txt) 
+---
 
--  [Output](./src/Simpson%201_3/Output.txt)
+### Transcendental Regression
 
-</details> <details> <summary><strong>Simpson's 3/8 Rule</strong></summary>
+#### Transcendental Regression Theory
+📄 [View Theory Document](./src/Trancendental%20Regression/TrancendentalRegression.txt)
 
--  [Report](./src/Simpson%203_8/Simpson3_8.txt) 
+#### Transcendental Regression Code
+💻 [View C++ Code](./src/Trancendental%20Regression/TrancendentalRegression.cpp)
 
--  [Cpp Code](./src/Simpson%203_8/Simpson3_8.cpp) 
+#### Transcendental Regression Input
+📥 [View Input Format](./src/Trancendental%20Regression/Input.txt)
 
--  [Input](./src/Simpson%203_8/Input.txt) 
+#### Transcendental Regression Output
+📤 [View Output Example](./src/Trancendental%20Regression/Output.txt)
 
--  [Output](./src/Simpson%203_8/Output.txt)
+---
 
-</details> </details>
+## Numerical Integration
 
-##  Purpose of This Repository
-- Provide **clean C++ codes** for numerical methods. 
-- Serve as a **learning resource & simulation** for Numerical Methods   
-- Combine all classical numerical methods in one project.  
+### Simpson's 1/3 Rule
 
-##  Author
-**1. Md. Toufiq Hasan & Roll : 2207049**  
-**2. Shahriar Abdullah & Roll : 2207050**  
-**3. Ariful Islam Sheikh & Roll : 2207051**
+#### Simpson 1/3 Theory
+📄 [View Theory Document](./src/Simpson%201_3/Simpson1_3.txt)
+
+#### Simpson 1/3 Code
+💻 [View C++ Code](./src/Simpson%201_3/Simpson1_3.cpp)
+
+#### Simpson 1/3 Input
+📥 [View Input Format](./src/Simpson%201_3/Input.txt)
+
+#### Simpson 1/3 Output
+📤 [View Output Example](./src/Simpson%201_3/Output.txt)
+
+---
+
+### Simpson's 3/8 Rule
+
+#### Simpson 3/8 Theory
+📄 [View Theory Document](./src/Simpson%203_8/Simpson3_8.txt)
+
+#### Simpson 3/8 Code
+💻 [View C++ Code](./src/Simpson%203_8/Simpson3_8.cpp)
+
+#### Simpson 3/8 Input
+📥 [View Input Format](./src/Simpson%203_8/Input.txt)
+
+#### Simpson 3/8 Output
+📤 [View Output Example](./src/Simpson%203_8/Output.txt)
+
+---
+
+## Purpose of This Repository
+- Provide **clean C++ codes** for numerical methods
+- Serve as a **learning resource & simulation** for Numerical Methods
+- Combine all classical numerical methods in one comprehensive project
+
+## Authors
+**1. Md. Toufiq Hasan • Roll: 2207049**  
+**2. Shahriar Abdullah • Roll: 2207050**  
+**3. Ariful Islam Sheikh • Roll: 2207051**
