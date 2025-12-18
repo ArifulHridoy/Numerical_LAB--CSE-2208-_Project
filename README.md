@@ -127,7 +127,6 @@ This project is a comprehensive collection of classical **Numerical Methods impl
 
 #### Bisection Theory
 
-```
 BISECTION METHOD - DOCUMENTATION
 =================================
 
@@ -166,7 +165,6 @@ FEATURES:
 - Removes duplicate roots
 - Formatted output with precision control
 - Error tolerance: 0.001 (default)
-```
 
 #### Bisection Code
 
@@ -413,7 +411,6 @@ Roots:
 
 #### False Position Theory
 
-```
 FALSE POSITION METHOD - DOCUMENTATION
 
 This program finds the roots of polynomial functions using the False Position Method.
@@ -461,7 +458,6 @@ FEATURES:
 - Formatted output with precision control
 - Console and file output simultaneously
 - Input validation and error handling
-```
 
 #### False Position Code
 
@@ -707,7 +703,6 @@ Root 3: 1.999936
 
 #### Newton Raphson Theory
 
-```
 NEWTON-RAPHSON METHOD - DOCUMENTATION
 
 This program finds roots of polynomial functions using the Newton-Raphson iterative method.
@@ -768,7 +763,6 @@ FEATURES:
 - Invalid result filtering (checks for NaN/Inf)
 - High precision output (6 decimal places)
 - Console and file output simultaneously
-```
 
 #### Newton Raphson Code
 
@@ -971,7 +965,6 @@ Root 4 = 2.000000 (Iterations: 13)
 
 #### Secant Theory
 
-```
 SECANT METHOD - DOCUMENTATION
 
 The Secant Method is an iterative root-finding algorithm that uses secant lines
@@ -987,7 +980,6 @@ but slower than Newton-Raphson. It's useful when derivatives are difficult
 to compute.
 
 Note: For complete theoretical details, see SECANT METHOD.pdf in the source folder.
-```
 
 #### Secant Code
 
@@ -1173,7 +1165,6 @@ range: [2.449534, 2.449490] Root: 2.449490 Iterations: 5
 
 #### Gauss Elimination Theory
 
-```
 Gaussian Elimination Report
 
 What it does
@@ -1213,7 +1204,6 @@ Output format
 
 Notes
 - Uses a tolerance of 1e-10 to treat pivots or coefficients as zero for stability.
-```
 
 #### Gauss Elimination Code
 
@@ -1435,7 +1425,6 @@ No Solution!
 
 #### Gauss Jordan Theory
 
-```
 Gauss-Jordan Elimination Report
 
 What it does :
@@ -1454,7 +1443,6 @@ Theory (brief)
 - Gauss-Jordan applies row operations to convert [A|b] directly to RREF, where each pivot is 1 and the pivot columns have zeros elsewhere.
 - Partial pivoting improves numerical stability and avoids dividing by tiny pivots.
 - Rank comparison: if rank(A) < rank([A|b]) → inconsistent; if rank(A) < n but rank(A) == rank([A|b]) → infinite solutions; if rank(A) = n → unique solution.
-```
 
 #### Gauss Jordan Code
 
@@ -1685,7 +1673,6 @@ No Solution (Inconsistent)
 
 #### LU Decomposition Theory
 
-```
 LU Decomposition (Doolittle) Report
 
 What it does :
@@ -1704,7 +1691,6 @@ Theory (brief) :
 - For nonsingular A with nonzero leading principal minors, A = LU exists with L unit lower-triangular and U upper-triangular (Doolittle sets L diagonals to 1).
 - Factorization cost is O(n^3); triangular solves are O(n^2).
 - If a pivot is zero, det(A) = 0.
-```
 
 #### LU Decomposition Code
 
@@ -2013,7 +1999,6 @@ Matrix A is singular (det A = 0)
 
 #### Matrix Inversion Theory
 
-```
 Matrix Inversion Report
 
 What it does :
@@ -2033,7 +2018,6 @@ Theory (brief) :
 - Matrix inversion by Gauss-Jordan is equivalent to solving n systems Ae_i = b_i for unit vectors e_i.
 - By augmenting with I and reducing to RREF, the right block becomes A^-1.
 - Computational cost is O(n^3) for factorization; multiplication by b adds O(n^2).
-```
 
 #### Matrix Inversion Code
 
@@ -2348,7 +2332,6 @@ Matrix is singular (det=0)
 
 #### Runge-Kutta Theory
 
-```
 RUNGE-KUTTA 4TH ORDER METHOD - DOCUMENTATION
 
 This program solves differential equations using the Runge-Kutta 4th Order method.
@@ -2373,7 +2356,6 @@ FEATURES:
 - Adaptive iteration count based on x range
 - Accurate 4th order method
 - Formatted output with precision control
-```
 
 #### Runge-Kutta Code
 
@@ -2511,7 +2493,6 @@ Result: y(3.000) = 403.429
 
 #### Newton Forward Theory
 
-```
 NEWTON FORWARD INTERPOLATION - DOCUMENTATION
 
 This program performs Newton Forward Interpolation to estimate function values at intermediate points.
@@ -2534,7 +2515,6 @@ FORWARD DIFFERENCE TABLE:
 
 Best suited for interpolation near the beginning of the data table.
 Requires equally spaced x values.
-```
 
 #### Newton Forward Code
 
@@ -2746,7 +2726,6 @@ Interpolated value f(2.500000) = 15.625000
 
 #### Newton Backward Theory
 
-```
 NEWTON BACKWARD INTERPOLATION - DOCUMENTATION
 
 Newton Backward Interpolation is used for interpolating values near the end of a data table.
@@ -2763,7 +2742,6 @@ f(x) = f(xₙ) + v∇f(xₙ) + [v(v+1)/2!]∇²f(xₙ) + ...
 where v = (x - xₙ)/h and xₙ is the last point.
 
 Note: For complete theoretical details, see Newton Backward Interpolation.pdf in the source folder.
-```
 
 #### Newton Backward Code
 
@@ -2961,7 +2939,6 @@ Interpolated Value: 12.1875
 
 #### Newton Divided Difference Theory
 
-```
 NEWTON DIVIDED DIFFERENCE INTERPOLATION
 
 This method works for both equally and unequally spaced data points.
@@ -2976,7 +2953,6 @@ INTERPOLATING POLYNOMIAL:
 f(x) = f(x₀) + (x-x₀)f[x₀,x₁] + (x-x₀)(x-x₁)f[x₀,x₁,x₂] + ...
 
 Note: For complete theoretical details, see NEWTON FORWARD INTERPOLATION FOR UNEQUALLY SPACED DATA.pdf
-```
 
 #### Newton Divided Difference Code
 
@@ -3181,7 +3157,6 @@ Truncation error: 0.0000
 
 #### Differentiation Forward Theory
 
-```
 DIFFERENTIATION USING NEWTON FORWARD INTERPOLATION
 
 This method uses Newton's forward difference formula to compute derivatives.
@@ -3196,7 +3171,6 @@ f''(x) = [Δ²f₀ + (u-1)Δ³f₀ + ...] / h²
 where u = (x - x₀)/h
 
 Note: For complete theoretical details, see DIFFERENTIATION USING NEWTON.pdf
-```
 
 #### Differentiation Forward Code
 
@@ -3405,7 +3379,6 @@ Second diff error: 0.0624101%
 
 #### Differentiation Backward Theory
 
-```
 DIFFERENTIATION USING NEWTON BACKWARD INTERPOLATION
 
 This method uses Newton's backward difference formula to compute derivatives
@@ -3418,7 +3391,6 @@ f'(xₙ) = [∇f(xₙ) + (2s+1)∇²f(xₙ)/2! + (3s²+6s+2)∇³f(xₙ)/6 + ...
 where s = (x - xₙ)/h
 
 Used for polynomial differentiation with backward differences.
-```
 
 #### Differentiation Backward Code
 
@@ -3640,7 +3612,6 @@ Row 3:   2.250000   1.250000   0.500000   0.000000
 
 #### Linear Regression Theory
 
-```
 LINEAR REGRESSION - LEAST SQUARES METHOD
 
 Linear regression finds the best-fit line y = a + bx through a set of data points
@@ -3656,7 +3627,6 @@ where:
 - n is the number of data points
 
 Note: For complete theoretical details, see LINEAR REGRESSION.pdf
-```
 
 #### Linear Regression Code
 
@@ -3779,27 +3749,23 @@ Line Equation: y = 4.2 + 1.44571x
 
 #### Polynomial Regression Theory
 
-```
 POLYNOMIAL REGRESSION
 
 Extends linear regression to fit polynomial curves of degree m:
 y = a₀ + a₁x + a₂x² + ... + aₘxᵐ
 
 The coefficients are found by solving the normal equations:
-∑y = na₀ + a₁∑x + a₂∑x² + ... + aₘ∑xᵐ
 ∑xy = a₀∑x + a₁∑x² + a₂∑x³ + ... + aₘ∑xᵐ⁺¹
 ...
 ∑xᵐy = a₀∑xᵐ + a₁∑xᵐ⁺¹ + ... + aₘ∑x²ᵐ
 
 This system is solved using Gauss-Jordan elimination.
-```
 
 #### Polynomial Regression Code
 
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
-#define db double
 
 void gaussJordan(vector<vector<db>>&augmented, int m)
 {
@@ -3998,14 +3964,12 @@ Polynomial: y = 1.0000 + 1.0000x^2
 
 #### Transcendental Regression Theory
 
-```
 TRANSCENDENTAL REGRESSION
 
 Fits data to exponential and power models by transforming to linear form:
 
 MODEL 1: y = ae^(bx)
   Linearize: ln(y) = ln(a) + bx
-
 MODEL 2: y = ax^b
   Linearize: ln(y) = ln(a) + b*ln(x)
 
@@ -4014,14 +3978,12 @@ MODEL 3: y = a + be^(x/4)
 
 After transformation, standard linear regression techniques are applied,
 then the results are transformed back to the original form.
-```
 
 #### Transcendental Regression Code
 
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
-#define db double
 
 void solve(int tc, ifstream&fin, ofstream&fout)
 {
@@ -4217,14 +4179,12 @@ Equation: y = -2.82689 + 7.81992 * e^(x/4)
 
 #### Simpson 1/3 Theory
 
-```
 SIMPSON'S 1/3 RULE - NUMERICAL INTEGRATION
 
 Simpson's 1/3 rule approximates the integral by fitting parabolas through
 three consecutive points. It requires an even number of intervals.
 
 FORMULA:
-∫[a,b] f(x)dx ≈ (h/3)[f(a) + f(b) + 4∑f(xₒ⵫d⵭) + 2∑f(xₑᵥₑₙ)]
 
 where:
 - h = (b-a)/n
@@ -4233,14 +4193,12 @@ where:
 - ∑f(xₑᵥₑₙ) is sum at even indices (x₂, x₄, x₆, ...)
 
 Provides higher accuracy than Trapezoidal rule with same number of points.
-```
 
 #### Simpson 1/3 Code
 
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
-#define db double
 
 db f(db x, vector<db>&coeff)
 {
@@ -4383,14 +4341,12 @@ Integral result: 10.6667
 
 #### Simpson 3/8 Theory
 
-```
 SIMPSON'S 3/8 RULE - NUMERICAL INTEGRATION
 
 Simpson's 3/8 rule uses cubic polynomials for approximation. It requires
 the number of intervals to be a multiple of 3.
 
 FORMULA:
-∫[a,b] f(x)dx ≈ (3h/8)[f(a) + f(b) + 3∑f(xᵢ) + 2∑f(xⱼ)]
 
 where:
 - h = (b-a)/n
@@ -4399,14 +4355,12 @@ where:
 - ∑f(xⱼ) is sum where j is a multiple of 3 (but not 0 or n)
 
 Often used in combination with Simpson's 1/3 rule for adaptive integration.
-```
 
 #### Simpson 3/8 Code
 
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
-#define db double
 
 db f(db x, vector<db>&coeff)
 {
