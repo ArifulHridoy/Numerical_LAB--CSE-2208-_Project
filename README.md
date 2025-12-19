@@ -965,22 +965,92 @@ Root 4 = 2.000000 (Iterations: 13)
 
 #### Secant Theory
 
-SECANT METHOD - DOCUMENTATION
+SECANT METHOD – DOCUMENTATION 
+This program finds real roots of polynomial equations using the Secant Method. 
+It supports multiple test cases, file input, and outputs results to both the console and a text file. 
+PURPOSE 
+To determine all real roots of a polynomial by applying the Secant Method across a calculated 
+search interval. 
+The program reads polynomial coefficients from an input file and applies numerical root-finding 
+to each test case. 
+METHOD OVERVIEW 
+The Secant Method is an iterative numerical technique used to approximate roots of equations 
+of the form: 
+f(x)=0  
+It uses two initial guesses and applies: 
+xn+1=  (𝑥0𝑓(𝑥1)−𝑥1𝑓(𝑥0))/(𝑥1)−𝑓(𝑥0)
+Iteration continues until: 
 
-The Secant Method is an iterative root-finding algorithm that uses secant lines
-to approximate the root of a function. Unlike Newton-Raphson, it doesn't require
-the derivative of the function.
-
-FORMULA:
---------
-x_{n+1} = x_n - f(x_n) * (x_n - x_{n-1}) / (f(x_n) - f(x_{n-1}))
-
-The method requires two initial guesses and converges faster than bisection
-but slower than Newton-Raphson. It's useful when derivatives are difficult
-to compute.
-
-Note: For complete theoretical details, see SECANT METHOD.pdf in the source folder.
-
+∣xn+1−xn∣<ϵ and ∣f(xn+1)∣<ϵ  
+where ε is the error tolerance.  
+POLYNOMIAL EVALUATION 
+The polynomial is defined as: 
+f(x)=a0+a1x+a2x2+⋯+anxn  
+Coefficients are supplied from highest degree to constant term but internally reversed for 
+computation. 
+ROOT BOUND (Cauchy's Bound) 
+To ensure all real roots are  detected, the program computes: 
+∣x∣ ≤  1 + max (∣𝑎𝑖/𝑎𝑛∣) 
+This value defines the search interval: [−B,B]  
+where B is the computed bound. 
+STEP-WISE ROOT SEARCH 
+The interval is scanned using small sub-intervals: 
+• Step size: 0.45 
+• Error tolerance: 0.001 
+Each sub-interval [x, x + 0.45] becomes an initial guess pair for the Secant method. 
+Duplicate roots (closely spaced values) are automatically ignored. 
+INPUT FORMAT (input.txt) 
+T 
+n 
+a_n a_(n−1) ... a_1 a_0 
+n 
+a_n a_(n−1) ... a_1 a_0 
+... 
+Where: 
+• T = number of test cases 
+• n = degree of the polynomial 
+• Next line has n+1 coefficients from highest degree to constant term 
+EXAMPLE INPUT 
+3 
+2 
+1 -5 6 
+3 
+1 -6 11 -6 
+4 
+1 0 -7 0 6 
+This represents 3 polynomials: 
+1. x2−5x+6x  
+2. x3−6x2+11x−6 
+3. x4−7x2+6
+ 
+OUTPUT DESCRIPTION 
+For each test case, the program outputs: 
+1. The polynomial in readable form 
+2. The computed root bound 
+3. Each detected real root 
+4. The interval used in Secant Method 
+5. Number of iterations required 
+6. A separator line between test cases 
+Output is written: 
+• To console 
+• To output.txt 
+ 
+OUTPUT EXAMPLE 
+ 
+Polynomial: 1x^2 - 5x + 6 
+Root bound: 6 
+range: [1.800000, 1.350000] Root: 2.000371 Iterations: 4 
+range: [2.700000, 2.250000] Root: 3.000117 Iterations: 4 --------------------------------------- 
+ 
+FEATURES 
+• Supports multiple test cases 
+• Uses Cauchy’s Bound to guarantee root coverage 
+• Detects and avoids duplicate roots 
+• Outputs to both console and file (output.txt) 
+• Nicely formatted polynomial printing 
+• Error tolerance = 0.001 
+• Step size = 0.45 
+• Clean and organized code structure
 #### Secant Code
 
 ```cpp
@@ -2726,23 +2796,82 @@ Interpolated value f(2.500000) = 15.625000
 
 #### Newton Backward Theory
 
-NEWTON BACKWARD INTERPOLATION - DOCUMENTATION
-
-Newton Backward Interpolation is used for interpolating values near the end of a data table.
-It uses backward differences computed from the last data point upward.
-
-BACKWARD DIFFERENCE FORMULA:
-----------------------------
-∇f(xᵢ) = f(xᵢ) - f(xᵢ₋₁)
-∇²f(xᵢ) = ∇f(xᵢ) - ∇f(xᵢ₋₁)
-
-NEWTON BACKWARD INTERPOLATION FORMULA:
-f(x) = f(xₙ) + v∇f(xₙ) + [v(v+1)/2!]∇²f(xₙ) + ...
-
-where v = (x - xₙ)/h and xₙ is the last point.
-
-Note: For complete theoretical details, see Newton Backward Interpolation.pdf in the source folder.
-
+Newton Backward Interpolation – Documentation 
+This program performs Newton Backward Interpolation to estimate the value of a function at a 
+given point using backward differences of tabulated data. 
+OBJECTIVE 
+To calculate the interpolated value f(X) for a given value X from a set of discrete data points   
+(xi, yi) using Newton Backward Interpolation formula. 
+THEORY 
+For n data points x0, x1, ..., xn-1 with corresponding function values y0, y1, ..., yn-1, the backward 
+interpolation formula is: 
+f(𝑋) = 𝑦𝑛 + 𝑣 𝛥𝑦𝑛 + (𝑣(𝑣+1)/2! ) 𝛥²𝑦𝑛 + (𝑣(𝑣+1)(𝑣+2)/3! ) 𝛥³𝑦𝑛 + ... 
+Where: 
+• yn = yn-1 
+• v = (𝑋 − 𝑥𝑛)/ℎ
+• h = xi – xi-1  
+• Δk yn = k-th backward difference at last point 
+INPUT FORMAT (input.txt) 
+T 
+n 
+x1 x2 ... xn 
+y1 y2 ... yn 
+X 
+(repeat for T test cases) 
+EXAMPLE INPUT 
+4 
+5 
+1 2 3 4 5 
+2 4 8 16 32 
+3 
+4 
+10 20 30 40 
+5 7 10 15 
+35 
+3 
+0 1 2 
+1 3 7 
+1 
+5 
+2 4 6 8 10 
+4 8 18 32 50 
+7  
+OUTPUT (Console + output.txt) 
+For each test case, the program prints: 
+1. Test Case Number 
+2. Number of data points (n) 
+3. x[] and y[] values 
+4. Interpolation point X 
+5. Full backward difference table (n×n including zeros) 
+6. Interpolated value at X 
+EXAMPLE OUTPUT 
+TestCase#1 
+n: 5 
+x: 1 2 3 4 5 
+y: 2 4 8 16 32 
+X: 3 
+Backward Difference Table: 
+2 0 0 0 0 
+4 2 0 0 0 
+8 4 2 0 0 
+16 8 4 2 0 
+32 16 8 4 2 
+Interpolated Value: 8 
+ALGORITHM 
+1. Read number of test cases T 
+• For each test case: 
+a. Read n, x[], y[], X 
+b. Initialize n×n difference table with zeros 
+c. Fill first column with y[] values 
+d. Compute backward differences column by column 
+e. Apply Newton Backward Formula to compute interpolated value 
+f. Print inputs, difference table, and interpolated value to console and output file 
+FEATURES 
+• Handles multiple test cases 
+• Works with uniformly spaced data points 
+• Prints full backward difference table including zeros 
+• Displays all input and output for clarity 
+• Outputs results to both console and output.txt
 #### Newton Backward Code
 
 ```cpp
@@ -2941,18 +3070,75 @@ Interpolated Value: 12.1875
 
 NEWTON DIVIDED DIFFERENCE INTERPOLATION
 
+This program performs Newton Forward Interpolation using the divided difference method to 
+estimate the value of a function at a given point X from unequally spaced data points. 
+OBJECTIVE 
+To calculate the interpolated value f(X) for a given value X using Newton Forward Interpolation 
+when the data points are not equally spaced. 
+THEORY 
+Newton Forward Interpolation for unequal spacing uses divided differences. 
+For n+1 data points (𝑥0, 𝑦0),(𝑥1,𝑦1),... ,(𝑥𝑛, 𝑦𝑛), the polynomial is: 
+		P𝑛(𝑋) = 𝑓[𝑥0] + (𝑋−𝑥0)𝑓[𝑥0,𝑥1] + (𝑋−𝑥0)(𝑋−𝑥1)𝑓[𝑥0,𝑥1,𝑥2] + ...+ (𝑋−𝑥0)...(𝑋 −𝑥_{𝑛 −1})𝑓[𝑥0,...,𝑥𝑛] 
+Where 𝑓[𝑥𝑖,...,𝑥𝑗] are divided differences, computed as: 
+	f[𝑥𝑖] = 𝑦𝑖  
+	f[𝑥𝑖, 𝑥𝑖 + 1] = (𝑓[𝑥𝑖 +1] − 𝑓[𝑥𝑖]) /(𝑥𝑖 +1−𝑥𝑖) 
+	f[𝑥𝑖, . . . , 𝑥𝑖 + 𝑘] = (𝑓[𝑥𝑖 +1,...,𝑥𝑖 + 𝑘] − 𝑓[𝑥_𝑖,...,𝑥_𝑖 + 𝑘 − 1])/(𝑥𝑖 +𝑘 − 𝑥𝑖)
+The error of interpolation is given by: 
+		e𝑟𝑟𝑜𝑟(𝑋) = 𝑓[𝑥0,...,𝑥𝑛](𝑋 − 𝑥0)(𝑋 −𝑥1)...(𝑋 −𝑥𝑛 −1) 
+INPUT FORMAT (input.txt) 
+T  
+N 
+x0 x1 ... xn  
+y0 y1 ... yn  
+X 
+EXAMPLE INPUT 
+1 
+4 
+1 4 5 7 10 
+2 20 30 56 100 
+8 
+OUTPUT (Console + output.txt) 
+For each test case, the program prints: 
+1. Test Case Number 
+2. Number of data points (n) 
+3. x[] and y[] values 
+4. Interpolation point X 
+5. Full divided difference table (n+1 x n+1 including zeros) 
+6. Interpolated value at X 
+7. Truncation error 
+EXAMPLE OUTPUT 
+Test Case  #1 
+n: 4 
+x: 1.0000 4.0000 5.0000 7.0000 10.0000 
+y: 2.0000 20.0000 30.0000 56.0000 100.0000 
+X: 8 
+Difference Table: 
+2.0000 6.0000 1.0000 0.0000 -0.0123 
+20.0000 10.0000 1.0000 -0.1111 0.0000 
+30.0000 13.0000 0.3333 0.0000 0.0000 
+56.0000 14.6667 0.0000 0.0000 0.0000 
+100.0000 0.0000 0.0000 0.0000 0.0000 
+Interpolation: 70.9630 
+Truncation error: 1.0370 
+ALGORITHM 
+1. Read number of test cases T 
+2. For each test case:  
+• Read n, x[], y[], X  
+• Initialize (n+1)x(n+2) difference table with zeros  
+• Fill first column with y[] values  
+• Compute divided differences column by column 
+• Apply Newton Forward formula to compute interpolated value  
+• Compute true error  
+• Print inputs, difference table, interpolated value, and error to console 
+	and output file 
+FEATURES 
+• Handles multiple test cases 
+• Works with unequally spaced data 
+• Prints full divided difference table including zeros 
+• Displays all input and output for clarity 
+• Outputs results to both console and output.txt
 This method works for both equally and unequally spaced data points.
-It uses divided differences to construct an interpolating polynomial.
 
-DIVIDED DIFFERENCE FORMULA:
---------------------------
-f[xᵢ, xᵢ₊₁] = (f(xᵢ₊₁) - f(xᵢ)) / (xᵢ₊₁ - xᵢ)
-f[xᵢ, xᵢ₊₁, xᵢ₊₂] = (f[xᵢ₊₁, xᵢ₊₂] - f[xᵢ, xᵢ₊₁]) / (xᵢ₊₂ - xᵢ)
-
-INTERPOLATING POLYNOMIAL:
-f(x) = f(x₀) + (x-x₀)f[x₀,x₁] + (x-x₀)(x-x₁)f[x₀,x₁,x₂] + ...
-
-Note: For complete theoretical details, see NEWTON FORWARD INTERPOLATION FOR UNEQUALLY SPACED DATA.pdf
 
 #### Newton Divided Difference Code
 
@@ -3157,20 +3343,93 @@ Truncation error: 0.0000
 
 #### Differentiation Forward Theory
 
-DIFFERENTIATION USING NEWTON FORWARD INTERPOLATION
+The objective of this experiment is to calculate the first and second derivatives of a function at 
+a given point using Newton’s Forward Interpolation formula. The program uses equally spaced 
+data points and compares the computed derivatives with the analytical derivatives to 
+determine the error. 
+Theory 
+Newton’s Forward Interpolation is a numerical method for estimating function values and their 
+derivatives using a set of discrete data points. For a function f(x)f(x)f(x) evaluated at equally 
+spaced points x0,x1,...,xn  the derivatives at a point XXX can be approximated as: 
+Forward Difference Table 
 
-This method uses Newton's forward difference formula to compute derivatives.
-It constructs a difference table and applies differentiation formulas.
-
-FIRST DERIVATIVE FORMULA:
-f'(x) = [Δf₀ + (2u-1)Δ²f₀/2! + (3u²-6u+2)Δ³f₀/3! + ...] / h
-
-SECOND DERIVATIVE FORMULA:
-f''(x) = [Δ²f₀ + (u-1)Δ³f₀ + ...] / h²
-
-where u = (x - x₀)/h
-
-Note: For complete theoretical details, see DIFFERENTIATION USING NEWTON.pdf
+• First Derivative f′(X) 
+Δ1yi = yi+1−yi 
+Δ2yi = Δ1yi+1−Δ1yi 
+Δ3yi = Δ2yi+1−Δ2yi 
+Where 
+		𝑦𝑖 = 𝑓(𝑥𝑖) 
+Derivative Formulas :
+		𝑓′(𝑋) ≈ (𝑦0 + (2𝑢−1)𝛥2𝑦0/2! + (3𝑢2−6𝑢+2)𝛥3𝑦0/3! +⋯)/ℎ
+• Second Derivative
+		𝑓′′(𝑋) ≈ (𝛥2𝑦0+(𝑢 −1)𝛥3𝑦0+⋯) /ℎ2
+Where: 
+	 u=(𝑋−𝑥0)/ℎ 
+	 ℎ=𝑥(𝑖+1)−𝑥𝑖  
+Error Calculation 
+The computed derivatives are compared with analytical derivatives f′(X) and f′′(X): 
+Error=   ∣𝐴𝑛𝑎𝑙𝑦𝑡𝑖𝑐𝑎𝑙−𝑁𝑢𝑚𝑒𝑟𝑖𝑐𝑎𝑙∣/𝐴𝑛𝑎𝑙𝑦𝑡𝑖𝑐𝑎𝑙×100  
+ 
+Input Format (input.txt) 
+• Line 1: Number of test cases T 
+• For each test case: 
+o n → number of intervals 
+o a b → start and end of interval 
+o X → point at which derivatives are computed 
+Example: 
+4 
+4 
+1 2 
+1.5 
+5 
+0 1 
+0.5 
+6 
+1 3 
+2.5 
+3 
+2 4 
+3.2 
+ 
+Output 
+• For each test case, the program outputs: 
+• Test case number 
+• Number of intervals, a, b, and X 
+• Forward difference table 
+• First derivative f′(X) 
+• Second derivative f′′(X) 
+• Percentage errors of first and second derivatives 
+Example Console / Output.txt format: 
+TEST CASE #1 
+n: 4, a: 1, b: 2, X: 1.5 
+Difference table: 
+2         1         0		0
+3         2			1		0
+5         4			1		0
+9         6         0		0
+... 
+y': 4.123 
+y'': 5.456 
+First diff error: 0.0123% 
+Second diff error: 0.0345% 
+Algorithm / Steps          
+1. Read number of test cases T. 
+2. For each test case: 
+• Read 𝑛,𝑎,𝑏,𝑋 input file. 
+• Compute step size ℎ = (𝑏 −𝑎)/𝑛   
+• Generate equally spaced points 𝑥𝑖 = 𝑎 + 𝑖 ∗ ℎ and compute 𝑦𝑖 = 𝑓(𝑥𝑖). 
+• Construct forward difference table. 
+• Compute first derivative f′(X)) using Newton’s formula. 
+• Compute second derivative f′′(X) using Newton’s formula. 
+• Compare with analytical derivatives to compute percentage error. 
+Print input, difference table, derivatives, and errors to console and output file. 
+Features 
+• Supports multiple test cases 
+• Computes first and second derivatives numerically 
+• Generates full forward difference table 
+• Calculates percentage error with analytical derivatives 
+• Outputs results to both console and file 
+• Works for equally spaced intervals
 
 #### Differentiation Forward Code
 
@@ -3612,21 +3871,105 @@ Row 3:   2.250000   1.250000   0.500000   0.000000
 
 #### Linear Regression Theory
 
-LINEAR REGRESSION - LEAST SQUARES METHOD
+LINEAR REGRESSION (LEAST SQUARES METHOD) – DOCUMENTATION 
 
-Linear regression finds the best-fit line y = a + bx through a set of data points
-by minimizing the sum of squared errors.
+This program performs Simple Linear Regression using the Least Squares Method to find the 
+best-fit straight line for a given set of data points. 
+It supports: 
+• Multiple test cases 
+• Input from input.txt 
+• Output to console and output.txt 
+• Clear reporting of input, computations, and final regression equation 
+OBJECTIVE 
+To compute the best-fit linear equation: 
+y=a + bx 
+from a given set of experimental or numerical data using the least squares regression 
+technique, which minimizes the total squared error. 
+CONCEPT 
+For n data points (xi,yi) the regression line: 
+			y=a + bx 
+is determined by minimizing: 
+			∑(yi−(a+bxi))2  
+This leads to two closed-form formulas: 
+Slope (b) 
 
-FORMULAS:
-b = (n∑xy - ∑x∑y) / (n∑x² - (∑x)²)
-a = (∑y - b∑x) / n
+			b= 𝑛∑𝑥𝑦−(∑𝑥)(∑𝑦) / n∑x2−(∑x)2b 
 
-where:
-- a is the y-intercept
-- b is the slope
-- n is the number of data points
-
-Note: For complete theoretical details, see LINEAR REGRESSION.pdf
+Intercept (a)
+				a=∑y−b∑xn 
+These values define the best-fit straight line. 
+ 
+PROGRAM FEATURES 
+• Reads all inputs from input.txt 
+• Writes results to both console and output.txt 
+• Handles multiple test cases 
+• Prints: 
+o Number of data points 
+o All x and y values 
+o Computed intercept (a) 
+o Computed slope (b) 
+o Final regression line equation 
+ 
+INPUT FORMAT (input.txt) 
+T 
+n 
+x1 x2 x3 ... xn 
+y1 y2 y3 ... yn 
+ 
+(repeat for T test cases) 
+Where: 
+• t = number of test cases 
+• n = number of data points in the test case 
+• Next line = n values of x 
+• Next line = n values of y 
+ 
+EXAMPLE INPUT 
+3 
+5 
+1 2 3 4 5 
+2 4 5 4 5 
+ 
+4 
+2 4 6 8 
+3 5 7 9 
+ 
+6 
+5 10 15 20 25 30 
+12 18 26 33 40 48 
+ 
+OUTPUT (Written to output.txt and displayed on console) 
+For each test case, the program prints: 
+• Test Case Number 
+• Total points 
+• x[] array 
+• y[] array 
+• Intercept (a) 
+• Slope (b) 
+• Regression Equation 
+Example: 
+Test Case #1 
+Number of points: 5 
+x values: 1 2 3 4 5 
+y values: 2 4 5 4 5 
+Computed Intercept (a): 2.2 
+Computed Slope (b): 0.6 
+Line Equation: y = 2.2 + 0.6x 
+ 
+ALGORITHM (Least Squares Method) 
+• Read number of data points n 
+• Read arrays x[n] and y[n] 
+• Compute required sums: 
+o Σx 
+o Σy 
+o Σxy 
+o Σx² 
+• Apply formulas: 
+o Compute b (slope) 
+o Compute a (intercept) 
+• Display and store: 
+o Input values 
+o Calculated coefficients 
+o Final regression line
 
 #### Linear Regression Code
 
