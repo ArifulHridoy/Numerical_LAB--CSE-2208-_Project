@@ -990,9 +990,11 @@ of the form:
 It uses two initial guesses and applies: 
 
 			xn+1=  (𝑥0𝑓(𝑥1)−𝑥1𝑓(𝑥0))/(𝑥1)−𝑓(𝑥0)
+			
 Iteration continues until: 
 
 		∣xn+1−xn∣<ϵ and ∣f(xn+1)∣<ϵ  
+		
 where ε is the error tolerance. 
 
 POLYNOMIAL EVALUATION:
@@ -1026,13 +1028,19 @@ Duplicate roots (closely spaced values) are automatically ignored.
  
 FEATURES :
 
-• Supports multiple test cases
-• Uses Cauchy’s Bound to guarantee root coverage 
-• Detects and avoids duplicate roots 
-• Outputs to both console and file (output.txt)
-• Formatted polynomial printing
+• Supports multiple test cases.
+
+• Uses Cauchy’s Bound to guarantee root coverage. 
+• Detects and avoids duplicate roots.
+
+• Outputs to both console and file (output.txt),
+
+• Formatted polynomial printing.
+
 • Error tolerance = 0.001 
+
 • Step size = 0.45 
+
 
 #### Secant Code
 
@@ -1453,20 +1461,31 @@ No Solution!
 #### Gauss Jordan Theory
 
 Theory (brief)
+
 - Gauss-Jordan applies row operations to convert [A|b] directly to RREF, where each pivot is 1 and the pivot columns have zeros elsewhere.
+
 - Partial pivoting improves numerical stability and avoids dividing by tiny pivots.
+
 - Rank comparison: if rank(A) < rank([A|b]) → inconsistent; if rank(A) < n but rank(A) == rank([A|b]) → infinite solutions; if rank(A) = n → unique solution.
 
 Algorithm steps
+
 1) Partial pivoting: swap the current row with the row having the largest absolute pivot in the column.
+
 2) Scale the pivot row so the pivot becomes 1.
+
 3) Eliminate the pivot column in all other rows to reach RREF.
+
 4) Check ranks to classify: inconsistent, infinite solutions, or unique solution (read directly from RREF).
 
 What it does :
+
 - Solves linear systems using Gauss-Jordan elimination with partial pivoting.
+
 - Reduces the augmented matrix to Reduced Row Echelon Form (RREF).
+
 - Detects three outcomes per test case: Unique Solution, No Solution (inconsistent), Infinite Solutions (dependent).
+
 - Handles multiple test cases in one run, reading from Input.txt and writing to Output.txt while printing to console.
   
 #### Gauss Jordan Code
@@ -1699,20 +1718,31 @@ No Solution (Inconsistent)
 #### LU Decomposition Theory
 
 Theory (brief) :
+
 - For nonsingular A with nonzero leading principal minors, A = LU exists with L unit lower-triangular and U upper-triangular (Doolittle sets L diagonals to 1).
+
 - Factorization cost is O(n^3); triangular solves are O(n^2).
+
 - If a pivot is zero, det(A) = 0.
 
 Algorithm steps :
+
 1) Doolittle LU factorization without pivoting: U has diagonals from A, L has 1s on the diagonal.
+
 2) Compute y via forward substitution (Ly = b).
+
 3) Detect singularity: if any |U[i][i]| < EPS, flag singular and inspect rows of U with y to classify.
+
 4) If singular and a zero row in U has nonzero y → No solution; if singular and zero row with zero y → Infinite solutions.
+
 5) Only when all pivots are nonzero run back substitution (Ux = y) and print unique solution; always print L and U matrices.
 
 What it does :
+
 - Solves linear systems by factoring A into L (unit lower) and U (upper) using the Doolittle method.
+
 - Handles multiple test cases, reading from Input.txt, writing to Output.txt, and printing to console.
+
 - Reports L and U matrices; classifies outcomes: unique solution, no solution (inconsistent), or infinitely many solutions (singular but consistent).
 
 #### LU Decomposition Code
@@ -2358,22 +2388,29 @@ Supports multiple test cases with different initial conditions.
 
 FUNCTION USED:
 
-dy/dx = f(x,y) = xy + y
+	dy/dx = f(x,y) = xy + y
 
 RUNGE-KUTTA 4TH ORDER FORMULA:
 
-y(n+1) = y(n) + (h/6)[k1 + 2k2 + 2k3 + k4]
+	y(n+1) = y(n) + (h/6)[k1 + 2k2 + 2k3 + k4]
+	
 where:
-  k1 = h*f(x(n), y(n))
-  k2 = h*f(x(n) + h/2, y(n) + k1/2)
-  k3 = h*f(x(n) + h/2, y(n) + k2/2)
-  k4 = h*f(x(n) + h, y(n) + k3)
+
+  	k1 = h*f(x(n), y(n))
+  	k2 = h*f(x(n) + h/2, y(n) + k1/2)
+ 	 k3 = h*f(x(n) + h/2, y(n) + k2/2)
+  	k4 = h*f(x(n) + h, y(n) + k3)
 
 FEATURES:
+
 - Multiple test cases support
+
 - Fixed step size: h = 0.001
+
 - Adaptive iteration count based on x range
+
 - Accurate 4th order method
+
 - Formatted output with precision control
 
 #### Runge-Kutta Code
@@ -2517,18 +2554,19 @@ Supports multiple test cases with automatic polynomial order detection.
 
 NEWTON FORWARD INTERPOLATION FORMULA:
 
-f(x) = f(x₀) + uΔf(x₀) + [u(u-1)/2!]Δ²f(x₀) + [u(u-1)(u-2)/3!]Δ³f(x₀) + ...
+	f(x) = f(x₀) + uΔf(x₀) + [u(u-1)/2!]Δ²f(x₀) + [u(u-1)(u-2)/3!]Δ³f(x₀) + ...
 
 where:
-  u = (x - x₀) / h
-  h = step size (x₁ - x₀)
-  Δⁿf(x₀) = nth forward difference at x₀
+
+	  u = (x - x₀) / h
+	  h = step size (x₁ - x₀)
+	  Δⁿf(x₀) = nth forward difference at x₀
 
 FORWARD DIFFERENCE TABLE:
 
-Δf(xᵢ) = f(xᵢ₊₁) - f(xᵢ)
-Δ²f(xᵢ) = Δf(xᵢ₊₁) - Δf(xᵢ)
-Δⁿf(xᵢ) = Δⁿ⁻¹f(xᵢ₊₁) - Δⁿ⁻¹f(xᵢ)
+	Δf(xᵢ) = f(xᵢ₊₁) - f(xᵢ)
+	Δ²f(xᵢ) = Δf(xᵢ₊₁) - Δf(xᵢ)
+	Δⁿf(xᵢ) = Δⁿ⁻¹f(xᵢ₊₁) - Δⁿ⁻¹f(xᵢ)
 
 Best suited for interpolation near the beginning of the data table.
 Requires equally spaced x values.
@@ -2767,20 +2805,31 @@ Where:
 ALGORITHM :
 
 1. Read number of test cases T
+
 • For each test case: 
+
 a. Read n, x[], y[], X.
+
 b. Initialize n×n difference table with zeros.
+
 c. Fill first column with y[] values .
+
 d. Compute backward differences column by column. 
+
 e. Apply Newton Backward Formula to compute interpolated value .
+
 f. Print inputs, difference table, and interpolated value to console and output file.
 
 FEATURES:
 
 • Handles multiple test cases.
+
 • Works with uniformly spaced data points.
+
 • Prints full backward difference table including zeros.
+
 • Displays all input and output for clarity.
+
 • Outputs results to both console and output.txt.
 
 #### Newton Backward Code
