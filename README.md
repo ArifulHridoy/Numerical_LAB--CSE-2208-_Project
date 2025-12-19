@@ -2867,14 +2867,19 @@ x: 1 2 3 4 5
 y: 2 4 8 16 32 
 X: 3 
 Backward Difference Table: 
-2 0 0 0 0 
+2 0 0 0 0
+   
 4 2 0 0 0 
+
 8 4 2 0 0 
+
 16 8 4 2 0 
+
 32 16 8 4 2 
+
 Interpolated Value: 8 
 ALGORITHM 
-1. Read number of test cases T 
+1. Read number of test cases T
 • For each test case: 
 a. Read n, x[], y[], X 
 b. Initialize n×n difference table with zeros 
@@ -2884,11 +2889,17 @@ e. Apply Newton Backward Formula to compute interpolated value
 f. Print inputs, difference table, and interpolated value to console and output file
 
 FEATURES 
-• Handles multiple test cases 
-• Works with uniformly spaced data points 
-• Prints full backward difference table including zeros 
-• Displays all input and output for clarity 
-• Outputs results to both console and output.txt
+
+• Handles multiple test cases.
+
+• Works with uniformly spaced data points.
+
+• Prints full backward difference table including zeros.
+
+• Displays all input and output for clarity.
+
+• Outputs results to both console and output.txt.
+
 #### Newton Backward Code
 
 ```cpp
