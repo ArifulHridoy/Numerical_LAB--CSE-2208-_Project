@@ -2784,7 +2784,8 @@ Interpolated value f(2.500000) = 15.625000
 This program performs Newton Backward Interpolation to estimate the value of a function at a 
 given point using backward differences of tabulated data. 
 
-OBJECTIVE 
+OBJECTIVE
+
 To calculate the interpolated value f(X) for a given value X from a set of discrete data points   
 (xi, yi) using Newton Backward Interpolation formula. 
 
@@ -3031,6 +3032,7 @@ Interpolated Value: 12.1875
 This program performs Newton Forward Interpolation using the divided difference method to 
 estimate the value of a function at a given point X from unequally spaced data points. 
 OBJECTIVE 
+
 To calculate the interpolated value f(X) for a given value X using Newton Forward Interpolation 
 when the data points are not equally spaced. 
 
@@ -3052,22 +3054,35 @@ The error of interpolation is given by:
 
 ALGORITHM Steps :
 
-1. Read number of test cases T 
+1. Read number of test cases T.
+
 2. For each test case:
+
 • Read n, x[], y[], X
+
 • Initialize (n+1)x(n+2) difference table with zeros
+
 • Fill first column with y[] values 
+
 • Compute divided differences column by column
+
 • Apply Newton Forward formula to compute interpolated value
+
 • Compute true error 
+
 • Print inputs, difference table, interpolated value, and error to console and output file
 
 FEATURES 
 
+
 • Handles multiple test cases
+
 • Works with unequally spaced data
+
 • Prints full divided difference table including zeros
+
 • Displays all input and output for clarity
+
 • Outputs results to both console and output.txt
 
 This method works for both equally and unequally spaced data points.
@@ -3283,9 +3298,9 @@ determine the error.
 Theory :
 
 Newton’s Forward Interpolation is a numerical method for estimating function values and their 
-derivatives using a set of discrete data points. For a function f(x)f(x)f(x) evaluated at equally 
+derivatives using a set of discrete data points. For a function f(x)f(x)f(x) evaluated at equally
 spaced points x0,x1,...,xn  the derivatives at a point XXX can be approximated as: 
-Forward Difference Table 
+Forward Difference Table.
 
 • First Derivative f′(X) 
 
@@ -3299,9 +3314,10 @@ Where
 Derivative Formulas :
 
 		𝑓′(𝑋) ≈ (𝑦0 + (2𝑢−1)𝛥2𝑦0/2! + (3𝑢2−6𝑢+2)𝛥3𝑦0/3! +⋯)/ℎ
+		
 • Second Derivative
 
-		𝑓′′(𝑋) ≈ (𝛥2𝑦0+(𝑢 −1)𝛥3𝑦0+⋯) /ℎ2
+		𝑓′′(𝑋) ≈ (𝛥2𝑦0+(𝑢 −1)𝛥3𝑦0+⋯) /ℎ^2
 Where: 
 
 	 u=(𝑋−𝑥0)/ℎ 
@@ -3316,22 +3332,35 @@ The computed derivatives are compared with analytical derivatives f′(X) and f�
 Algorithm / Steps  
 
 1. Read number of test cases T. 
+
 2. For each test case: 
+
 • Read 𝑛,𝑎,𝑏,𝑋 input file. 
+
 • Compute step size ℎ = (𝑏 −𝑎)/𝑛   
+
 • Generate equally spaced points 𝑥𝑖 = 𝑎 + 𝑖 ∗ ℎ and compute 𝑦𝑖 = 𝑓(𝑥𝑖). 
+
 • Construct forward difference table. 
+
 • Compute first derivative f′(X)) using Newton’s formula. 
+
 • Compute second derivative f′′(X) using Newton’s formula. 
+
 • Compare with analytical derivatives to compute percentage error. 
+
 Print input, difference table, derivatives, and errors to console and output file.
 
 Features 
 
 • Supports multiple test cases 
+
 • Calculates first and second derivatives numerically 
+
 • Generates full forward difference table 
+
 • Calculates percentage error with analytical derivatives 
+
 • Outputs results to both console and file 
 
 #### Differentiation Forward Code
@@ -3546,9 +3575,12 @@ near the end of a data table. It constructs backward differences and applies
 Newton's backward differentiation formulas.
 
 BACKWARD DIFFERENCE DERIVATIVE FORMULAS:
-f'(xₙ) = [∇f(xₙ) + (2s+1)∇²f(xₙ)/2! + (3s²+6s+2)∇³f(xₙ)/6 + ...] / h
 
-where s = (x - xₙ)/h
+	f'(xₙ) = [∇f(xₙ) + (2s+1)∇²f(xₙ)/2! + (3s²+6s+2)∇³f(xₙ)/6 + ...] / h
+
+where 
+
+	s = (x - xₙ)/h
 
 Used for polynomial differentiation with backward differences.
 
@@ -3776,13 +3808,16 @@ This program performs Simple Linear Regression using the Least Squares Method to
 best-fit straight line for a given set of data points. 
 
 OBJECTIVE 
+
 To compute the best-fit linear equation: 
+
 			y = a + bx 
 			
 from a given set of experimental or numerical data using the least squares regression 
 technique, which minimizes the total squared error. 
 
 CONCEPT 
+
 For n data points (xi,yi) the regression line: 
 
 			y= a + bx 
@@ -3800,20 +3835,31 @@ Intercept (a):
 These values define the best-fit straight line. 
  
 PROGRAM FEATURES 
+
 • Reads all inputs from input.txt.
+
 • Writes results to both console and output.txt.
+
 • Handles multiple test cases.
+
 • Prints: 
+
 o Number of data points 
+
 o All x and y values 
+
 o Computed intercept (a) 
+
 o Computed slope (b) 
+
 o Final regression line equation 
  
 ALGORITHM (Least Squares Method) :
 
 • Read number of data points n 
+
 • Read arrays x[n] and y[n] 
+
 • Compute required sums: 
 
 	o Σx 
@@ -3822,12 +3868,19 @@ ALGORITHM (Least Squares Method) :
 	o Σx² 
 
 • Apply formulas: 
+
 o Compute b (slope) 
+
 o Compute a (intercept) 
+
 • Display and store: 
+
 o Input values 
+
 o Calculated coefficients 
+
 o Final regression line
+
 
 #### Linear Regression Code
 
@@ -4165,12 +4218,22 @@ Polynomial: y = 1.0000 + 1.0000x^2
 
 Fits data to exponential and power models by transforming to linear form:
 
-MODEL 1: y = ae^(bx)
-  Linearize: ln(y) = ln(a) + bx
-MODEL 2: y = ax^b
-  Linearize: ln(y) = ln(a) + b*ln(x)
+MODEL 1:
 
-MODEL 3: y = a + be^(x/4)
+		y = ae^(bx)
+  Linearize: 
+  			
+		ln(y) = ln(a) + bx
+MODEL 2: 
+			
+		y = ax^b
+  Linearize:
+  
+  		ln(y) = ln(a) + b*ln(x)
+
+MODEL 3: 
+		
+		y = a + be^(x/4)
   Linearize: Requires iterative or custom fitting
 
 After transformation, standard linear regression techniques are applied,
@@ -4382,9 +4445,13 @@ three consecutive points. It requires an even number of intervals.
 FORMULA:
 
 where:
+
 - h = (b-a)/n
+
 - n must be even
-- ∑f(xₒ⵫d⵭) is sum at odd indices (x₁, x₃, x₅, ...)
+
+- ∑f(xₒdd) is sum at odd indices (x₁, x₃, x₅, ...)
+
 - ∑f(xₑᵥₑₙ) is sum at even indices (x₂, x₄, x₆, ...)
 
 Provides higher accuracy than Trapezoidal rule with same number of points.
@@ -4542,9 +4609,13 @@ the number of intervals to be a multiple of 3.
 FORMULA:
 
 where:
+
 - h = (b-a)/n
+
 - n must be a multiple of 3
+
 - ∑f(xᵢ) is sum where i is not a multiple of 3
+
 - ∑f(xⱼ) is sum where j is a multiple of 3 (but not 0 or n)
 
 Often used in combination with Simpson's 1/3 rule for adaptive integration.
