@@ -2872,10 +2872,10 @@ interpolation formula is:
 		
 Where: 
 
-• yn = yn-1 
-• v = (𝑋 − 𝑥𝑛)/ℎ
-• h = xi – xi-1  
-• Δk yn = k-th backward difference at last point 
+	• yn = yn-1 
+	• v = (𝑋 − 𝑥𝑛)/ℎ
+	• h = xi – xi-1  
+    Δk yn = k-th backward difference at last point 
 
 INPUT FORMAT (input.txt) 
 
@@ -2892,22 +2892,39 @@ X
 (repeat for T test cases) 
 
 EXAMPLE INPUT 
-4 
+
+4
+
 5 
+
 1 2 3 4 5 
-2 4 8 16 32 
+
+2 4 8 16 32
+
 3 
+
 4 
-10 20 30 40 
+
+10 20 30 40
+
 5 7 10 15 
+
 35 
-3 
+
+3
+
 0 1 2 
+
 1 3 7 
-1 
+
+1
+
 5 
+
 2 4 6 8 10 
+
 4 8 18 32 50 
+
 7  
 
 OUTPUT (Console + output.txt) 
