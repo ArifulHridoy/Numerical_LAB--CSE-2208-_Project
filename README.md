@@ -966,6 +966,7 @@ Root 4 = 2.000000 (Iterations: 13)
 #### Secant Theory
 
 SECANT METHOD – DOCUMENTATION 
+
 This program finds real roots of polynomial equations using the Secant Method. 
 It supports multiple test cases, file input, and outputs results to both the console and a text file. 
 PURPOSE 
@@ -973,84 +974,142 @@ To determine all real roots of a polynomial by applying the Secant Method across
 search interval. 
 The program reads polynomial coefficients from an input file and applies numerical root-finding 
 to each test case. 
-METHOD OVERVIEW 
+
+METHOD OVERVIEW :
+
 The Secant Method is an iterative numerical technique used to approximate roots of equations 
 of the form: 
-f(x)=0  
+
+		f(x)=0  
 It uses two initial guesses and applies: 
-xn+1=  (𝑥0𝑓(𝑥1)−𝑥1𝑓(𝑥0))/(𝑥1)−𝑓(𝑥0)
+
+			xn+1=  (𝑥0𝑓(𝑥1)−𝑥1𝑓(𝑥0))/(𝑥1)−𝑓(𝑥0)
 Iteration continues until: 
 
-∣xn+1−xn∣<ϵ and ∣f(xn+1)∣<ϵ  
-where ε is the error tolerance.  
-POLYNOMIAL EVALUATION 
-The polynomial is defined as: 
-f(x)=a0+a1x+a2x2+⋯+anxn  
+		∣xn+1−xn∣<ϵ and ∣f(xn+1)∣<ϵ  
+where ε is the error tolerance. 
+
+POLYNOMIAL EVALUATION:
+
+The polynomial is defined as:
+
+		f(x)=a0+a1x+a2x2+⋯+anxn 
+		
 Coefficients are supplied from highest degree to constant term but internally reversed for 
 computation. 
-ROOT BOUND (Cauchy's Bound) 
+
+ROOT BOUND (Cauchy's Bound) :
+
 To ensure all real roots are  detected, the program computes: 
-∣x∣ ≤  1 + max (∣𝑎𝑖/𝑎𝑛∣) 
-This value defines the search interval: [−B,B]  
+
+		∣x∣ ≤  1 + max (∣𝑎𝑖/𝑎𝑛∣) 
+This value defines the search interval: [−B,B],
 where B is the computed bound. 
-STEP-WISE ROOT SEARCH 
+
+STEP-WISE ROOT SEARCH :
+
 The interval is scanned using small sub-intervals: 
+
 • Step size: 0.45 
+
 • Error tolerance: 0.001 
+
 Each sub-interval [x, x + 0.45] becomes an initial guess pair for the Secant method. 
+
 Duplicate roots (closely spaced values) are automatically ignored. 
+
 INPUT FORMAT (input.txt) 
+
 T 
+
 n 
+
 a_n a_(n−1) ... a_1 a_0 
-n 
+
 a_n a_(n−1) ... a_1 a_0 
+
 ... 
 Where: 
+
 • T = number of test cases 
+
 • n = degree of the polynomial 
+
 • Next line has n+1 coefficients from highest degree to constant term 
+
 EXAMPLE INPUT 
+
 3 
-2 
+
+2
+
 1 -5 6 
+
 3 
+
 1 -6 11 -6 
+
 4 
+
 1 0 -7 0 6 
+
 This represents 3 polynomials: 
-1. x2−5x+6x  
-2. x3−6x2+11x−6 
-3. x4−7x2+6
+
+	1. x2−5x+6x  
+	2. x3−6x2+11x−6 
+	3. x4−7x2+6
  
 OUTPUT DESCRIPTION 
-For each test case, the program outputs: 
-1. The polynomial in readable form 
+
+For each test case, the program outputs:
+
+1. The polynomial in readable form
+
 2. The computed root bound 
+
 3. Each detected real root 
+
 4. The interval used in Secant Method 
+
 5. Number of iterations required 
-6. A separator line between test cases 
+
+6. A separator line between test cases
+   
 Output is written: 
+
 • To console 
+
 • To output.txt 
+
  
 OUTPUT EXAMPLE 
  
 Polynomial: 1x^2 - 5x + 6 
+
 Root bound: 6 
+
 range: [1.800000, 1.350000] Root: 2.000371 Iterations: 4 
-range: [2.700000, 2.250000] Root: 3.000117 Iterations: 4 --------------------------------------- 
+
+range: [2.700000, 2.250000] Root: 3.000117 Iterations: 4
+
+--------------------------------------- 
  
 FEATURES 
-• Supports multiple test cases 
+
+• Supports multiple test cases
+
 • Uses Cauchy’s Bound to guarantee root coverage 
+
 • Detects and avoids duplicate roots 
-• Outputs to both console and file (output.txt) 
-• Nicely formatted polynomial printing 
+
+• Outputs to both console and file (output.txt)
+
+• Formatted polynomial printing
+
 • Error tolerance = 0.001 
+
 • Step size = 0.45 
-• Clean and organized code structure
+
 #### Secant Code
 
 ```cpp
@@ -3118,29 +3177,49 @@ estimate the value of a function at a given point X from unequally spaced data p
 OBJECTIVE 
 To calculate the interpolated value f(X) for a given value X using Newton Forward Interpolation 
 when the data points are not equally spaced. 
+
 THEORY 
+
 Newton Forward Interpolation for unequal spacing uses divided differences. 
 For n+1 data points (𝑥0, 𝑦0),(𝑥1,𝑦1),... ,(𝑥𝑛, 𝑦𝑛), the polynomial is: 
+
 		P𝑛(𝑋) = 𝑓[𝑥0] + (𝑋−𝑥0)𝑓[𝑥0,𝑥1] + (𝑋−𝑥0)(𝑋−𝑥1)𝑓[𝑥0,𝑥1,𝑥2] + ...+ (𝑋−𝑥0)...(𝑋 −𝑥_{𝑛 −1})𝑓[𝑥0,...,𝑥𝑛] 
+		
 Where 𝑓[𝑥𝑖,...,𝑥𝑗] are divided differences, computed as: 
+
 	f[𝑥𝑖] = 𝑦𝑖  
 	f[𝑥𝑖, 𝑥𝑖 + 1] = (𝑓[𝑥𝑖 +1] − 𝑓[𝑥𝑖]) /(𝑥𝑖 +1−𝑥𝑖) 
 	f[𝑥𝑖, . . . , 𝑥𝑖 + 𝑘] = (𝑓[𝑥𝑖 +1,...,𝑥𝑖 + 𝑘] − 𝑓[𝑥_𝑖,...,𝑥_𝑖 + 𝑘 − 1])/(𝑥𝑖 +𝑘 − 𝑥𝑖)
 The error of interpolation is given by: 
+
 		e𝑟𝑟𝑜𝑟(𝑋) = 𝑓[𝑥0,...,𝑥𝑛](𝑋 − 𝑥0)(𝑋 −𝑥1)...(𝑋 −𝑥𝑛 −1) 
+		
 INPUT FORMAT (input.txt) 
+
 T  
+
 N 
-x0 x1 ... xn  
-y0 y1 ... yn  
+
+x0 x1 ... xn
+
+y0 y1 ... yn 
+
 X 
+
 EXAMPLE INPUT 
+
 1 
+
 4 
+
 1 4 5 7 10 
+
 2 20 30 56 100 
+
 8 
+
 OUTPUT (Console + output.txt) 
+
 For each test case, the program prints: 
 1. Test Case Number 
 2. Number of data points (n) 
@@ -3148,39 +3227,68 @@ For each test case, the program prints:
 4. Interpolation point X 
 5. Full divided difference table (n+1 x n+1 including zeros) 
 6. Interpolated value at X 
-7. Truncation error 
-EXAMPLE OUTPUT 
+7. Truncation error
+
+EXAMPLE OUTPUT
+
 Test Case  #1 
+
 n: 4 
+
 x: 1.0000 4.0000 5.0000 7.0000 10.0000 
+
 y: 2.0000 20.0000 30.0000 56.0000 100.0000 
-X: 8 
-Difference Table: 
-2.0000 6.0000 1.0000 0.0000 -0.0123 
+
+X: 8
+
+Difference Table:
+
+2.0000 6.0000 1.0000 0.0000 -0.0123
+
 20.0000 10.0000 1.0000 -0.1111 0.0000 
-30.0000 13.0000 0.3333 0.0000 0.0000 
-56.0000 14.6667 0.0000 0.0000 0.0000 
-100.0000 0.0000 0.0000 0.0000 0.0000 
+
+30.0000 13.0000 0.3333 0.0000 0.0000
+
+56.0000 14.6667 0.0000 0.0000 0.0000
+
+100.0000 0.0000 0.0000 0.0000 0.0000
+
 Interpolation: 70.9630 
-Truncation error: 1.0370 
+
+Truncation error: 1.0370
+
 ALGORITHM 
+
 1. Read number of test cases T 
-2. For each test case:  
-• Read n, x[], y[], X  
-• Initialize (n+1)x(n+2) difference table with zeros  
-• Fill first column with y[] values  
-• Compute divided differences column by column 
-• Apply Newton Forward formula to compute interpolated value  
-• Compute true error  
-• Print inputs, difference table, interpolated value, and error to console 
-	and output file 
+2. For each test case:
+  
+• Read n, x[], y[], X
+
+• Initialize (n+1)x(n+2) difference table with zeros
+
+• Fill first column with y[] values 
+
+• Compute divided differences column by column
+
+• Apply Newton Forward formula to compute interpolated value
+
+• Compute true error 
+
+• Print inputs, difference table, interpolated value, and error to console and output file 
 FEATURES 
-• Handles multiple test cases 
-• Works with unequally spaced data 
-• Prints full divided difference table including zeros 
-• Displays all input and output for clarity 
+
+• Handles multiple test cases
+
+• Works with unequally spaced data
+
+• Prints full divided difference table including zeros
+
+• Displays all input and output for clarity
+
 • Outputs results to both console and output.txt
+
 This method works for both equally and unequally spaced data points.
+
 
 
 #### Newton Divided Difference Code
@@ -3390,89 +3498,157 @@ The objective of this experiment is to calculate the first and second derivative
 a given point using Newton’s Forward Interpolation formula. The program uses equally spaced 
 data points and compares the computed derivatives with the analytical derivatives to 
 determine the error. 
+
 Theory 
+
 Newton’s Forward Interpolation is a numerical method for estimating function values and their 
 derivatives using a set of discrete data points. For a function f(x)f(x)f(x) evaluated at equally 
 spaced points x0,x1,...,xn  the derivatives at a point XXX can be approximated as: 
 Forward Difference Table 
 
+
 • First Derivative f′(X) 
-Δ1yi = yi+1−yi 
-Δ2yi = Δ1yi+1−Δ1yi 
-Δ3yi = Δ2yi+1−Δ2yi 
+
+	Δ1yi = yi+1−yi 
+	Δ2yi = Δ1yi+1−Δ1yi 
+	Δ3yi = Δ2yi+1−Δ2yi 
 Where 
+
 		𝑦𝑖 = 𝑓(𝑥𝑖) 
+		
 Derivative Formulas :
+
 		𝑓′(𝑋) ≈ (𝑦0 + (2𝑢−1)𝛥2𝑦0/2! + (3𝑢2−6𝑢+2)𝛥3𝑦0/3! +⋯)/ℎ
 • Second Derivative
+
 		𝑓′′(𝑋) ≈ (𝛥2𝑦0+(𝑢 −1)𝛥3𝑦0+⋯) /ℎ2
 Where: 
+
 	 u=(𝑋−𝑥0)/ℎ 
 	 ℎ=𝑥(𝑖+1)−𝑥𝑖  
-Error Calculation 
+	 
+Error Calculation :
+
 The computed derivatives are compared with analytical derivatives f′(X) and f′′(X): 
-Error=   ∣𝐴𝑛𝑎𝑙𝑦𝑡𝑖𝑐𝑎𝑙−𝑁𝑢𝑚𝑒𝑟𝑖𝑐𝑎𝑙∣/𝐴𝑛𝑎𝑙𝑦𝑡𝑖𝑐𝑎𝑙×100  
+
+	Error  = ∣𝐴𝑛𝑎𝑙𝑦𝑡𝑖𝑐𝑎𝑙−𝑁𝑢𝑚𝑒𝑟𝑖𝑐𝑎𝑙∣/𝐴𝑛𝑎𝑙𝑦𝑡𝑖𝑐𝑎𝑙×100  
  
 Input Format (input.txt) 
+
 • Line 1: Number of test cases T 
+
 • For each test case: 
+
 o n → number of intervals 
+
 o a b → start and end of interval 
+
 o X → point at which derivatives are computed 
+
 Example: 
+
 4 
-4 
-1 2 
+
+4
+
+1 2
+
 1.5 
-5 
+
+5
+
 0 1 
+
 0.5 
+
 6 
+
 1 3 
-2.5 
+
+2.5
+
 3 
-2 4 
+
+2 4
+
 3.2 
+
  
 Output 
-• For each test case, the program outputs: 
+• For each test case, the program outputs:
+
 • Test case number 
+
 • Number of intervals, a, b, and X 
+
 • Forward difference table 
+
 • First derivative f′(X) 
+
 • Second derivative f′′(X) 
+
 • Percentage errors of first and second derivatives 
-Example Console / Output.txt format: 
+
+Example Console / Output.txt format:
+
 TEST CASE #1 
+
 n: 4, a: 1, b: 2, X: 1.5 
-Difference table: 
+
+Difference table:
+
 2         1         0		0
+
 3         2			1		0
+
 5         4			1		0
+
 9         6         0		0
+
 ... 
+
 y': 4.123 
+
 y'': 5.456 
+
 First diff error: 0.0123% 
-Second diff error: 0.0345% 
-Algorithm / Steps          
+
+Second diff error: 0.0345%
+
+Algorithm / Steps  
+
 1. Read number of test cases T. 
+
 2. For each test case: 
+
 • Read 𝑛,𝑎,𝑏,𝑋 input file. 
+
 • Compute step size ℎ = (𝑏 −𝑎)/𝑛   
+
 • Generate equally spaced points 𝑥𝑖 = 𝑎 + 𝑖 ∗ ℎ and compute 𝑦𝑖 = 𝑓(𝑥𝑖). 
+
 • Construct forward difference table. 
+
 • Compute first derivative f′(X)) using Newton’s formula. 
+
 • Compute second derivative f′′(X) using Newton’s formula. 
+
 • Compare with analytical derivatives to compute percentage error. 
-Print input, difference table, derivatives, and errors to console and output file. 
+
+Print input, difference table, derivatives, and errors to console and output file.
+
 Features 
+
 • Supports multiple test cases 
-• Computes first and second derivatives numerically 
+
+• Calculates first and second derivatives numerically 
+
 • Generates full forward difference table 
+
 • Calculates percentage error with analytical derivatives 
+
 • Outputs results to both console and file 
-• Works for equally spaced intervals
+
 
 #### Differentiation Forward Code
 
