@@ -2860,13 +2860,20 @@ For each test case, the program prints:
 4. Interpolation point X 
 5. Full backward difference table (n×n including zeros) 
 6. Interpolated value at X 
-EXAMPLE OUTPUT 
+EXAMPLE OUTPUT:
+
 TestCase#1 
+
 n: 5 
+
 x: 1 2 3 4 5 
-y: 2 4 8 16 32 
+
+y: 2 4 8 16 32
+
 X: 3 
+
 Backward Difference Table: 
+
 2 0 0 0 0
    
 4 2 0 0 0 
@@ -2877,18 +2884,26 @@ Backward Difference Table:
 
 32 16 8 4 2 
 
-Interpolated Value: 8 
-ALGORITHM 
+Interpolated Value: 8
+
+ALGORITHM :
+
 1. Read number of test cases T
 • For each test case: 
-a. Read n, x[], y[], X 
-b. Initialize n×n difference table with zeros 
-c. Fill first column with y[] values 
-d. Compute backward differences column by column 
-e. Apply Newton Backward Formula to compute interpolated value 
-f. Print inputs, difference table, and interpolated value to console and output file
+a. Read n, x[], y[], X.
 
-FEATURES 
+b. Initialize n×n difference table with zeros.
+
+c. Fill first column with y[] values .
+
+d. Compute backward differences column by column. 
+
+e. Apply Newton Backward Formula to compute interpolated value .
+
+f. Print inputs, difference table, and interpolated value to console and output file.
+
+
+FEATURES:
 
 • Handles multiple test cases.
 
@@ -3903,55 +3918,75 @@ LINEAR REGRESSION (LEAST SQUARES METHOD) – DOCUMENTATION
 
 This program performs Simple Linear Regression using the Least Squares Method to find the 
 best-fit straight line for a given set of data points. 
-It supports: 
-• Multiple test cases 
-• Input from input.txt 
-• Output to console and output.txt 
-• Clear reporting of input, computations, and final regression equation 
+
 OBJECTIVE 
 To compute the best-fit linear equation: 
-y=a + bx 
+			y = a + bx 
+			
 from a given set of experimental or numerical data using the least squares regression 
 technique, which minimizes the total squared error. 
+
 CONCEPT 
 For n data points (xi,yi) the regression line: 
-			y=a + bx 
+
+			y= a + bx 
 is determined by minimizing: 
+
 			∑(yi−(a+bxi))2  
 This leads to two closed-form formulas: 
 Slope (b) 
 
 			b= 𝑛∑𝑥𝑦−(∑𝑥)(∑𝑦) / n∑x2−(∑x)2b 
 
-Intercept (a)
+Intercept (a):
+
 				a=∑y−b∑xn 
 These values define the best-fit straight line. 
  
 PROGRAM FEATURES 
-• Reads all inputs from input.txt 
-• Writes results to both console and output.txt 
-• Handles multiple test cases 
+• Reads all inputs from input.txt.
+
+• Writes results to both console and output.txt.
+
+• Handles multiple test cases.
+
 • Prints: 
 o Number of data points 
+
 o All x and y values 
+
 o Computed intercept (a) 
+
 o Computed slope (b) 
+
 o Final regression line equation 
+
  
 INPUT FORMAT (input.txt) 
+
 T 
+
 n 
+
 x1 x2 x3 ... xn 
+
 y1 y2 y3 ... yn 
+
  
 (repeat for T test cases) 
+
 Where: 
 • t = number of test cases 
+
 • n = number of data points in the test case 
+
 • Next line = n values of x 
+
 • Next line = n values of y 
+
  
 EXAMPLE INPUT 
+
 3 
 5 
 1 2 3 4 5 
@@ -3965,36 +4000,61 @@ EXAMPLE INPUT
 5 10 15 20 25 30 
 12 18 26 33 40 48 
  
-OUTPUT (Written to output.txt and displayed on console) 
+OUTPUT (Written to output.txt and displayed on console) :
+
 For each test case, the program prints: 
-• Test Case Number 
-• Total points 
+
+• Test Case Number
+
+• Total points
+
 • x[] array 
+
 • y[] array 
+
 • Intercept (a) 
+
 • Slope (b) 
-• Regression Equation 
-Example: 
+
+• Regression Equation
+
+Example:
+
 Test Case #1 
+
 Number of points: 5 
-x values: 1 2 3 4 5 
+
+x values: 1 2 3 4 5
+
 y values: 2 4 5 4 5 
+
 Computed Intercept (a): 2.2 
+
 Computed Slope (b): 0.6 
+
 Line Equation: y = 2.2 + 0.6x 
+
  
-ALGORITHM (Least Squares Method) 
+ALGORITHM (Least Squares Method) :
+
 • Read number of data points n 
+
 • Read arrays x[n] and y[n] 
+
 • Compute required sums: 
+
 o Σx 
 o Σy 
 o Σxy 
 o Σx² 
+
 • Apply formulas: 
+
 o Compute b (slope) 
 o Compute a (intercept) 
+
 • Display and store: 
+
 o Input values 
 o Calculated coefficients 
 o Final regression line
