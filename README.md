@@ -4181,17 +4181,25 @@ Where:
 EXAMPLE INPUT 
 
 3 
-5 
+
+5
+
 1 2 3 4 5 
+
 2 4 5 4 5 
- 
+
 4 
+
 2 4 6 8 
+
 3 5 7 9 
- 
+
 6 
+
 5 10 15 20 25 30 
+
 12 18 26 33 40 48 
+
  
 OUTPUT (Written to output.txt and displayed on console) :
 
@@ -4236,10 +4244,10 @@ ALGORITHM (Least Squares Method) :
 
 • Compute required sums: 
 
-o Σx 
-o Σy 
-o Σxy 
-o Σx² 
+	o Σx 
+	o Σy 
+	o Σxy 
+	o Σx² 
 
 • Apply formulas: 
 
