@@ -37,56 +37,10 @@ This project is a **comprehensive collection of 19 classical Numerical Methods i
 - Simpson's 1/3 Rule
 - Simpson's 3/8 Rule
 
-### README.md Structure
-
-```
-README.md/
-├── Project Introduction
-├── README.md Structure
-└── Table of Contents
-├── Solution of Non-Linear Equations
-    ├── Bisection/
-    ├── False Position/
-    ├── Newton Raphson/
-    ├── Secant/
-
-├── Solution of Linear Equations
-    ├── Gauss Elimination/
-    ├── Gauss Jordan Elimination/
-    ├── LU Decomposition/
-    ├── Matrix Inversion/
-
-├── Differential Equation Solving
-    ├── Runge Kutta 4th Order/
-
-├── Interpolation Methods
-    ├── Newton Forward Interpolation/
-    ├── Newton Backward Interpolation/
-    ├── Newton Divided Difference Interpolation/
-
-├── Numerical Differentiation
-    ├── Differentiation by Forward Interpolation/
-    ├── Differentiation by Backward Interpolation/
-
-├── Curve Fitting & Regression
-    ├── Linear Regression/
-    ├── Polynomial Regression/
-    ├── Transcendental Regression/
-
-├── Numerical Integration
-    ├── Simpson 1_3/
-    └── Simpson 3_8/
-
-├── Purpose of this project
-├── Aurthors
-```
-
-Each method contains:
-- **{Method}.txt** - Briefly explained theory and features
-- **{Method}.cpp** - C++ implementation of the method.
-- **Input.txt** - Sample test case inputs
-- **Output.txt** - Expected outputs and results
----
+## Purpose of This Repository
+- To provide **clean C++ codes** for all studied numerical methods in this lab.
+- To serve as a **learning resource & simulation** for Numerical Methods
+- Combine all classical numerical methods in one comprehensive project to access easily.
 
 # Table of Contents
 
@@ -4760,13 +4714,6 @@ Number of intervals (n): 12
 Step size (h): 0.166667
 Integral result: 10.6667
 ```
-
----
-
-## Purpose of This Repository
-- Provide **clean C++ codes** for numerical methods
-- Serve as a **learning resource & simulation** for Numerical Methods
-- Combine all classical numerical methods in one comprehensive project
 
 ## Authors
 **1. Md. Toufiq Hasan • Roll: 2207049**  
