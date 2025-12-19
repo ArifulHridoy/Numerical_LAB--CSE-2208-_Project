@@ -420,6 +420,8 @@ Roots:
   x = 2.000186
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 ---
 
 ### False Position Method
@@ -671,8 +673,15 @@ Root 1: -0.828423
 Root 2: 0.000000
 Root 3: 1.000000
 Root 4: 4.828427
+```
 
-Test Case 2
+[⬆ Back to Table of Contents](#table-of-contents)
+
+---
+
+### Newton Raphson Method
+
+#### Newton Raphson Theory
 Polynomial: f(x) = 1.0000*x^3 + 2.0000*x^2 - 5.0000*x - 6.0000
 Tolerance (E): 1.000000e-03
 Search limit: [-3.741657e+00, 3.741657e+00]
@@ -916,6 +925,8 @@ Root 2 = -1.000000 (Iterations: 1)
 Root 3 = 1.000000 (Iterations: 4)
 Root 4 = 2.000000 (Iterations: 13)
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -1171,6 +1182,8 @@ range: [2.449534, 2.449490] Root: 2.449490 Iterations: 5
 ---------------------------------------
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 ---
 
 ## Solution of Linear Equations
@@ -1407,6 +1420,8 @@ Matrix:
 
 No Solution!
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -1664,6 +1679,8 @@ Reduced Row Echelon Form:
 
 No Solution (Inconsistent)
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -2000,6 +2017,8 @@ Matrix A is singular (det A = 0)
 => System has NO solution.
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 ---
 
 ### Matrix Inversion
@@ -2329,6 +2348,8 @@ Augmented [A|I]:
 Matrix is singular (det=0)
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 ---
 
 ## Differential Equation Solving
@@ -2494,6 +2515,8 @@ Step size (h): 0.001
 Number of steps: 2000
 Result: y(3.000) = 403.429
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -2728,6 +2751,8 @@ u value: 1.500000
 Detected Polynomial Order: 2
 Interpolated value f(2.500000) = 15.625000
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -2976,6 +3001,8 @@ Backward Difference Table:
 15 5 2 1 
 Interpolated Value: 12.1875
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -3235,6 +3262,8 @@ DifferenceTable:
 Interpolation: 1.0000
 Truncation error: 0.0000
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -3518,6 +3547,8 @@ First diff error: 0.0672453%
 Second diff error: 0.0624101%
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 ---
 
 ### Differentiation by Backward Interpolation
@@ -3750,6 +3781,8 @@ Row 2:   1.000000   0.750000   0.500000
 Row 3:   2.250000   1.250000   0.500000   0.000000 
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 ---
 
 ## Curve Fitting / Regression
@@ -3950,6 +3983,8 @@ Computed Intercept (a): 4.2
 Computed Slope (b): 1.44571
 Line Equation: y = 4.2 + 1.44571x
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -4163,6 +4198,8 @@ a3 = 0.000000
 
 Polynomial: y = 1.0000 + 1.0000x^2
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -4385,6 +4422,8 @@ Computed b: 7.81992
 Equation: y = -2.82689 + 7.81992 * e^(x/4)
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 ---
 
 ## Numerical Integration
@@ -4551,6 +4590,8 @@ Step size (h): 0.25
 Integral result: 10.6667
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 ---
 
 ### Simpson's 3/8 Rule
@@ -4714,6 +4755,10 @@ Number of intervals (n): 12
 Step size (h): 0.166667
 Integral result: 10.6667
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
+
+---
 
 ## Authors
 **1. Md. Toufiq Hasan • Roll: 2207049**  
