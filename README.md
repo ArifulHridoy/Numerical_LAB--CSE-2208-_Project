@@ -127,35 +127,23 @@ This project is a comprehensive collection of classical **Numerical Methods impl
 
 #### Bisection Theory
 
-BISECTION METHOD - DOCUMENTATION
-=================================
+Bisection Method Definition
+The bisection method is used to find the roots of a polynomial equation. It separates the interval and subdivides the interval in which the root of the equation lies. The principle behind this method is the intermediate theorem for continuous functions. It works by narrowing the gap between the positive and negative intervals until it closes in on the correct answer. This method narrows the gap by taking the average of the positive and negative intervals. It is a simple method and it is relatively slow. The bisection method is also known as interval halving method, root-finding method, binary search method or dichotomy method.
 
-This program finds the roots of polynomial equations using the Bisection Method.
-Supports multiple test cases in a single run.
+Let us consider a continuous function “f” which is defined on the closed interval [a, b], is given with f(a) and f(b) of different signs. Then by intermediate theorem, there exists a point x belong to (a, b) for which f(x) = 0.
 
-INPUT FORMAT (Input.txt):
--------------------------
-Line 1: Number of test cases (T)
+Bisection Method Algorithm
+Follow the below procedure to get the solution for the continuous function:
 
-For each test case:
-  Line 1: Degree of polynomial (n)
-  Line 2: Coefficients (n+1 values) from highest degree to constant term
+For any continuous function f(x),
 
-EXAMPLE:
---------
-Input.txt:
-3
-4
-4 -9 0 0 4
-3
-1 -6 11 -6
-2
-1 0 -4
-
-This represents 3 test cases:
-1. Degree 4: f(x) = 4x^4 - 9x^3 + 4
-2. Degree 3: f(x) = x^3 - 6x^2 + 11x - 6
-3. Degree 2: f(x) = x^2 - 4
+- Find two points, say a and b such that a < b and f(a)* f(b) < 0
+- Find the midpoint of a and b, say “t”
+- t is the root of the given function if f(t) = 0; else follow the next step
+- Divide the interval [a, b] – If f(t)*f(a) <0, there exist a root between t and a
+– else if f(t) *f (b) < 0, there exist a root between t and b
+- Repeat above three steps until f(t) = 0.
+The bisection method is an approximation method to find the roots of the given equation by repeatedly dividing the interval. This method will divide the interval until the resulting interval is found, which is extremely small.
 
 FEATURES:
 ---------
@@ -367,9 +355,8 @@ int main()
 BISECTION METHOD - MULTIPLE TEST CASES
 Total Test Cases: 3
 
-============================================================
 TEST CASE 1
-============================================================
+
 Function: f(x) = 4x^4 - 9x^3 + 4
 Degree: 4
 Error Tolerance: 0.001000
@@ -377,11 +364,9 @@ Search Limit: 2.250000
 Roots:
   x = 0.906250
   x = 2.148926
-============================================================
 
-============================================================
 TEST CASE 2
-============================================================
+
 Function: f(x) = x^3 - 6x^2 + 11x - 6
 Degree: 3
 Error Tolerance: 0.001000
@@ -390,11 +375,9 @@ Roots:
   x = 0.999554
   x = 2.000530
   x = 2.999554
-============================================================
 
-============================================================
 TEST CASE 3
-============================================================
+
 Function: f(x) = x^2 - 4
 Degree: 2
 Error Tolerance: 0.001000
@@ -402,7 +385,6 @@ Search Limit: 2.828427
 Roots:
   x = -1.999814
   x = 2.000186
-============================================================
 ```
 
 ---
@@ -411,10 +393,7 @@ Roots:
 
 #### False Position Theory
 
-FALSE POSITION METHOD - DOCUMENTATION
-
-This program finds the roots of polynomial functions using the False Position Method.
-Supports multiple test cases in a single run.
+The false position method is one of the iterative methods of finding the roots of a non-linear equation of the form f(x) = 0. This method provides us with a better approximation of the roots of the equation.
 
 FALSE POSITION METHOD FORMULA:
 ------------------------------
@@ -422,30 +401,6 @@ x_n = (x_{n-1} * f(x_n) - x_n * f(x_{n-1})) / (f(x_n) - f(x_{n-1}))
 
 The method uses regula falsi (false position) to find roots by linear interpolation.
 It requires a sign change f(x_1) * f(x_2) < 0 in the interval [x_1, x_2].
-
-INPUT FORMAT (Input.txt):
--------------------------
-Line 1: Number of test cases (T)
-
-For each test case:
-  Line 1: Degree of polynomial (n)
-  Line 2: Coefficients (n+1 values) from highest degree to constant term
-  Line 3: Tolerance (E) - convergence criterion
-
-EXAMPLE:
---------
-Input.txt:
-2
-4
-1 -5 0 4 0
-0.0001
-3
-1 2 -5 -6
-0.001
-
-This represents 2 test cases:
-1. f(x) = x^4 - 5x^3 + 4x with tolerance 0.0001
-2. f(x) = x^3 + 2x^2 - 5x - 6 with tolerance 0.001
 
 FEATURES:
 
@@ -703,10 +658,7 @@ Root 3: 1.999936
 
 #### Newton Raphson Theory
 
-NEWTON-RAPHSON METHOD - DOCUMENTATION
-
-This program finds roots of polynomial functions using the Newton-Raphson iterative method.
-Supports multiple test cases with automatic root finding in specified intervals.
+Newton Raphson method is an efficient technique to solve the equations numerically. It gives us better approximations in terms of solutions. The Newton Raphson method is not always convergent. That means it cannot always guarantee that the condition is satisfied. However, this method fails when f'(x) is equal to 0.
 
 NEWTON-RAPHSON FORMULA:
 -----------------------
@@ -723,33 +675,6 @@ The iteration stops when:
   |f(x_n)| < E  (function value is near zero)
 
 The method has quadratic convergence near simple roots, making it very efficient.
-
-INPUT FORMAT (Input.txt):
--------------------------
-Line 1: Number of test cases (T)
-
-For each test case:
-  Line 1: Degree of polynomial (n)
-  Line 2: Coefficients (n+1 values) from highest degree to constant term
-  Line 3: Search interval [a, b], Tolerance (E)
-  Line 4: Maximum iterations allowed
-
-EXAMPLE:
---------
-Input.txt:
-2
-3
-1 -6 11 -6
-0 5 0.0001
-50
-4
-1 0 -5 0 4
--3 5 0.0001
-100
-
-This represents 2 test cases:
-1. f(x) = x³ - 6x² + 11x - 6, search in [0,5], tolerance 0.0001, max 50 iterations
-2. f(x) = x⁴ - 5x² + 4, search in [-3,5], tolerance 0.0001, max 100 iterations
 
 FEATURES:
 
