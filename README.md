@@ -187,6 +187,8 @@ Features:
 - Formatted output with precision control
 - Error tolerance: 0.001 (default)
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Bisection Code
 
 ```cpp
@@ -370,6 +372,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Bisection Input
 
 ```
@@ -381,6 +385,7 @@ int main()
 2
 1 0 -4
 ```
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Bisection Output
 
@@ -448,6 +453,8 @@ Features :
 - Formatted output with precision control
 - Console and file output simultaneously
 - Input validation and error handling
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### False Position Code
 
@@ -647,6 +654,8 @@ roots.erase(
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### False Position Input
 
 ```
@@ -658,6 +667,8 @@ roots.erase(
 1 2 -5 -6
 0.001
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### False Position Output
 
@@ -673,15 +684,8 @@ Root 1: -0.828423
 Root 2: 0.000000
 Root 3: 1.000000
 Root 4: 4.828427
-```
 
-[⬆ Back to Table of Contents](#table-of-contents)
-
----
-
-### Newton Raphson Method
-
-#### Newton Raphson Theory
+Test Case 2
 Polynomial: f(x) = 1.0000*x^3 + 2.0000*x^2 - 5.0000*x - 6.0000
 Tolerance (E): 1.000000e-03
 Search limit: [-3.741657e+00, 3.741657e+00]
@@ -693,6 +697,8 @@ Root 1: -2.999978
 Root 2: -1.000010
 Root 3: 1.999936
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -730,6 +736,8 @@ FEATURES:
 - Invalid result filtering (checks for NaN/Inf)
 - High precision output (6 decimal places)
 - Console and file output simultaneously
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Newton Raphson Code
 
@@ -889,6 +897,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Newton Raphson Input
 
 ```
@@ -902,6 +912,8 @@ int main()
 -3 5 0.0001
 100
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Newton Raphson Output
 
@@ -950,14 +962,11 @@ METHOD OVERVIEW :
 
 The Secant Method is an iterative numerical technique used to approximate roots of equations 
 of the form: 
-
 		f(x)=0  
 It uses two initial guesses and applies: 
-
 			xn+1=  (𝑥0𝑓(𝑥1)−𝑥1𝑓(𝑥0))/(𝑥1)−𝑓(𝑥0)
 			
 Iteration continues until: 
-
 		∣xn+1−xn∣<ϵ and ∣f(xn+1)∣<ϵ  
 		
 where ε is the error tolerance. 
@@ -965,47 +974,35 @@ where ε is the error tolerance.
 POLYNOMIAL EVALUATION:
 
 The polynomial is defined as:
-
-		f(x)=a0+a1x+a2x2+⋯+anxn 
+		f(x)=a0+a1x+a2x2+⋯+anxn 	
 		
 Coefficients are supplied from highest degree to constant term but internally reversed for 
 computation. 
 
 ROOT BOUND (Cauchy's Bound) :
-
 To ensure all real roots are  detected, the program computes: 
-
 		∣x∣ ≤  1 + max (∣𝑎𝑖/𝑎𝑛∣) 
 This value defines the search interval: [−B,B],
 where B is the computed bound. 
 
 STEP-WISE ROOT SEARCH :
-
 The interval is scanned using small sub-intervals: 
-
 • Step size: 0.45 
-
 • Error tolerance: 0.001 
-
 Each sub-interval [x, x + 0.45] becomes an initial guess pair for the Secant method. 
-
 Duplicate roots (closely spaced values) are automatically ignored. 
  
 FEATURES :
 
 • Supports multiple test cases.
-
 • Uses Cauchy’s Bound to guarantee root coverage. 
 • Detects and avoids duplicate roots.
-
 • Outputs to both console and file (output.txt),
-
 • Formatted polynomial printing.
-
 • Error tolerance = 0.001 
-
 • Step size = 0.45 
 
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Secant Code
 
@@ -1145,6 +1142,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Secant Input
 
 ```
@@ -1156,6 +1155,8 @@ int main()
 4
 1 0 -7 0 6
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Secant Output
 
@@ -1206,6 +1207,8 @@ Algorithm steps
 
 Notes
 - Uses a tolerance of 1e-10 to treat pivots or coefficients as zero for stability.
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Gauss Elimination Code
 
@@ -1358,6 +1361,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Gauss Elimination Input
 
 ```
@@ -1381,6 +1386,8 @@ int main()
 1 1 2
 1 1 3
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Gauss Elimination Output
 
@@ -1432,30 +1439,22 @@ No Solution!
 Theory (brief)
 
 - Gauss-Jordan applies row operations to convert [A|b] directly to RREF, where each pivot is 1 and the pivot columns have zeros elsewhere.
-
 - Partial pivoting improves numerical stability and avoids dividing by tiny pivots.
-
 - Rank comparison: if rank(A) < rank([A|b]) → inconsistent; if rank(A) < n but rank(A) == rank([A|b]) → infinite solutions; if rank(A) = n → unique solution.
 
 Algorithm steps
-
 1) Partial pivoting: swap the current row with the row having the largest absolute pivot in the column.
-
 2) Scale the pivot row so the pivot becomes 1.
-
 3) Eliminate the pivot column in all other rows to reach RREF.
-
 4) Check ranks to classify: inconsistent, infinite solutions, or unique solution (read directly from RREF).
 
 What it does :
-
 - Solves linear systems using Gauss-Jordan elimination with partial pivoting.
-
 - Reduces the augmented matrix to Reduced Row Echelon Form (RREF).
-
 - Detects three outcomes per test case: Unique Solution, No Solution (inconsistent), Infinite Solutions (dependent).
-
 - Handles multiple test cases in one run, reading from Input.txt and writing to Output.txt while printing to console.
+
+[⬆ Back to Table of Contents](#table-of-contents)
   
 #### Gauss Jordan Code
 
@@ -1598,6 +1597,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Gauss Jordan Input
 
 ```
@@ -1622,6 +1623,8 @@ int main()
 1 1 2
 1 1 3
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Gauss Jordan Output
 
@@ -1691,30 +1694,24 @@ No Solution (Inconsistent)
 Theory (brief) :
 
 - For nonsingular A with nonzero leading principal minors, A = LU exists with L unit lower-triangular and U upper-triangular (Doolittle sets L diagonals to 1).
-
 - Factorization cost is O(n^3); triangular solves are O(n^2).
-
 - If a pivot is zero, det(A) = 0.
 
 Algorithm steps :
 
 1) Doolittle LU factorization without pivoting: U has diagonals from A, L has 1s on the diagonal.
-
 2) Compute y via forward substitution (Ly = b).
-
 3) Detect singularity: if any |U[i][i]| < EPS, flag singular and inspect rows of U with y to classify.
-
 4) If singular and a zero row in U has nonzero y → No solution; if singular and zero row with zero y → Infinite solutions.
-
 5) Only when all pivots are nonzero run back substitution (Ux = y) and print unique solution; always print L and U matrices.
 
 What it does :
 
 - Solves linear systems by factoring A into L (unit lower) and U (upper) using the Doolittle method.
-
 - Handles multiple test cases, reading from Input.txt, writing to Output.txt, and printing to console.
-
 - Reports L and U matrices; classifies outcomes: unique solution, no solution (inconsistent), or infinitely many solutions (singular but consistent).
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### LU Decomposition Code
 
@@ -1915,6 +1912,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### LU Decomposition Input
 
 ```
@@ -1938,6 +1937,8 @@ int main()
 1 1 2
 1 1 3
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### LU Decomposition Output
 
@@ -2042,6 +2043,8 @@ What it does :
 - Handles multiple test cases, reading from Input.txt (matrix A and vector b per test case), writing to Output.txt, and printing to console.
 - Reports the inverse matrix A^-1 and the solution vector x = A^-1 * b.
 - Detects singular matrices (det = 0) and reports failure.
+
+[⬆ Back to Table of Contents](#table-of-contents)
   
 #### Matrix Inversion Code
 
@@ -2231,6 +2234,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Matrix Inversion Input
 
 ```
@@ -2258,6 +2263,8 @@ int main()
 1 1
 2 3
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Matrix Inversion Output
 
@@ -2362,15 +2369,12 @@ This program solves differential equations using the Runge-Kutta 4th Order metho
 Supports multiple test cases with different initial conditions.
 
 FUNCTION USED:
-
 	dy/dx = f(x,y) = xy + y
 
 RUNGE-KUTTA 4TH ORDER FORMULA:
-
 	y(n+1) = y(n) + (h/6)[k1 + 2k2 + 2k3 + k4]
 	
 where:
-
   	k1 = h*f(x(n), y(n))
   	k2 = h*f(x(n) + h/2, y(n) + k1/2)
  	 k3 = h*f(x(n) + h/2, y(n) + k2/2)
@@ -2379,14 +2383,12 @@ where:
 FEATURES:
 
 - Multiple test cases support
-
 - Fixed step size: h = 0.001
-
 - Adaptive iteration count based on x range
-
 - Accurate 4th order method
-
 - Formatted output with precision control
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Runge-Kutta Code
 
@@ -2476,6 +2478,8 @@ int main(){
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Runge-Kutta Input
 
 ```
@@ -2484,6 +2488,8 @@ int main(){
 0 2 2
 1 1 3
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Runge-Kutta Output
 
@@ -2530,23 +2536,22 @@ This program performs Newton Forward Interpolation to estimate function values a
 Supports multiple test cases with automatic polynomial order detection.
 
 NEWTON FORWARD INTERPOLATION FORMULA:
-
 	f(x) = f(x₀) + uΔf(x₀) + [u(u-1)/2!]Δ²f(x₀) + [u(u-1)(u-2)/3!]Δ³f(x₀) + ...
 
 where:
-
 	  u = (x - x₀) / h
 	  h = step size (x₁ - x₀)
 	  Δⁿf(x₀) = nth forward difference at x₀
 
 FORWARD DIFFERENCE TABLE:
-
 	Δf(xᵢ) = f(xᵢ₊₁) - f(xᵢ)
 	Δ²f(xᵢ) = Δf(xᵢ₊₁) - Δf(xᵢ)
 	Δⁿf(xᵢ) = Δⁿ⁻¹f(xᵢ₊₁) - Δⁿ⁻¹f(xᵢ)
 
 Best suited for interpolation near the beginning of the data table.
 Requires equally spaced x values.
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Newton Forward Code
 
@@ -2696,6 +2701,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Newton Forward Input
 
 ```
@@ -2709,6 +2716,8 @@ int main()
 1 8 27 64
 2.5
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Newton Forward Output
 
@@ -2772,11 +2781,9 @@ THEORY
 
 For n data points x0, x1, ..., xn-1 with corresponding function values y0, y1, ..., yn-1, the backward 
 interpolation formula is: 
-
 		f(𝑋) = 𝑦𝑛 + 𝑣 𝛥𝑦𝑛 + (𝑣(𝑣+1)/2! ) 𝛥²𝑦𝑛 + (𝑣(𝑣+1)(𝑣+2)/3! ) 𝛥³𝑦𝑛 + ... 
 		
 Where: 
-
 	• yn = yn-1 
 	• v = (𝑋 − 𝑥𝑛)/ℎ
 	• h = xi – xi-1  
@@ -2785,32 +2792,23 @@ Where:
 ALGORITHM :
 
 1. Read number of test cases T
-
 • For each test case: 
-
 a. Read n, x[], y[], X.
-
 b. Initialize n×n difference table with zeros.
-
 c. Fill first column with y[] values .
-
 d. Compute backward differences column by column. 
-
 e. Apply Newton Backward Formula to compute interpolated value .
-
 f. Print inputs, difference table, and interpolated value to console and output file.
 
 FEATURES:
 
 • Handles multiple test cases.
-
 • Works with uniformly spaced data points.
-
 • Prints full backward difference table including zeros.
-
 • Displays all input and output for clarity.
-
 • Outputs results to both console and output.txt.
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Newton Backward Code
 
@@ -2942,6 +2940,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Newton Backward Input
 
 ```
@@ -2966,6 +2966,8 @@ int main()
 4 8 18 32 50
 7
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Newton Backward Output
 
@@ -3021,52 +3023,38 @@ THEORY
 
 Newton Forward Interpolation for unequal spacing uses divided differences. 
 For n+1 data points (𝑥0, 𝑦0),(𝑥1,𝑦1),... ,(𝑥𝑛, 𝑦𝑛), the polynomial is: 
-
 		P𝑛(𝑋) = 𝑓[𝑥0] + (𝑋−𝑥0)𝑓[𝑥0,𝑥1] + (𝑋−𝑥0)(𝑋−𝑥1)𝑓[𝑥0,𝑥1,𝑥2] + ...+ (𝑋−𝑥0)...(𝑋 −𝑥_{𝑛 −1})𝑓[𝑥0,...,𝑥𝑛] 
 		
 Where 𝑓[𝑥𝑖,...,𝑥𝑗] are divided differences, computed as: 
-
 	f[𝑥𝑖] = 𝑦𝑖  
 	f[𝑥𝑖, 𝑥𝑖 + 1] = (𝑓[𝑥𝑖 +1] − 𝑓[𝑥𝑖]) /(𝑥𝑖 +1−𝑥𝑖) 
 	f[𝑥𝑖, . . . , 𝑥𝑖 + 𝑘] = (𝑓[𝑥𝑖 +1,...,𝑥𝑖 + 𝑘] − 𝑓[𝑥_𝑖,...,𝑥_𝑖 + 𝑘 − 1])/(𝑥𝑖 +𝑘 − 𝑥𝑖)
 The error of interpolation is given by: 
-
 		e𝑟𝑟𝑜𝑟(𝑋) = 𝑓[𝑥0,...,𝑥𝑛](𝑋 − 𝑥0)(𝑋 −𝑥1)...(𝑋 −𝑥𝑛 −1) 
 
 ALGORITHM Steps :
 
 1. Read number of test cases T.
-
 2. For each test case:
-
 • Read n, x[], y[], X
-
 • Initialize (n+1)x(n+2) difference table with zeros
-
 • Fill first column with y[] values 
-
 • Compute divided differences column by column
-
 • Apply Newton Forward formula to compute interpolated value
-
 • Compute true error 
-
 • Print inputs, difference table, interpolated value, and error to console and output file
 
 FEATURES 
 
-
 • Handles multiple test cases
-
 • Works with unequally spaced data
-
 • Prints full divided difference table including zeros
-
 • Displays all input and output for clarity
-
 • Outputs results to both console and output.txt
 
 This method works for both equally and unequally spaced data points.
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Newton Divided Difference Code
 
@@ -3196,6 +3184,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Newton Divided Difference Input
 
 ```
@@ -3225,6 +3215,8 @@ int main()
 2 20 30 56 100
 8
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Newton Divided Difference Output
 
@@ -3286,65 +3278,48 @@ spaced points x0,x1,...,xn  the derivatives at a point XXX can be approximated a
 Forward Difference Table.
 
 • First Derivative f′(X) 
-
 	Δ1yi = yi+1−yi 
 	Δ2yi = Δ1yi+1−Δ1yi 
 	Δ3yi = Δ2yi+1−Δ2yi 
 Where 
-
 		𝑦𝑖 = 𝑓(𝑥𝑖) 
 		
 Derivative Formulas :
-
 		𝑓′(𝑋) ≈ (𝑦0 + (2𝑢−1)𝛥2𝑦0/2! + (3𝑢2−6𝑢+2)𝛥3𝑦0/3! +⋯)/ℎ
 		
 • Second Derivative
-
 		𝑓′′(𝑋) ≈ (𝛥2𝑦0+(𝑢 −1)𝛥3𝑦0+⋯) /ℎ^2
 Where: 
-
 	 u=(𝑋−𝑥0)/ℎ 
 	 ℎ=𝑥(𝑖+1)−𝑥𝑖  
 	 
 Error Calculation :
 
 The computed derivatives are compared with analytical derivatives f′(X) and f′′(X): 
-
 	Error  = ∣𝐴𝑛𝑎𝑙𝑦𝑡𝑖𝑐𝑎𝑙−𝑁𝑢𝑚𝑒𝑟𝑖𝑐𝑎𝑙∣/𝐴𝑛𝑎𝑙𝑦𝑡𝑖𝑐𝑎𝑙×100  
 
 Algorithm / Steps  
 
 1. Read number of test cases T. 
-
 2. For each test case: 
-
 • Read 𝑛,𝑎,𝑏,𝑋 input file. 
-
 • Compute step size ℎ = (𝑏 −𝑎)/𝑛   
-
 • Generate equally spaced points 𝑥𝑖 = 𝑎 + 𝑖 ∗ ℎ and compute 𝑦𝑖 = 𝑓(𝑥𝑖). 
-
 • Construct forward difference table. 
-
 • Compute first derivative f′(X)) using Newton’s formula. 
-
 • Compute second derivative f′′(X) using Newton’s formula. 
-
 • Compare with analytical derivatives to compute percentage error. 
-
 Print input, difference table, derivatives, and errors to console and output file.
 
 Features 
 
 • Supports multiple test cases 
-
 • Calculates first and second derivatives numerically 
-
 • Generates full forward difference table 
-
 • Calculates percentage error with analytical derivatives 
-
 • Outputs results to both console and file 
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Differentiation Forward Code
 
@@ -3496,6 +3471,8 @@ int main ()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Differentiation Forward Input
 
 ```
@@ -3516,6 +3493,8 @@ int main ()
 0.5 2.5
 1
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Differentiation Forward Output
 
@@ -3560,14 +3539,14 @@ near the end of a data table. It constructs backward differences and applies
 Newton's backward differentiation formulas.
 
 BACKWARD DIFFERENCE DERIVATIVE FORMULAS:
-
 	f'(xₙ) = [∇f(xₙ) + (2s+1)∇²f(xₙ)/2! + (3s²+6s+2)∇³f(xₙ)/6 + ...] / h
 
 where 
-
 	s = (x - xₙ)/h
 
 Used for polynomial differentiation with backward differences.
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Differentiation Backward Code
 
@@ -3730,6 +3709,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Differentiation Backward Input
 
 ```
@@ -3745,6 +3726,8 @@ int main()
 0 0.5 1 1.5 2 2.5 3
 2
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Differentiation Backward Output
 
@@ -3797,7 +3780,6 @@ best-fit straight line for a given set of data points.
 OBJECTIVE 
 
 To compute the best-fit linear equation: 
-
 			y = a + bx 
 			
 from a given set of experimental or numerical data using the least squares regression 
@@ -3806,68 +3788,47 @@ technique, which minimizes the total squared error.
 CONCEPT 
 
 For n data points (xi,yi) the regression line: 
-
 			y= a + bx 
 is determined by minimizing: 
-
 			∑(yi−(a+bxi))2  
 This leads to two closed-form formulas: 
 Slope (b) 
-
 			b= 𝑛∑𝑥𝑦−(∑𝑥)(∑𝑦) / n∑x2−(∑x)2b 
 
 Intercept (a):
-
 				a=∑y−b∑xn 
 These values define the best-fit straight line. 
  
 PROGRAM FEATURES 
 
 • Reads all inputs from input.txt.
-
 • Writes results to both console and output.txt.
-
 • Handles multiple test cases.
-
 • Prints: 
-
 o Number of data points 
-
 o All x and y values 
-
 o Computed intercept (a) 
-
 o Computed slope (b) 
-
 o Final regression line equation 
  
 ALGORITHM (Least Squares Method) :
-
 • Read number of data points n 
-
 • Read arrays x[n] and y[n] 
-
 • Compute required sums: 
-
 	o Σx 
 	o Σy 
 	o Σxy 
 	o Σx² 
 
 • Apply formulas: 
-
 o Compute b (slope) 
-
 o Compute a (intercept) 
-
 • Display and store: 
-
 o Input values 
-
 o Calculated coefficients 
-
 o Final regression line
 
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Linear Regression Code
 
@@ -3937,6 +3898,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Linear Regression Input
 
 ```
@@ -3953,6 +3916,8 @@ int main()
 5 10 15 20 25 30
 12 18 26 33 40 48
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Linear Regression Output
 
@@ -4001,6 +3966,8 @@ The coefficients are found by solving the normal equations:
 ∑xᵐy = a₀∑xᵐ + a₁∑xᵐ⁺¹ + ... + aₘ∑x²ᵐ
 
 This system is solved using Gauss-Jordan elimination.
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Polynomial Regression Code
 
@@ -4153,6 +4120,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Polynomial Regression Input
 
 ```
@@ -4165,6 +4134,8 @@ int main()
 1 2 3 4 5 6
 2 5 10 17 26 37
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Polynomial Regression Output
 
@@ -4210,25 +4181,22 @@ Polynomial: y = 1.0000 + 1.0000x^2
 Fits data to exponential and power models by transforming to linear form:
 
 MODEL 1:
-
 		y = ae^(bx)
-  Linearize: 
-  			
+  Linearize: 	
 		ln(y) = ln(a) + bx
-MODEL 2: 
-			
+MODEL 2: 		
 		y = ax^b
   Linearize:
-  
   		ln(y) = ln(a) + b*ln(x)
 
 MODEL 3: 
-		
 		y = a + be^(x/4)
   Linearize: Requires iterative or custom fitting
 
 After transformation, standard linear regression techniques are applied,
 then the results are transformed back to the original form.
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Transcendental Regression Code
 
@@ -4366,6 +4334,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Transcendental Regression Input
 
 ```
@@ -4382,6 +4352,8 @@ int main()
 0 4 8 12 16
 5 10 18 35 70
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Transcendental Regression Output
 
@@ -4438,16 +4410,14 @@ three consecutive points. It requires an even number of intervals.
 FORMULA:
 
 where:
-
 - h = (b-a)/n
-
 - n must be even
-
 - ∑f(xₒdd) is sum at odd indices (x₁, x₃, x₅, ...)
-
 - ∑f(xₑᵥₑₙ) is sum at even indices (x₂, x₄, x₆, ...)
 
 Provides higher accuracy than Trapezoidal rule with same number of points.
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Simpson 1/3 Code
 
@@ -4543,6 +4513,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Simpson 1/3 Input
 
 ```
@@ -4559,6 +4531,8 @@ int main()
 1 2 1
 0 2 8
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Simpson 1/3 Output
 
@@ -4606,14 +4580,12 @@ FORMULA:
 where:
 
 - h = (b-a)/n
-
 - n must be a multiple of 3
-
 - ∑f(xᵢ) is sum where i is not a multiple of 3
-
 - ∑f(xⱼ) is sum where j is a multiple of 3 (but not 0 or n)
-
 Often used in combination with Simpson's 1/3 rule for adaptive integration.
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Simpson 3/8 Code
 
@@ -4709,6 +4681,8 @@ int main()
 }
 ```
 
+[⬆ Back to Table of Contents](#table-of-contents)
+
 #### Simpson 3/8 Input
 
 ```
@@ -4725,6 +4699,8 @@ int main()
 1 2 1
 0 2 12
 ```
+
+[⬆ Back to Table of Contents](#table-of-contents)
 
 #### Simpson 3/8 Output
 
