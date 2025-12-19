@@ -4,38 +4,38 @@
 
 This project is a **comprehensive collection of 19 classical Numerical Methods implemented in C++**, where each method supports multiple test cases and able to take input from file and output write on both file and terminal. All methods are well structured under their respective types. Such as,
 
-#### 1. **Solution of Non-Linear Equations** (4 methods)
-- Bisection Method
-- False Position Method
-- Newton-Raphson Method
-- Secant Method
+#### 1. **[Solution of Non-Linear Equations](#solution-of-non-linear-equations-toc)** (4 methods)
+- [Bisection Method](#bisection-method-toc)
+- [False Position Method](#false-position-method-toc)
+- [Newton-Raphson Method](#newton-raphson-method-toc)
+- [Secant Method](#secant-method-toc)
 
-#### 2. **Solution of Linear Equations** (4 methods)
-- Gauss Elimination
-- Gauss-Jordan Elimination
-- LU Decomposition (Doolittle)
-- Matrix Inversion
+#### 2. **[Solution of Linear Equations](#solution-of-linear-equations-toc)** (4 methods)
+- [Gauss Elimination](#gauss-elimination-method-toc)
+- [Gauss-Jordan Elimination](#gauss-jordan-elimination-method-toc)
+- [LU Decomposition (Doolittle)](#lu-decomposition-method-toc)
+- [Matrix Inversion](#matrix-inversion-toc)
 
-#### 3. **Differential Equation Solving** (1 method)
-- Runge-Kutta 4th Order Method
+#### 3. **[Differential Equation Solving](#differential-equation-solving-toc)** (1 method)
+- [Runge-Kutta 4th Order Method](#runge-kutta-4th-order-method-toc)
 
-#### 4. **Interpolation Methods** (3 methods)
-- Newton Forward Interpolation
-- Newton Backward Interpolation
-- Newton Divided Difference Interpolation
+#### 4. **[Interpolation Methods](#interpolation-methods-toc)** (3 methods)
+- [Newton Forward Interpolation](#newton-forward-interpolation-toc)
+- [Newton Backward Interpolation](#newton-backward-interpolation-toc)
+- [Newton Divided Difference Interpolation](#newton-divided-difference-interpolation-toc)
 
-#### 5. **Numerical Differentiation** (2 methods)
-- Differentiation by Forward Interpolation
-- Differentiation by Backward Interpolation
+#### 5. **[Numerical Differentiation](#numerical-differentiation-toc)** (2 methods)
+- [Differentiation by Forward Interpolation](#differentiation-forward-interpolation-toc)
+- [Differentiation by Backward Interpolation](#differentiation-backward-interpolation-toc)
 
-#### 6. **Curve Fitting & Regression** (3 methods)
-- Linear Regression
-- Polynomial Regression
-- Transcendental Regression
+#### 6. **[Curve Fitting & Regression](#curve-fitting--regression-toc)** (3 methods)
+- [Linear Regression](#linear-regression-toc)
+- [Polynomial Regression](#polynomial-regression-toc)
+- [Transcendental Regression](#transcendental-regression-toc)
 
-#### 7. **Numerical Integration** (2 methods)
-- Simpson's 1/3 Rule
-- Simpson's 3/8 Rule
+#### 7. **[Numerical Integration](#numerical-integration-toc)** (2 methods)
+- [Simpson's 1/3 Rule](#simpsons-13-rule-toc)
+- [Simpson's 3/8 Rule](#simpsons-38-rule-toc)
 
 ## Purpose of This Repository
 - To provide **clean C++ codes** for all studied numerical methods in this lab.
@@ -44,110 +44,110 @@ This project is a **comprehensive collection of 19 classical Numerical Methods i
 
 # Table of Contents
 
-- [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
-  - [Bisection Method](#bisection-method)
+- [Solution of Non-Linear Equations](#solution-of-non-linear-equations-toc)
+  - [Bisection Method](#bisection-method-toc)
     - [Theory](#bisection-theory)
     - [Code](#bisection-code)
     - [Input](#bisection-input)
     - [Output](#bisection-output)
-  - [False Position Method](#false-position-method)
+  - [False Position Method](#false-position-method-toc)
     - [Theory](#false-position-theory)
     - [Code](#false-position-code)
     - [Input](#false-position-input)
     - [Output](#false-position-output)
-  - [Newton Raphson Method](#newton-raphson-method)
+  - [Newton Raphson Method](#newton-raphson-method-toc)
     - [Theory](#newton-raphson-theory)
     - [Code](#newton-raphson-code)
     - [Input](#newton-raphson-input)
     - [Output](#newton-raphson-output)
-  - [Secant Method](#secant-method)
+  - [Secant Method](#secant-method-toc)
     - [Theory](#secant-theory)
     - [Code](#secant-code)
     - [Input](#secant-input)
     - [Output](#secant-output)
 
-- [Solution of Linear Equations](#solution-of-linear-equations)
-  - [Gauss Elimination Method](#gauss-elimination-method)
+- [Solution of Linear Equations](#solution-of-linear-equations-toc)
+  - [Gauss Elimination Method](#gauss-elimination-method-toc)
     - [Theory](#gauss-elimination-theory)
     - [Code](#gauss-elimination-code)
     - [Input](#gauss-elimination-input)
     - [Output](#gauss-elimination-output)
-  - [Gauss Jordan Elimination Method](#gauss-jordan-elimination-method)
+  - [Gauss Jordan Elimination Method](#gauss-jordan-elimination-method-toc)
     - [Theory](#gauss-jordan-theory)
     - [Code](#gauss-jordan-code)
     - [Input](#gauss-jordan-input)
     - [Output](#gauss-jordan-output)
-  - [LU Decomposition Method](#lu-decomposition-method)
+  - [LU Decomposition Method](#lu-decomposition-method-toc)
     - [Theory](#lu-decomposition-theory)
     - [Code](#lu-decomposition-code)
     - [Input](#lu-decomposition-input)
     - [Output](#lu-decomposition-output)
-  - [Matrix Inversion](#matrix-inversion)
+  - [Matrix Inversion](#matrix-inversion-toc)
     - [Theory](#matrix-inversion-theory)
     - [Code](#matrix-inversion-code)
     - [Input](#matrix-inversion-input)
     - [Output](#matrix-inversion-output)
 
-- [Differential Equation Solving](#differential-equation-solving)
-  - [Runge-Kutta 4th Order Method](#runge-kutta-4th-order-method)
+- [Differential Equation Solving](#differential-equation-solving-toc)
+  - [Runge-Kutta 4th Order Method](#runge-kutta-4th-order-method-toc)
     - [Theory](#runge-kutta-theory)
     - [Code](#runge-kutta-code)
     - [Input](#runge-kutta-input)
     - [Output](#runge-kutta-output)
 
-- [Interpolation Methods](#interpolation-methods)
-  - [Newton Forward Interpolation](#newton-forward-interpolation)
+- [Interpolation Methods](#interpolation-methods-toc)
+  - [Newton Forward Interpolation](#newton-forward-interpolation-toc)
     - [Theory](#newton-forward-theory)
     - [Code](#newton-forward-code)
     - [Input](#newton-forward-input)
     - [Output](#newton-forward-output)
-  - [Newton Backward Interpolation](#newton-backward-interpolation)
+  - [Newton Backward Interpolation](#newton-backward-interpolation-toc)
     - [Theory](#newton-backward-theory)
     - [Code](#newton-backward-code)
     - [Input](#newton-backward-input)
     - [Output](#newton-backward-output)
-  - [Newton Divided Difference Interpolation](#newton-divided-difference-interpolation)
+  - [Newton Divided Difference Interpolation](#newton-divided-difference-interpolation-toc)
     - [Theory](#newton-divided-difference-theory)
     - [Code](#newton-divided-difference-code)
     - [Input](#newton-divided-difference-input)
     - [Output](#newton-divided-difference-output)
 
-- [Numerical Differentiation](#numerical-differentiation)
-  - [Differentiation by Forward Interpolation](#differentiation-forward-interpolation)
+- [Numerical Differentiation](#numerical-differentiation-toc)
+  - [Differentiation by Forward Interpolation](#differentiation-forward-interpolation-toc)
     - [Theory](#differentiation-forward-theory)
     - [Code](#differentiation-forward-code)
     - [Input](#differentiation-forward-input)
     - [Output](#differentiation-forward-output)
-  - [Differentiation by Backward Interpolation](#differentiation-backward-interpolation)
+  - [Differentiation by Backward Interpolation](#differentiation-backward-interpolation-toc)
     - [Theory](#differentiation-backward-theory)
     - [Code](#differentiation-backward-code)
     - [Input](#differentiation-backward-input)
     - [Output](#differentiation-backward-output)
 
-- [Curve Fitting / Regression](#curve-fitting--regression)
-  - [Linear Regression](#linear-regression)
+- [Curve Fitting / Regression](#curve-fitting--regression-toc)
+  - [Linear Regression](#linear-regression-toc)
     - [Theory](#linear-regression-theory)
     - [Code](#linear-regression-code)
     - [Input](#linear-regression-input)
     - [Output](#linear-regression-output)
-  - [Polynomial Regression](#polynomial-regression)
+  - [Polynomial Regression](#polynomial-regression-toc)
     - [Theory](#polynomial-regression-theory)
     - [Code](#polynomial-regression-code)
     - [Input](#polynomial-regression-input)
     - [Output](#polynomial-regression-output)
-  - [Transcendental Regression](#transcendental-regression)
+  - [Transcendental Regression](#transcendental-regression-toc)
     - [Theory](#transcendental-regression-theory)
     - [Code](#transcendental-regression-code)
     - [Input](#transcendental-regression-input)
     - [Output](#transcendental-regression-output)
 
-- [Numerical Integration](#numerical-integration)
-  - [Simpson's 1/3 Rule](#simpsons-13-rule)
+- [Numerical Integration](#numerical-integration-toc)
+  - [Simpson's 1/3 Rule](#simpsons-13-rule-toc)
     - [Theory](#simpson-13-theory)
     - [Code](#simpson-13-code)
     - [Input](#simpson-13-input)
     - [Output](#simpson-13-output)
-  - [Simpson's 3/8 Rule](#simpsons-38-rule)
+  - [Simpson's 3/8 Rule](#simpsons-38-rule-toc)
     - [Theory](#simpson-38-theory)
     - [Code](#simpson-38-code)
     - [Input](#simpson-38-input)
