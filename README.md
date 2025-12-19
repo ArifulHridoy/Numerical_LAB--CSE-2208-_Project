@@ -1,11 +1,91 @@
 # Numerical Methods in C++
 
-## Overview
+### Project Introduction
 
-Numerical Methods are mathematical techniques used to **approximate solutions** to problems that may not have exact analytical solutions. They are widely used in engineering, physics, computer science and many applied fields.
+This project is a **comprehensive collection of 19 classical Numerical Methods implemented in C++**, where each method supports multiple test cases and able to take input from file and output write on both file and terminal. All methods are well structured under their respective types. Such as,
 
-This project is a comprehensive collection of classical **Numerical Methods implemented in C++**, organized for easy learning and practical use.
+#### 1. **Solution of Non-Linear Equations** (4 methods)
+- Bisection Method
+- False Position Method
+- Newton-Raphson Method
+- Secant Method
 
+#### 2. **Solution of Linear Equations** (4 methods)
+- Gauss Elimination
+- Gauss-Jordan Elimination
+- LU Decomposition (Doolittle)
+- Matrix Inversion
+
+#### 3. **Differential Equation Solving** (1 method)
+- Runge-Kutta 4th Order Method
+
+#### 4. **Interpolation Methods** (3 methods)
+- Newton Forward Interpolation
+- Newton Backward Interpolation
+- Newton Divided Difference Interpolation
+
+#### 5. **Numerical Differentiation** (2 methods)
+- Differentiation by Forward Interpolation
+- Differentiation by Backward Interpolation
+
+#### 6. **Curve Fitting & Regression** (3 methods)
+- Linear Regression
+- Polynomial Regression
+- Transcendental Regression
+
+#### 7. **Numerical Integration** (2 methods)
+- Simpson's 1/3 Rule
+- Simpson's 3/8 Rule
+
+### README.md Structure
+
+```
+README.md/
+├── Project Introduction
+├── README.md Structure
+└── Table of Contents
+├── Solution of Non-Linear Equations
+    ├── Bisection/
+    ├── False Position/
+    ├── Newton Raphson/
+    ├── Secant/
+
+├── Solution of Linear Equations
+    ├── Gauss Elimination/
+    ├── Gauss Jordan Elimination/
+    ├── LU Decomposition/
+    ├── Matrix Inversion/
+
+├── Differential Equation Solving
+    ├── Runge Kutta 4th Order/
+
+├── Interpolation Methods
+    ├── Newton Forward Interpolation/
+    ├── Newton Backward Interpolation/
+    ├── Newton Divided Difference Interpolation/
+
+├── Numerical Differentiation
+    ├── Differentiation by Forward Interpolation/
+    ├── Differentiation by Backward Interpolation/
+
+├── Curve Fitting & Regression
+    ├── Linear Regression/
+    ├── Polynomial Regression/
+    ├── Transcendental Regression/
+
+├── Numerical Integration
+    ├── Simpson 1_3/
+    └── Simpson 3_8/
+
+├── Purpose of this project
+├── Aurthors
+```
+
+Each method contains:
+- **{Method}.txt** - Briefly explained theory and features
+- **{Method}.cpp** - C++ implementation of the method.
+- **Input.txt** - Sample test case inputs
+- **Output.txt** - Expected outputs and results
 ---
 
 # Table of Contents
@@ -145,8 +225,7 @@ For any continuous function f(x),
 - Repeat above three steps until f(t) = 0.
 The bisection method is an approximation method to find the roots of the given equation by repeatedly dividing the interval. This method will divide the interval until the resulting interval is found, which is extremely small.
 
-FEATURES:
----------
+Features:
 - Multiple test cases support
 - Dynamic polynomial evaluation
 - Automatic function string generation
@@ -395,14 +474,14 @@ Roots:
 
 The false position method is one of the iterative methods of finding the roots of a non-linear equation of the form f(x) = 0. This method provides us with a better approximation of the roots of the equation.
 
-FALSE POSITION METHOD FORMULA:
-------------------------------
+FALSE POSITION METHOD FORMULA :
+
 x_n = (x_{n-1} * f(x_n) - x_n * f(x_{n-1})) / (f(x_n) - f(x_{n-1}))
 
 The method uses regula falsi (false position) to find roots by linear interpolation.
 It requires a sign change f(x_1) * f(x_2) < 0 in the interval [x_1, x_2].
 
-FEATURES:
+Features :
 
 - Multiple test cases support
 - Dynamic polynomial evaluation
@@ -661,14 +740,14 @@ Root 3: 1.999936
 Newton Raphson method is an efficient technique to solve the equations numerically. It gives us better approximations in terms of solutions. The Newton Raphson method is not always convergent. That means it cannot always guarantee that the condition is satisfied. However, this method fails when f'(x) is equal to 0.
 
 NEWTON-RAPHSON FORMULA:
------------------------
+
 x_{n+1} = x_n - f(x_n) / f'(x_n)
 
 Starting from an initial guess x₀, the method iteratively improves the approximation
 until convergence. Requires the function to be differentiable.
 
 CONVERGENCE CRITERIA:
---------------------
+
 The iteration stops when:
   |x_{n+1} - x_n| < E  (successive approximations are close)
   OR
@@ -893,8 +972,10 @@ Root 4 = 2.000000 (Iterations: 13)
 SECANT METHOD – DOCUMENTATION 
 
 This program finds real roots of polynomial equations using the Secant Method. 
-It supports multiple test cases, file input, and outputs results to both the console and a text file. 
-PURPOSE 
+It supports multiple test cases, file input, and outputs results to both the console and a text file.
+
+PURPOSE :
+
 To determine all real roots of a polynomial by applying the Secant Method across a calculated 
 search interval. 
 The program reads polynomial coefficients from an input file and applies numerical root-finding 
@@ -942,97 +1023,15 @@ The interval is scanned using small sub-intervals:
 Each sub-interval [x, x + 0.45] becomes an initial guess pair for the Secant method. 
 
 Duplicate roots (closely spaced values) are automatically ignored. 
-
-INPUT FORMAT (input.txt) 
-
-T 
-
-n 
-
-a_n a_(n−1) ... a_1 a_0 
-
-a_n a_(n−1) ... a_1 a_0 
-
-... 
-Where: 
-
-• T = number of test cases 
-
-• n = degree of the polynomial 
-
-• Next line has n+1 coefficients from highest degree to constant term 
-
-EXAMPLE INPUT 
-
-3 
-
-2
-
-1 -5 6 
-
-3 
-
-1 -6 11 -6 
-
-4 
-
-1 0 -7 0 6 
-
-This represents 3 polynomials: 
-
-	1. x2−5x+6x  
-	2. x3−6x2+11x−6 
-	3. x4−7x2+6
  
-OUTPUT DESCRIPTION 
-
-For each test case, the program outputs:
-
-1. The polynomial in readable form
-
-2. The computed root bound 
-
-3. Each detected real root 
-
-4. The interval used in Secant Method 
-
-5. Number of iterations required 
-
-6. A separator line between test cases
-   
-Output is written: 
-
-• To console 
-
-• To output.txt 
-
- 
-OUTPUT EXAMPLE 
- 
-Polynomial: 1x^2 - 5x + 6 
-
-Root bound: 6 
-
-range: [1.800000, 1.350000] Root: 2.000371 Iterations: 4 
-
-range: [2.700000, 2.250000] Root: 3.000117 Iterations: 4
-
---------------------------------------- 
- 
-FEATURES 
+FEATURES :
 
 • Supports multiple test cases
-
 • Uses Cauchy’s Bound to guarantee root coverage 
-
 • Detects and avoids duplicate roots 
-
 • Outputs to both console and file (output.txt)
-
 • Formatted polynomial printing
-
 • Error tolerance = 0.001 
-
 • Step size = 0.45 
 
 #### Secant Code
@@ -1042,7 +1041,6 @@ FEATURES
 using namespace std;
 vector<double> roots;
 ofstream fout;
-
 
 double f(double x, const vector<double>& v)
 {
@@ -1219,42 +1217,17 @@ range: [2.449534, 2.449490] Root: 2.449490 Iterations: 5
 
 #### Gauss Elimination Theory
 
-Gaussian Elimination Report
-
-What it does
-- Solves linear systems using Gaussian elimination with partial pivoting.
-- Detects three outcomes per test case: Unique Solution, No Solution (inconsistent), Infinite Solutions (dependent).
-- Handles multiple test cases in a single run, reading from Input.txt and writing to Output.txt while printing to console.
-
-Input format (Input.txt)
-- First line: T (number of test cases)
-- For each test case:
-  - Line: n (number of variables/rows)
-  - Next n lines: n+1 numbers per line representing the augmented matrix [A|b]
-
-Algorithm steps
-1) Partial pivoting each column to select the largest pivot.
-2) Forward elimination to upper-triangular form.
-3) Consistency checks for zero/near-zero pivots and zero rows.
-4) Back substitution when a unique solution exists.
-
 Theory (brief)
 - Gaussian elimination transforms the augmented matrix [A|b] into an upper-triangular form U via elementary row operations.
 - Partial pivoting swaps rows to place the largest available pivot on the diagonal, reducing numerical error and avoiding division by tiny pivots.
 - If a pivot column becomes all zeros but the augmented part is non-zero, the system is inconsistent (no solution). If both are zero, the system may have infinitely many solutions.
 - Once U is obtained with non-zero diagonal entries, back substitution solves Ux = c efficiently from bottom to top.
 
-Output format
-- For each test case, console and Output.txt show:
-  - Header: Test Case k (nxn)
-  - Labeled block: Matrix: followed by the augmented matrix values to 3 decimals
-  - Result line:
-      * Unique Solution
-          x1 = value
-          x2 = value
-          ...
-      * No Solution
-      * Infinite Solutions
+Algorithm steps
+1) Partial pivoting each column to select the largest pivot.
+2) Forward elimination to upper-triangular form.
+3) Consistency checks for zero/near-zero pivots and zero rows.
+4) Back substitution when a unique solution exists.
 
 Notes
 - Uses a tolerance of 1e-10 to treat pivots or coefficients as zero for stability.
@@ -1479,13 +1452,10 @@ No Solution!
 
 #### Gauss Jordan Theory
 
-Gauss-Jordan Elimination Report
-
-What it does :
-- Solves linear systems using Gauss-Jordan elimination with partial pivoting.
-- Reduces the augmented matrix to Reduced Row Echelon Form (RREF).
-- Detects three outcomes per test case: Unique Solution, No Solution (inconsistent), Infinite Solutions (dependent).
-- Handles multiple test cases in one run, reading from Input.txt and writing to Output.txt while printing to console.
+Theory (brief)
+- Gauss-Jordan applies row operations to convert [A|b] directly to RREF, where each pivot is 1 and the pivot columns have zeros elsewhere.
+- Partial pivoting improves numerical stability and avoids dividing by tiny pivots.
+- Rank comparison: if rank(A) < rank([A|b]) → inconsistent; if rank(A) < n but rank(A) == rank([A|b]) → infinite solutions; if rank(A) = n → unique solution.
 
 Algorithm steps
 1) Partial pivoting: swap the current row with the row having the largest absolute pivot in the column.
@@ -1493,11 +1463,12 @@ Algorithm steps
 3) Eliminate the pivot column in all other rows to reach RREF.
 4) Check ranks to classify: inconsistent, infinite solutions, or unique solution (read directly from RREF).
 
-Theory (brief)
-- Gauss-Jordan applies row operations to convert [A|b] directly to RREF, where each pivot is 1 and the pivot columns have zeros elsewhere.
-- Partial pivoting improves numerical stability and avoids dividing by tiny pivots.
-- Rank comparison: if rank(A) < rank([A|b]) → inconsistent; if rank(A) < n but rank(A) == rank([A|b]) → infinite solutions; if rank(A) = n → unique solution.
-
+What it does :
+- Solves linear systems using Gauss-Jordan elimination with partial pivoting.
+- Reduces the augmented matrix to Reduced Row Echelon Form (RREF).
+- Detects three outcomes per test case: Unique Solution, No Solution (inconsistent), Infinite Solutions (dependent).
+- Handles multiple test cases in one run, reading from Input.txt and writing to Output.txt while printing to console.
+  
 #### Gauss Jordan Code
 
 ```cpp
@@ -1727,12 +1698,10 @@ No Solution (Inconsistent)
 
 #### LU Decomposition Theory
 
-LU Decomposition (Doolittle) Report
-
-What it does :
-- Solves linear systems by factoring A into L (unit lower) and U (upper) using the Doolittle method.
-- Handles multiple test cases, reading from Input.txt, writing to Output.txt, and printing to console.
-- Reports L and U matrices; classifies outcomes: unique solution, no solution (inconsistent), or infinitely many solutions (singular but consistent).
+Theory (brief) :
+- For nonsingular A with nonzero leading principal minors, A = LU exists with L unit lower-triangular and U upper-triangular (Doolittle sets L diagonals to 1).
+- Factorization cost is O(n^3); triangular solves are O(n^2).
+- If a pivot is zero, det(A) = 0.
 
 Algorithm steps :
 1) Doolittle LU factorization without pivoting: U has diagonals from A, L has 1s on the diagonal.
@@ -1741,10 +1710,10 @@ Algorithm steps :
 4) If singular and a zero row in U has nonzero y → No solution; if singular and zero row with zero y → Infinite solutions.
 5) Only when all pivots are nonzero run back substitution (Ux = y) and print unique solution; always print L and U matrices.
 
-Theory (brief) :
-- For nonsingular A with nonzero leading principal minors, A = LU exists with L unit lower-triangular and U upper-triangular (Doolittle sets L diagonals to 1).
-- Factorization cost is O(n^3); triangular solves are O(n^2).
-- If a pivot is zero, det(A) = 0.
+What it does :
+- Solves linear systems by factoring A into L (unit lower) and U (upper) using the Doolittle method.
+- Handles multiple test cases, reading from Input.txt, writing to Output.txt, and printing to console.
+- Reports L and U matrices; classifies outcomes: unique solution, no solution (inconsistent), or infinitely many solutions (singular but consistent).
 
 #### LU Decomposition Code
 
@@ -2053,13 +2022,10 @@ Matrix A is singular (det A = 0)
 
 #### Matrix Inversion Theory
 
-Matrix Inversion Report
-
-What it does :
-- Solves linear systems AX = b by computing A^-1 using Gauss-Jordan elimination on augmented [A|I].
-- Handles multiple test cases, reading from Input.txt (matrix A and vector b per test case), writing to Output.txt, and printing to console.
-- Reports the inverse matrix A^-1 and the solution vector x = A^-1 * b.
-- Detects singular matrices (det = 0) and reports failure.
+Theory (brief) :
+- Matrix inversion by Gauss-Jordan is equivalent to solving n systems Ae_i = b_i for unit vectors e_i.
+- By augmenting with I and reducing to RREF, the right block becomes A^-1.
+- Computational cost is O(n^3) for factorization; multiplication by b adds O(n^2).
 
 Algorithm steps :
 1) Construct augmented matrix [A|I] by appending identity matrix to A.
@@ -2068,11 +2034,12 @@ Algorithm steps :
 4) Extract A^-1 from the right half of the RREF matrix.
 5) Compute solution x = A^-1 * b by matrix-vector multiplication.
 
-Theory (brief) :
-- Matrix inversion by Gauss-Jordan is equivalent to solving n systems Ae_i = b_i for unit vectors e_i.
-- By augmenting with I and reducing to RREF, the right block becomes A^-1.
-- Computational cost is O(n^3) for factorization; multiplication by b adds O(n^2).
-
+What it does :
+- Solves linear systems AX = b by computing A^-1 using Gauss-Jordan elimination on augmented [A|I].
+- Handles multiple test cases, reading from Input.txt (matrix A and vector b per test case), writing to Output.txt, and printing to console.
+- Reports the inverse matrix A^-1 and the solution vector x = A^-1 * b.
+- Detects singular matrices (det = 0) and reports failure.
+  
 #### Matrix Inversion Code
 
 ```cpp
@@ -2386,13 +2353,11 @@ Matrix is singular (det=0)
 
 #### Runge-Kutta Theory
 
-RUNGE-KUTTA 4TH ORDER METHOD - DOCUMENTATION
-
 This program solves differential equations using the Runge-Kutta 4th Order method.
 Supports multiple test cases with different initial conditions.
 
-FUNCTION:
----------
+FUNCTION USED:
+
 dy/dx = f(x,y) = xy + y
 
 RUNGE-KUTTA 4TH ORDER FORMULA:
@@ -2547,13 +2512,11 @@ Result: y(3.000) = 403.429
 
 #### Newton Forward Theory
 
-NEWTON FORWARD INTERPOLATION - DOCUMENTATION
-
 This program performs Newton Forward Interpolation to estimate function values at intermediate points.
 Supports multiple test cases with automatic polynomial order detection.
 
 NEWTON FORWARD INTERPOLATION FORMULA:
--------------------------------------
+
 f(x) = f(x₀) + uΔf(x₀) + [u(u-1)/2!]Δ²f(x₀) + [u(u-1)(u-2)/3!]Δ³f(x₀) + ...
 
 where:
@@ -2562,7 +2525,7 @@ where:
   Δⁿf(x₀) = nth forward difference at x₀
 
 FORWARD DIFFERENCE TABLE:
--------------------------
+
 Δf(xᵢ) = f(xᵢ₊₁) - f(xᵢ)
 Δ²f(xᵢ) = Δf(xᵢ₊₁) - Δf(xᵢ)
 Δⁿf(xᵢ) = Δⁿ⁻¹f(xᵢ₊₁) - Δⁿ⁻¹f(xᵢ)
@@ -2780,7 +2743,6 @@ Interpolated value f(2.500000) = 15.625000
 
 #### Newton Backward Theory
 
-Newton Backward Interpolation – Documentation 
 This program performs Newton Backward Interpolation to estimate the value of a function at a 
 given point using backward differences of tabulated data. 
 
@@ -2802,118 +2764,23 @@ Where:
 	• h = xi – xi-1  
     Δk yn = k-th backward difference at last point 
 
-INPUT FORMAT (input.txt) 
-
-T 
-
-n 
-
-x1 x2 ... xn 
-
-y1 y2 ... yn 
-
-X 
-
-(repeat for T test cases) 
-
-EXAMPLE INPUT 
-
-4
-
-5 
-
-1 2 3 4 5 
-
-2 4 8 16 32
-
-3 
-
-4 
-
-10 20 30 40
-
-5 7 10 15 
-
-35 
-
-3
-
-0 1 2 
-
-1 3 7 
-
-1
-
-5 
-
-2 4 6 8 10 
-
-4 8 18 32 50 
-
-7  
-
-OUTPUT (Console + output.txt) 
-
-For each test case, the program prints: 
-1. Test Case Number 
-2. Number of data points (n) 
-3. x[] and y[] values 
-4. Interpolation point X 
-5. Full backward difference table (n×n including zeros) 
-6. Interpolated value at X 
-EXAMPLE OUTPUT:
-
-TestCase#1 
-
-n: 5 
-
-x: 1 2 3 4 5 
-
-y: 2 4 8 16 32
-
-X: 3 
-
-Backward Difference Table: 
-
-2 0 0 0 0
-   
-4 2 0 0 0 
-
-8 4 2 0 0 
-
-16 8 4 2 0 
-
-32 16 8 4 2 
-
-Interpolated Value: 8
-
 ALGORITHM :
 
 1. Read number of test cases T
 • For each test case: 
 a. Read n, x[], y[], X.
-
 b. Initialize n×n difference table with zeros.
-
 c. Fill first column with y[] values .
-
 d. Compute backward differences column by column. 
-
 e. Apply Newton Backward Formula to compute interpolated value .
-
 f. Print inputs, difference table, and interpolated value to console and output file.
-
 
 FEATURES:
 
 • Handles multiple test cases.
-
 • Works with uniformly spaced data points.
-
 • Prints full backward difference table including zeros.
-
 • Displays all input and output for clarity.
-
 • Outputs results to both console and output.txt.
 
 #### Newton Backward Code
@@ -3112,8 +2979,6 @@ Interpolated Value: 12.1875
 
 #### Newton Divided Difference Theory
 
-NEWTON DIVIDED DIFFERENCE INTERPOLATION
-
 This program performs Newton Forward Interpolation using the divided difference method to 
 estimate the value of a function at a given point X from unequally spaced data points. 
 OBJECTIVE 
@@ -3135,103 +3000,28 @@ Where 𝑓[𝑥𝑖,...,𝑥𝑗] are divided differences, computed as:
 The error of interpolation is given by: 
 
 		e𝑟𝑟𝑜𝑟(𝑋) = 𝑓[𝑥0,...,𝑥𝑛](𝑋 − 𝑥0)(𝑋 −𝑥1)...(𝑋 −𝑥𝑛 −1) 
-		
-INPUT FORMAT (input.txt) 
 
-T  
-
-N 
-
-x0 x1 ... xn
-
-y0 y1 ... yn 
-
-X 
-
-EXAMPLE INPUT 
-
-1 
-
-4 
-
-1 4 5 7 10 
-
-2 20 30 56 100 
-
-8 
-
-OUTPUT (Console + output.txt) 
-
-For each test case, the program prints: 
-1. Test Case Number 
-2. Number of data points (n) 
-3. x[] and y[] values 
-4. Interpolation point X 
-5. Full divided difference table (n+1 x n+1 including zeros) 
-6. Interpolated value at X 
-7. Truncation error
-
-EXAMPLE OUTPUT
-
-Test Case  #1 
-
-n: 4 
-
-x: 1.0000 4.0000 5.0000 7.0000 10.0000 
-
-y: 2.0000 20.0000 30.0000 56.0000 100.0000 
-
-X: 8
-
-Difference Table:
-
-2.0000 6.0000 1.0000 0.0000 -0.0123
-
-20.0000 10.0000 1.0000 -0.1111 0.0000 
-
-30.0000 13.0000 0.3333 0.0000 0.0000
-
-56.0000 14.6667 0.0000 0.0000 0.0000
-
-100.0000 0.0000 0.0000 0.0000 0.0000
-
-Interpolation: 70.9630 
-
-Truncation error: 1.0370
-
-ALGORITHM 
+ALGORITHM Steps :
 
 1. Read number of test cases T 
 2. For each test case:
-  
 • Read n, x[], y[], X
-
 • Initialize (n+1)x(n+2) difference table with zeros
-
 • Fill first column with y[] values 
-
 • Compute divided differences column by column
-
 • Apply Newton Forward formula to compute interpolated value
-
 • Compute true error 
+• Print inputs, difference table, interpolated value, and error to console and output file
 
-• Print inputs, difference table, interpolated value, and error to console and output file 
 FEATURES 
 
 • Handles multiple test cases
-
 • Works with unequally spaced data
-
 • Prints full divided difference table including zeros
-
 • Displays all input and output for clarity
-
 • Outputs results to both console and output.txt
 
 This method works for both equally and unequally spaced data points.
-
-
 
 #### Newton Divided Difference Code
 
@@ -3441,13 +3231,12 @@ a given point using Newton’s Forward Interpolation formula. The program uses e
 data points and compares the computed derivatives with the analytical derivatives to 
 determine the error. 
 
-Theory 
+Theory :
 
 Newton’s Forward Interpolation is a numerical method for estimating function values and their 
 derivatives using a set of discrete data points. For a function f(x)f(x)f(x) evaluated at equally 
 spaced points x0,x1,...,xn  the derivatives at a point XXX can be approximated as: 
 Forward Difference Table 
-
 
 • First Derivative f′(X) 
 
@@ -3474,123 +3263,27 @@ Error Calculation :
 The computed derivatives are compared with analytical derivatives f′(X) and f′′(X): 
 
 	Error  = ∣𝐴𝑛𝑎𝑙𝑦𝑡𝑖𝑐𝑎𝑙−𝑁𝑢𝑚𝑒𝑟𝑖𝑐𝑎𝑙∣/𝐴𝑛𝑎𝑙𝑦𝑡𝑖𝑐𝑎𝑙×100  
- 
-Input Format (input.txt) 
-
-• Line 1: Number of test cases T 
-
-• For each test case: 
-
-o n → number of intervals 
-
-o a b → start and end of interval 
-
-o X → point at which derivatives are computed 
-
-Example: 
-
-4 
-
-4
-
-1 2
-
-1.5 
-
-5
-
-0 1 
-
-0.5 
-
-6 
-
-1 3 
-
-2.5
-
-3 
-
-2 4
-
-3.2 
-
- 
-Output 
-• For each test case, the program outputs:
-
-• Test case number 
-
-• Number of intervals, a, b, and X 
-
-• Forward difference table 
-
-• First derivative f′(X) 
-
-• Second derivative f′′(X) 
-
-• Percentage errors of first and second derivatives 
-
-Example Console / Output.txt format:
-
-TEST CASE #1 
-
-n: 4, a: 1, b: 2, X: 1.5 
-
-Difference table:
-
-2         1         0		0
-
-3         2			1		0
-
-5         4			1		0
-
-9         6         0		0
-
-... 
-
-y': 4.123 
-
-y'': 5.456 
-
-First diff error: 0.0123% 
-
-Second diff error: 0.0345%
 
 Algorithm / Steps  
 
 1. Read number of test cases T. 
-
 2. For each test case: 
-
 • Read 𝑛,𝑎,𝑏,𝑋 input file. 
-
 • Compute step size ℎ = (𝑏 −𝑎)/𝑛   
-
 • Generate equally spaced points 𝑥𝑖 = 𝑎 + 𝑖 ∗ ℎ and compute 𝑦𝑖 = 𝑓(𝑥𝑖). 
-
 • Construct forward difference table. 
-
 • Compute first derivative f′(X)) using Newton’s formula. 
-
 • Compute second derivative f′′(X) using Newton’s formula. 
-
 • Compare with analytical derivatives to compute percentage error. 
-
 Print input, difference table, derivatives, and errors to console and output file.
 
 Features 
 
 • Supports multiple test cases 
-
 • Calculates first and second derivatives numerically 
-
 • Generates full forward difference table 
-
 • Calculates percentage error with analytical derivatives 
-
 • Outputs results to both console and file 
-
 
 #### Differentiation Forward Code
 
@@ -3798,8 +3491,6 @@ Second diff error: 0.0624101%
 ### Differentiation by Backward Interpolation
 
 #### Differentiation Backward Theory
-
-DIFFERENTIATION USING NEWTON BACKWARD INTERPOLATION
 
 This method uses Newton's backward difference formula to compute derivatives
 near the end of a data table. It constructs backward differences and applies
@@ -4032,8 +3723,6 @@ Row 3:   2.250000   1.250000   0.500000   0.000000
 
 #### Linear Regression Theory
 
-LINEAR REGRESSION (LEAST SQUARES METHOD) – DOCUMENTATION 
-
 This program performs Simple Linear Regression using the Least Squares Method to find the 
 best-fit straight line for a given set of data points. 
 
@@ -4063,110 +3752,19 @@ These values define the best-fit straight line.
  
 PROGRAM FEATURES 
 • Reads all inputs from input.txt.
-
 • Writes results to both console and output.txt.
-
 • Handles multiple test cases.
-
 • Prints: 
 o Number of data points 
-
 o All x and y values 
-
 o Computed intercept (a) 
-
 o Computed slope (b) 
-
 o Final regression line equation 
-
- 
-INPUT FORMAT (input.txt) 
-
-T 
-
-n 
-
-x1 x2 x3 ... xn 
-
-y1 y2 y3 ... yn 
-
- 
-(repeat for T test cases) 
-
-Where: 
-• t = number of test cases 
-
-• n = number of data points in the test case 
-
-• Next line = n values of x 
-
-• Next line = n values of y 
-
- 
-EXAMPLE INPUT 
-
-3 
-
-5
-
-1 2 3 4 5 
-
-2 4 5 4 5 
-
-4 
-
-2 4 6 8 
-
-3 5 7 9 
-
-6 
-
-5 10 15 20 25 30 
-
-12 18 26 33 40 48 
-
- 
-OUTPUT (Written to output.txt and displayed on console) :
-
-For each test case, the program prints: 
-
-• Test Case Number
-
-• Total points
-
-• x[] array 
-
-• y[] array 
-
-• Intercept (a) 
-
-• Slope (b) 
-
-• Regression Equation
-
-Example:
-
-Test Case #1 
-
-Number of points: 5 
-
-x values: 1 2 3 4 5
-
-y values: 2 4 5 4 5 
-
-Computed Intercept (a): 2.2 
-
-Computed Slope (b): 0.6 
-
-Line Equation: y = 2.2 + 0.6x 
-
  
 ALGORITHM (Least Squares Method) :
 
 • Read number of data points n 
-
 • Read arrays x[n] and y[n] 
-
 • Compute required sums: 
 
 	o Σx 
@@ -4175,12 +3773,9 @@ ALGORITHM (Least Squares Method) :
 	o Σx² 
 
 • Apply formulas: 
-
 o Compute b (slope) 
 o Compute a (intercept) 
-
 • Display and store: 
-
 o Input values 
 o Calculated coefficients 
 o Final regression line
@@ -4305,8 +3900,6 @@ Line Equation: y = 4.2 + 1.44571x
 ### Polynomial Regression
 
 #### Polynomial Regression Theory
-
-POLYNOMIAL REGRESSION
 
 Extends linear regression to fit polynomial curves of degree m:
 y = a₀ + a₁x + a₂x² + ... + aₘxᵐ
@@ -4521,8 +4114,6 @@ Polynomial: y = 1.0000 + 1.0000x^2
 
 #### Transcendental Regression Theory
 
-TRANSCENDENTAL REGRESSION
-
 Fits data to exponential and power models by transforming to linear form:
 
 MODEL 1: y = ae^(bx)
@@ -4736,8 +4327,6 @@ Equation: y = -2.82689 + 7.81992 * e^(x/4)
 
 #### Simpson 1/3 Theory
 
-SIMPSON'S 1/3 RULE - NUMERICAL INTEGRATION
-
 Simpson's 1/3 rule approximates the integral by fitting parabolas through
 three consecutive points. It requires an even number of intervals.
 
@@ -4897,8 +4486,6 @@ Integral result: 10.6667
 ### Simpson's 3/8 Rule
 
 #### Simpson 3/8 Theory
-
-SIMPSON'S 3/8 RULE - NUMERICAL INTEGRATION
 
 Simpson's 3/8 rule uses cubic polynomials for approximation. It requires
 the number of intervals to be a multiple of 3.
