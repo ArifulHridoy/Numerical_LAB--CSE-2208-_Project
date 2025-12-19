@@ -2799,25 +2799,39 @@ Interpolated value f(2.500000) = 15.625000
 Newton Backward Interpolation – Documentation 
 This program performs Newton Backward Interpolation to estimate the value of a function at a 
 given point using backward differences of tabulated data. 
+
 OBJECTIVE 
 To calculate the interpolated value f(X) for a given value X from a set of discrete data points   
 (xi, yi) using Newton Backward Interpolation formula. 
+
 THEORY 
+
 For n data points x0, x1, ..., xn-1 with corresponding function values y0, y1, ..., yn-1, the backward 
 interpolation formula is: 
-f(𝑋) = 𝑦𝑛 + 𝑣 𝛥𝑦𝑛 + (𝑣(𝑣+1)/2! ) 𝛥²𝑦𝑛 + (𝑣(𝑣+1)(𝑣+2)/3! ) 𝛥³𝑦𝑛 + ... 
+
+		f(𝑋) = 𝑦𝑛 + 𝑣 𝛥𝑦𝑛 + (𝑣(𝑣+1)/2! ) 𝛥²𝑦𝑛 + (𝑣(𝑣+1)(𝑣+2)/3! ) 𝛥³𝑦𝑛 + ... 
+		
 Where: 
+
 • yn = yn-1 
 • v = (𝑋 − 𝑥𝑛)/ℎ
 • h = xi – xi-1  
 • Δk yn = k-th backward difference at last point 
+
 INPUT FORMAT (input.txt) 
+
 T 
+
 n 
+
 x1 x2 ... xn 
+
 y1 y2 ... yn 
+
 X 
+
 (repeat for T test cases) 
+
 EXAMPLE INPUT 
 4 
 5 
@@ -2836,7 +2850,9 @@ EXAMPLE INPUT
 2 4 6 8 10 
 4 8 18 32 50 
 7  
+
 OUTPUT (Console + output.txt) 
+
 For each test case, the program prints: 
 1. Test Case Number 
 2. Number of data points (n) 
@@ -2865,7 +2881,8 @@ b. Initialize n×n difference table with zeros
 c. Fill first column with y[] values 
 d. Compute backward differences column by column 
 e. Apply Newton Backward Formula to compute interpolated value 
-f. Print inputs, difference table, and interpolated value to console and output file 
+f. Print inputs, difference table, and interpolated value to console and output file
+
 FEATURES 
 • Handles multiple test cases 
 • Works with uniformly spaced data points 
