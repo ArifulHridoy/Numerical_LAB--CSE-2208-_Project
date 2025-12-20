@@ -177,6 +177,7 @@ For any continuous function f(x),
 - Divide the interval [a, b] – If f(t)*f(a) <0, there exist a root between t and a
 – else if f(t) *f (b) < 0, there exist a root between t and b
 - Repeat above three steps until f(t) = 0.
+ 
 The bisection method is an approximation method to find the roots of the given equation by repeatedly dividing the interval. This method will divide the interval until the resulting interval is found, which is extremely small.
 
 Features:
@@ -946,8 +947,6 @@ Root 4 = 2.000000 (Iterations: 13)
 
 #### Secant Theory
 
-SECANT METHOD – DOCUMENTATION 
-
 This program finds real roots of polynomial equations using the Secant Method. 
 It supports multiple test cases, file input, and outputs results to both the console and a text file.
 
@@ -973,6 +972,7 @@ where ε is the error tolerance.
 
 POLYNOMIAL EVALUATION:
 
+
 The polynomial is defined as:
 		f(x)=a0+a1x+a2x2+⋯+anxn 	
 		
@@ -980,12 +980,14 @@ Coefficients are supplied from highest degree to constant term but internally re
 computation. 
 
 ROOT BOUND (Cauchy's Bound) :
+
 To ensure all real roots are  detected, the program computes: 
 		∣x∣ ≤  1 + max (∣𝑎𝑖/𝑎𝑛∣) 
 This value defines the search interval: [−B,B],
 where B is the computed bound. 
 
 STEP-WISE ROOT SEARCH :
+
 The interval is scanned using small sub-intervals: 
 • Step size: 0.45 
 • Error tolerance: 0.001 
@@ -2369,12 +2371,15 @@ This program solves differential equations using the Runge-Kutta 4th Order metho
 Supports multiple test cases with different initial conditions.
 
 FUNCTION USED:
+
 	dy/dx = f(x,y) = xy + y
 
 RUNGE-KUTTA 4TH ORDER FORMULA:
+
 	y(n+1) = y(n) + (h/6)[k1 + 2k2 + 2k3 + k4]
 	
 where:
+
   	k1 = h*f(x(n), y(n))
   	k2 = h*f(x(n) + h/2, y(n) + k1/2)
  	 k3 = h*f(x(n) + h/2, y(n) + k2/2)
@@ -2536,14 +2541,17 @@ This program performs Newton Forward Interpolation to estimate function values a
 Supports multiple test cases with automatic polynomial order detection.
 
 NEWTON FORWARD INTERPOLATION FORMULA:
+
 	f(x) = f(x₀) + uΔf(x₀) + [u(u-1)/2!]Δ²f(x₀) + [u(u-1)(u-2)/3!]Δ³f(x₀) + ...
 
 where:
+
 	  u = (x - x₀) / h
 	  h = step size (x₁ - x₀)
 	  Δⁿf(x₀) = nth forward difference at x₀
 
 FORWARD DIFFERENCE TABLE:
+
 	Δf(xᵢ) = f(xᵢ₊₁) - f(xᵢ)
 	Δ²f(xᵢ) = Δf(xᵢ₊₁) - Δf(xᵢ)
 	Δⁿf(xᵢ) = Δⁿ⁻¹f(xᵢ₊₁) - Δⁿ⁻¹f(xᵢ)
@@ -2707,10 +2715,12 @@ int main()
 
 ```
 2
+
 5
 0 1 2 3 4
 1 2 4 8 16
 2.5
+
 4
 1 2 3 4
 1 8 27 64
@@ -2780,10 +2790,12 @@ To calculate the interpolated value f(X) for a given value X from a set of discr
 THEORY 
 
 For n data points x0, x1, ..., xn-1 with corresponding function values y0, y1, ..., yn-1, the backward 
-interpolation formula is: 
+interpolation formula is:
+
 		f(𝑋) = 𝑦𝑛 + 𝑣 𝛥𝑦𝑛 + (𝑣(𝑣+1)/2! ) 𝛥²𝑦𝑛 + (𝑣(𝑣+1)(𝑣+2)/3! ) 𝛥³𝑦𝑛 + ... 
 		
 Where: 
+
 	• yn = yn-1 
 	• v = (𝑋 − 𝑥𝑛)/ℎ
 	• h = xi – xi-1  
@@ -2792,21 +2804,28 @@ Where:
 ALGORITHM :
 
 1. Read number of test cases T
-• For each test case: 
+
+• For each test case:
+
 a. Read n, x[], y[], X.
+
 b. Initialize n×n difference table with zeros.
+
 c. Fill first column with y[] values .
+
 d. Compute backward differences column by column. 
+
 e. Apply Newton Backward Formula to compute interpolated value .
+
 f. Print inputs, difference table, and interpolated value to console and output file.
 
 FEATURES:
 
-• Handles multiple test cases.
-• Works with uniformly spaced data points.
-• Prints full backward difference table including zeros.
-• Displays all input and output for clarity.
-• Outputs results to both console and output.txt.
+- Handles multiple test cases.
+- Works with uniformly spaced data points.
+- Prints full backward difference table including zeros.
+- Displays all input and output for clarity.
+- Outputs results to both console and output.txt.
 
 [⬆ Back to Table of Contents](#table-of-contents)
 
@@ -3021,36 +3040,42 @@ when the data points are not equally spaced.
 
 THEORY 
 
-Newton Forward Interpolation for unequal spacing uses divided differences. 
+Newton Forward Interpolation for unequal spacing uses divided differences.
+
 For n+1 data points (𝑥0, 𝑦0),(𝑥1,𝑦1),... ,(𝑥𝑛, 𝑦𝑛), the polynomial is: 
+
 		P𝑛(𝑋) = 𝑓[𝑥0] + (𝑋−𝑥0)𝑓[𝑥0,𝑥1] + (𝑋−𝑥0)(𝑋−𝑥1)𝑓[𝑥0,𝑥1,𝑥2] + ...+ (𝑋−𝑥0)...(𝑋 −𝑥_{𝑛 −1})𝑓[𝑥0,...,𝑥𝑛] 
 		
 Where 𝑓[𝑥𝑖,...,𝑥𝑗] are divided differences, computed as: 
+
 	f[𝑥𝑖] = 𝑦𝑖  
 	f[𝑥𝑖, 𝑥𝑖 + 1] = (𝑓[𝑥𝑖 +1] − 𝑓[𝑥𝑖]) /(𝑥𝑖 +1−𝑥𝑖) 
 	f[𝑥𝑖, . . . , 𝑥𝑖 + 𝑘] = (𝑓[𝑥𝑖 +1,...,𝑥𝑖 + 𝑘] − 𝑓[𝑥_𝑖,...,𝑥_𝑖 + 𝑘 − 1])/(𝑥𝑖 +𝑘 − 𝑥𝑖)
 The error of interpolation is given by: 
+
 		e𝑟𝑟𝑜𝑟(𝑋) = 𝑓[𝑥0,...,𝑥𝑛](𝑋 − 𝑥0)(𝑋 −𝑥1)...(𝑋 −𝑥𝑛 −1) 
 
 ALGORITHM Steps :
 
 1. Read number of test cases T.
+
 2. For each test case:
-• Read n, x[], y[], X
-• Initialize (n+1)x(n+2) difference table with zeros
-• Fill first column with y[] values 
-• Compute divided differences column by column
-• Apply Newton Forward formula to compute interpolated value
-• Compute true error 
-• Print inputs, difference table, interpolated value, and error to console and output file
+
+- Read n, x[], y[], X
+- Initialize (n+1)x(n+2) difference table with zeros
+- Fill first column with y[] values 
+- Compute divided differences column by column
+- Apply Newton Forward formula to compute interpolated value
+- Compute true error 
+- Print inputs, difference table, interpolated value, and error to console and output file
 
 FEATURES 
 
-• Handles multiple test cases
-• Works with unequally spaced data
-• Prints full divided difference table including zeros
-• Displays all input and output for clarity
-• Outputs results to both console and output.txt
+- Handles multiple test cases
+- Works with unequally spaced data
+- Prints full divided difference table including zeros
+- Displays all input and output for clarity
+- Outputs results to both console and output.txt
 
 This method works for both equally and unequally spaced data points.
 
@@ -3190,26 +3215,32 @@ int main()
 
 ```
 6
+
 3
 2 5 6 8
 4 25 36 64
 5
+
 2
 0 1 2
 0 1 4
 1
+
 4
 1 3 4 6 7
 2 6 12 24 32
 5
+
 2
 1 2 4
 1 3 15
 3
+
 3
 0 2 5 7
 1 8 30 70
 6
+
 4
 1 4 5 7 10
 2 20 30 56 100
@@ -3477,15 +3508,19 @@ int main ()
 
 ```
 4
+
 10
 1 2
 1.2
+
 10
 2 5.5
 2.2
+
 10
 1 3
 1.5
+
 10
 2 4
 2.3
@@ -3539,9 +3574,11 @@ near the end of a data table. It constructs backward differences and applies
 Newton's backward differentiation formulas.
 
 BACKWARD DIFFERENCE DERIVATIVE FORMULAS:
+
 	f'(xₙ) = [∇f(xₙ) + (2s+1)∇²f(xₙ)/2! + (3s²+6s+2)∇³f(xₙ)/6 + ...] / h
 
 where 
+
 	s = (x - xₙ)/h
 
 Used for polynomial differentiation with backward differences.
@@ -3715,11 +3752,13 @@ int main()
 
 ```
 2
+
 3
 1 2 -1 0.5
 6
 0 1 2 3 4 5
 4.5
+
 2
 0 0 1
 7
@@ -3780,6 +3819,7 @@ best-fit straight line for a given set of data points.
 OBJECTIVE 
 
 To compute the best-fit linear equation: 
+
 			y = a + bx 
 			
 from a given set of experimental or numerical data using the least squares regression 
@@ -3788,45 +3828,51 @@ technique, which minimizes the total squared error.
 CONCEPT 
 
 For n data points (xi,yi) the regression line: 
+
 			y= a + bx 
 is determined by minimizing: 
+
 			∑(yi−(a+bxi))2  
 This leads to two closed-form formulas: 
+
 Slope (b) 
+
 			b= 𝑛∑𝑥𝑦−(∑𝑥)(∑𝑦) / n∑x2−(∑x)2b 
 
 Intercept (a):
+
 				a=∑y−b∑xn 
 These values define the best-fit straight line. 
  
 PROGRAM FEATURES 
 
-• Reads all inputs from input.txt.
-• Writes results to both console and output.txt.
-• Handles multiple test cases.
-• Prints: 
-o Number of data points 
-o All x and y values 
-o Computed intercept (a) 
-o Computed slope (b) 
-o Final regression line equation 
+- Reads all inputs from input.txt.
+- Writes results to both console and output.txt.
+- Handles multiple test cases.
+- Prints: 
+- Number of data points 
+- All x and y values 
+- Computed intercept (a) 
+- Computed slope (b) 
+- Final regression line equation 
  
 ALGORITHM (Least Squares Method) :
-• Read number of data points n 
-• Read arrays x[n] and y[n] 
-• Compute required sums: 
+
+- Read number of data points n 
+- Read arrays x[n] and y[n] 
+- Compute required sums:
 	o Σx 
 	o Σy 
 	o Σxy 
 	o Σx² 
 
-• Apply formulas: 
-o Compute b (slope) 
-o Compute a (intercept) 
-• Display and store: 
-o Input values 
-o Calculated coefficients 
-o Final regression line
+- Apply formulas: 
+- Compute b (slope) 
+- Compute a (intercept) 
+- Display and store: 
+- Input values 
+- Calculated coefficients 
+- Final regression line
 
 [⬆ Back to Table of Contents](#table-of-contents)
 
@@ -4181,15 +4227,20 @@ Polynomial: y = 1.0000 + 1.0000x^2
 Fits data to exponential and power models by transforming to linear form:
 
 MODEL 1:
+
 		y = ae^(bx)
   Linearize: 	
+  
 		ln(y) = ln(a) + bx
 MODEL 2: 		
+
 		y = ax^b
   Linearize:
+  
   		ln(y) = ln(a) + b*ln(x)
 
 MODEL 3: 
+
 		y = a + be^(x/4)
   Linearize: Requires iterative or custom fitting
 
@@ -4408,6 +4459,7 @@ Simpson's 1/3 rule approximates the integral by fitting parabolas through
 three consecutive points. It requires an even number of intervals.
 
 FORMULA:
+∫[a,b] f(x) dx ≈ (h/3) [ y0 + yn + 4(y1 + y3 + ... + y(n−1)) + 2(y2 + y4 + ... + y(n−2)) ]
 
 where:
 - h = (b-a)/n
@@ -4576,6 +4628,7 @@ Simpson's 3/8 rule uses cubic polynomials for approximation. It requires
 the number of intervals to be a multiple of 3.
 
 FORMULA:
+∫[a,b] f(x) dx ≈ (3h/8) [ y0 + yn+ 3(y1 + y2 + y4 + y5 + ... + y(n−1))+ 2(y3 + y6 + y9 + ... + y(n−3)) ]
 
 where:
 
