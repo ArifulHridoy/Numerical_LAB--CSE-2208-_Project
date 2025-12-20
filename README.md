@@ -37,11 +37,6 @@ This project is a **comprehensive collection of 19 classical Numerical Methods i
 - Simpson's 1/3 Rule
 - Simpson's 3/8 Rule
 
-## Purpose of This Repository
-- To provide **clean C++ codes** for all studied numerical methods in this lab.
-- To serve as a **learning resource & simulation** for Numerical Methods
-- Combine all classical numerical methods in one comprehensive project to access easily.
-
 # Table of Contents
 
 - [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
